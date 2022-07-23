@@ -134,6 +134,8 @@ class Product extends Controller {
     function upload() {
         $ids = $_POST['ids'] ?? [];
         $trayId = $_POST['tray_id'];
+        print_r($ids);
+        print_r($trayId);
         if($_POST['delete-all'] == "delete-all") {
             if (!empty($ids)) {
                 $getModel = $this->model("ProductModel");
@@ -146,6 +148,7 @@ class Product extends Controller {
         } else {
             if (!empty($ids)) {
                 $getModel = $this->model("ProductModel");
+                $sum = 0;
                 foreach ($ids as $id) {
                     $trayData = [
                         "tray_id" => $trayId,

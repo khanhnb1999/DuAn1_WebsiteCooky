@@ -56,7 +56,7 @@
                 <a href="#" class="btn btn-warning text-white mx-3" id="btn2">Uncheck all</a>
                 <button type="submit" class="btn btn-danger" name="delete-all" value="delete-all"
                 onclick="return confirm('Bạn có muốn xóa không')">Delete All</button>
-                <button type="submit" class="btn btn-success mx-3">Thêm Món Ăn Vào Mâm Cơm</button>
+                <button type="submit"  class="btn btn-success mx-3">Thêm Món Ăn Vào Mâm Cơm</button>
             </div>
         </form>
         <div class="pagination d-flex justify-content-center mt-5">
