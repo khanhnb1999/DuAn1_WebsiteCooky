@@ -9,10 +9,11 @@
         <form action="?url=product/add" method="post" enctype="multipart/form-data">
             <div class="input__news">
                 <div class="item ">
-                    <input type="text" class="form-control input__control" name="dish_name" placeholder="Tên món ăn">
+                    <input type="text" class="form-control input__control border border-success border-3"
+                    name="dish_name" placeholder="Tên món ăn">
                 </div>
                 <div class="item">
-                    <select name="cate_id" class="form-control input__control">
+                    <select name="cate_id" class="form-control input__control border border-success border-3">
                         <option value="">Loại món ăn</option>
                         <?php foreach($data['catalog'] as $cat): ?>
                             <option value="<?= $cat['catalog_id'] ?>"><?= $cat['catalog_name'] ?></option>
@@ -20,19 +21,31 @@
                     </select>
                 </div>
                 <div class="item">
-                    <input type="text" class="form-control input__control" name="dish_price" placeholder="Giá món ăn">
+                    <input type="text" class="form-control input__control border border-success border-3"
+                     name="dish_price" placeholder="Giá món ăn">
                 </div>
                 <div class="item">
-                    <input type="file" class="form-control input__control" name="fileToUpload">
+                    <input type="file" class="form-control input__control border border-success border-3" 
+                    name="fileToUpload">
                 </div>
             </div>
-            <div class="choice__dish" style="width: 200px">
-                <select name="tray_id" class="form-control input__control text-center p-1 border border-success border-3">
-                    <option>Chọn Loại Mâm Cơm</option>
-                    <?php foreach($data['tray'] as $cat): ?>
-                        <option value="<?= $cat['tray_id'] ?>"><?= $cat['tray_name'] ?></option>
-                    <?php endforeach; ?>
-                </select>
+            <div class="choice__dish d-flex">
+                <div class="dish" style="width: 200px">
+                    <select name="tray_id" class="form-control input__control text-center p-1 border border-success border-3">
+                        <option>Chọn Loại Mâm Cơm</option>
+                        <?php foreach($data['tray'] as $cat): ?>
+                            <option value="<?= $cat['tray_id'] ?>"><?= $cat['tray_name'] ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+                <div class="unit" style="width: 200px;">
+                    <select name="tray_id" class="form-control input__control text-center p-1 border border-success border-3 mx-3">
+                        <option>Chọn Đơn Vị</option>
+                        <?php foreach($data['tray'] as $cat): ?>
+                            <option value="<?= $cat['tray_id'] ?>"><?= $cat['tray_name'] ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
             </div>
             <div class="row input__fruit intro my-3 text-center mt-5">
                 <div class="col-md-6 desc__item">
