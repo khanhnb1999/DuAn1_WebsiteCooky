@@ -38,7 +38,7 @@ $(document).ready(function () {
         nextArrow:
         '<button type="button" class="slick-next btn-gray"><i class="fad fa-chevron-circle-right icon__click"></i></button>',
         centerMode:true,
-        slidesToShow:4,
+        slidesToShow:6,
         slidesToScroll:2,
         draggable: true,
         fade: false,
@@ -49,9 +49,9 @@ $(document).ready(function () {
         autoplay:true,
         autoplaySpeed:1900,
         prevArrow:
-        '<button type="button" class="slick-prev btn-gray"><i class="fad fa-chevron-circle-left icon__click"></i></i></button>',
+        '<button type="button" class="slick-prev btn-white"><i class="fad fa-chevron-circle-left icon__click"></i></i></button>',
         nextArrow:
-        '<button type="button" class="slick-next btn-gray"><i class="fad fa-chevron-circle-right icon__click"></i></button>',
+        '<button type="button" class="slick-next btn-white"><i class="fad fa-chevron-circle-right icon__click"></i></button>',
         slidesToShow:4,
         slidesToScroll:2,
         draggable: true,
