@@ -1,6 +1,7 @@
 <?php
 
-class ConnectDb {
+class ConnectDb
+{
     public $conn;
     protected $username = "root";
     protected $password = "";
@@ -9,4 +10,3 @@ class ConnectDb {
         $this->conn = new PDO($this->url, $this->username, $this->password);
     }
 }
-?>

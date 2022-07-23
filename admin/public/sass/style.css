@@ -600,7 +600,7 @@ p {
 }
 
 .form__product {
-  margin: 130px 200px;
+  margin: 130px 50px;
   display: flex;
   justify-content: center;
   align-items: center;
