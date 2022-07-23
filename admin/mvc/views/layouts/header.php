@@ -52,13 +52,13 @@
                     </li>
                     <li class="sidebar__nav--group">
                         <button class="dropdown__btn">
-                            <i class="fas fa-newspaper icon__left"></i>
+                            <i class="fas fa-newspaper"></i>
                             <span>News</span>
                             <i class="fal fa-angle-down icon__right"></i>
                         </button>
                         <ul class="dropdown__nav">
                             <li class="dropdown__item">
-                                <a href="../news/list_news.php" class="dropdown__item--link">List news</a>
+                                <a href="?url=news/index/1" class="dropdown__item--link">List news</a>
                             </li>
                         </ul>
                     </li>
@@ -76,7 +76,7 @@
                     </li>
                     <li class="sidebar__nav--group">
                         <button class="dropdown__btn">
-                            <i class="fas fa-comment-alt-check icon__left"></i>
+                            <i class="fas fa-comment-alt-check "></i>
                             <span>Comments</span>
                             <i class="fal fa-angle-down icon__right"></i>
                         </button>
