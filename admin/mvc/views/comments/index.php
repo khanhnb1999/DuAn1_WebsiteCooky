@@ -24,7 +24,8 @@
                          <?php foreach ($data["Comment"] as $value) : ?>
                               <tr>
                                    <td>
-                                        <input type="checkbox" name='ids[]' id='check_all' value='<?= $value['comment_id'] ?? 0; ?>'>
+                                        <input type="checkbox" name='ids[]' id='check_all' class="form-check-input"
+                                        value='<?= $value['comment_id'] ?? 0; ?>'>
                                    </td>
                                    <td><?= $value['comment_id'] ?? 0 ?></td>
                                    <td><?= $value['content'] ?></td>
@@ -34,8 +35,8 @@
                                    <td><?= $value['dish_id'] ?></td>
                                    <td>
                                         <a onclick="return confirm('Bạn có muốn xóa không!!!')" 
-                                        href="?url=comment/delete/<?= $value['comment_id'] ?>" class="btn btn-danger">DELETE</a>
-                                        <a href="?url=comment/update/<?= $value['comment_id'] ?>" class="btn btn-info">UPDATE</a>
+                                        href="?url=comment/delete/<?= $value['comment_id'] ?>" class="btn btn-danger"><i class="fas fa-backspace"></i></a>
+                                        <a href="?url=comment/update/<?= $value['comment_id'] ?>" class="btn btn-info"><i class="fas fa-edit"></i></a>
                                    </td>
                               </tr>
                          <?php endforeach; ?>

@@ -18,29 +18,24 @@
 
             public function add(){
                 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-                   $new_title = $_POST['new_title'];
-                   $new_content = $_POST['new_content'];
-                   $new_date = $_POST['new_date'];
-                   $image_new= "no_image.php";
-                   $image_new=$_FILES['fileToUpload']['name'];
-                   $data = [
-                       'new_title' => $new_title,
-                       'image_new' =>$image_new,
+                    $new_title = $_POST['new_title'];
+                    $new_content = $_POST['new_content'];
+                    $new_date = $_POST['new_date'];
+                    $image_new= "no_image.php";
+                    $image_new=$_FILES['fileToUpload']['name'];
+                    $data = [
+                        'new_title' => $new_title,
+                        'image_new' =>$image_new,
                         'new_description' => $new_content,
                         'new_date' => $new_date,
-                   ];
-                   
-                   
-                   $getModel = $this->model('NewModel');
-                   $getModel->insert('news',$data);
-                   move_uploaded_file($_FILES['fileToUpload']['tmp_name'],'./mvc/views/news/image/'.$image_new);
-                   header('Location: ?url=news/index/1'); 
+                    ];
+                    $getModel = $this->model('NewModel');
+                    $getModel->insert('news',$data);
+                    move_uploaded_file($_FILES['fileToUpload']['tmp_name'],'./mvc/views/news/image/'.$image_new);
+                    header('Location: ?url=news/index/1'); 
                 }
                 $this->view('news/add');
             }
-
-
-
             // sửa
             public function update($id){
                 $getModel =$this->model('NewModel');

@@ -16,8 +16,8 @@
                         <tr class="table-primary">
                             <th>CHECK</th>
                             <th>ID</th>
-                            <th>IMAGES</th>
                             <th>TITLE</th>
+                            <th>IMAGES</th>
                             <th>DATE</th>
                             <th>ACTIONS</th>
                         </tr>
@@ -26,7 +26,8 @@
                         <?php foreach ($data["new"] as $value): ?>
                         <tr>
                             <td>
-                                <input type="checkbox" name='ids[]' id='check_all' value='<?= $value['new_id'] ?? 0; ?>'>
+                                <input type="checkbox" name='ids[]' id='check_all' class="form-check-input"
+                                value='<?= $value['new_id'] ?? 0; ?>'>
                             </td>
                             <td><?=$value['new_id']?></td>
                             <td><?=$value['new_title']?></td>
@@ -35,9 +36,9 @@
                             </td>
                             <td><?=$value['new_date']?></td>
                             <td>
-                                <a href="?url=news/update/<?=$value['new_id']?>" class="btn btn-info">UPDATE</a>
+                                <a href="?url=news/update/<?=$value['new_id']?>" class="btn btn-info"><i class="fas fa-edit"></i></a>
                                 <a onclick="return confirm('Bạn có muốn xóa không!!!')"
-                                    href="?url=news/delete/<?=$value['new_id']?>" class="btn btn-danger">DELETE</a>
+                                    href="?url=news/delete/<?=$value['new_id']?>" class="btn btn-danger"><i class="fas fa-backspace"></i></a>
                             </td>
                         </tr>
                         <?php endforeach;?>
