@@ -4,7 +4,6 @@
 // Tránh sự lặp lại hàm require_one đối với các file trong Controllers
 
 class Controller {
-    // Hàm gọi file trong thư mục models
     public function model($modelFileName) {
         require_once "./mvc/models/".$modelFileName.".php";
         return new $modelFileName;

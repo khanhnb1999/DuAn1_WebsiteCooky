@@ -1,5 +1,5 @@
 
-<!-- <?php require_once "./mvc/views/layouts/header.php" ?> -->
+<?php require_once "./mvc/views/layouts/header.php" ?>
 
 <div class="form__product">
     <div class="content border border-5 p-3">

@@ -84,6 +84,16 @@ class BaseModel extends ConnectDb {
         return $stmt->rowCount();
     }
 
+    // Hàm Inner join
+    public function innerJoin($column,$table = [], $tableId = []) {
+        $sql = "SELECT SUM($column) FROM $table[0] INNER JOIN $table[1] 
+        ON $table[0].$tableId[0] = $table[1].$tableId[0] INNER JOIN $table[2]
+        ON $table[1].$tableId[1] = $table[2].$tableId[1] WHERE $table[2].$tableId[1] = $tableId[2]";
+        $stmt = ($this->conn)->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     // Hàm phân trang
     public function paging($table,$tableId,$pages_one,$page) {
         $start_from = ($page - 1) * $pages_one;
