@@ -155,7 +155,7 @@
 
 .blogs {
     background-color: #ffff;
-    border-radius: 29px;
+    border-radius: 15px;
 }
 
 .latest__news {
@@ -173,24 +173,24 @@
 .info__image img {
     width: 380px;
     height: 225px;
-    border-radius: 20px;
+    border-radius: 15px;
 }
 
 .details {
     margin-left: 20px;
 }
 
-.details h4 a {
+.details span {
+    font-size:25px;
+}
+
+.details a {
     text-decoration: none;
     color: var(--color-black);
 }
 
-.details h4 a:hover {
+.details a:hover {
     color: #5350bb;
-}
-
-.details span {
-    font-size: 14px;
 }
 
 .details p {

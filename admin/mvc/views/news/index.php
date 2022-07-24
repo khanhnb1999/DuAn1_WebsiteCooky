@@ -11,9 +11,9 @@ require_once "./mvc/views/layouts/header.php";
     <div class="content__list--catalog">
         <form action="?url=news/deleteAll" method="post" multipart="multipart/form-data">
             <div class="content__list--fruit">
-                <table class="table table-hover text-center">
+                <table class="table table-hover">
                     <thead>
-                        <tr class="table-primary">
+                        <tr class="table-primary text-center">
                             <th>CHECK</th>
                             <th>ID</th>
                             <th>IMAGES</th>
@@ -25,17 +25,17 @@ require_once "./mvc/views/layouts/header.php";
                     <tbody>
                         <?php foreach ($data["new"] as $value) : ?>
                         <tr>
-                            <td>
+                            <td class="text-center">
                                 <input type="checkbox" name='ids[]' id='check_all' class="form-check-input"
                                     value='<?= $value['new_id'] ?? 0; ?>'>
                             </td>
-                            <td><?= $value['new_id'] ?></td>
-                            <td>
+                            <td class="text-center"><?= $value['new_id'] ?></td>
+                            <td class="text-center">
                                 <img src="./mvc/views/news/image/<?= $value['image_new'] ?>" width="100px" alt="">
                             </td>
                             <td><?= $value['new_title'] ?></td>
-                            <td><?= $value['new_date'] ?></td>
-                            <td>
+                            <td class="text-center"><?= $value['new_date'] ?></td>
+                            <td class="text-center">
                                 <a href="?url=news/update/<?= $value['new_id'] ?>" class="btn btn-info"><i
                                         class="fas fa-edit"></i></a>
                                 <a onclick="return confirm('Bạn có muốn xóa không!!!')"
