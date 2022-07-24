@@ -8,5 +8,4 @@ if(isset($_SESSION['username'])) {
     require_once "./mvc/Bridge.php";
     $result = new App();
 }
-
 ?>

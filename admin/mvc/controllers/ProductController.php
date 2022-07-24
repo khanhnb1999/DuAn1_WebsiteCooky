@@ -5,7 +5,7 @@ class Product extends Controller {
     // list sản phẩm
     function index($id) {
         $getModel = $this->model("ProductModel");
-        $pr = $getModel->paging("dish","dish_id",3,$id);
+        $pr = $getModel->paging("dish","dish_id",6,$id);
         $trays = $getModel->getAll("trays");
         $totalRecord = $getModel->totalRecord("dish");
         $this->view("products/index",
@@ -14,7 +14,7 @@ class Product extends Controller {
             "totalRecord" => $totalRecord,
             "tray" => $trays,
             "page" => $id,
-            "page_one" => 3
+            "page_one" => 6
         ]);
     }
 
@@ -133,10 +133,8 @@ class Product extends Controller {
     // delete nhiều  sản phẩm và thêm vào bàn ăn
     function upload() {
         $ids = $_POST['ids'] ?? [];
-        $trayId = $_POST['tray_id'];
-        print_r($ids);
-        print_r($trayId);
-        if($_POST['delete-all'] == "delete-all") {
+        $trayId = $_POST['tray_id'] ?? "";
+        if(isset($_POST['delete-all']) == "delete-all") {
             if (!empty($ids)) {
                 $getModel = $this->model("ProductModel");
                 foreach ($ids as $id) {
@@ -148,14 +146,25 @@ class Product extends Controller {
         } else {
             if (!empty($ids)) {
                 $getModel = $this->model("ProductModel");
-                $sum = 0;
                 foreach ($ids as $id) {
                     $trayData = [
                         "tray_id" => $trayId,
                         "dish_id" => $id
                     ];
                     $getModel->insert("tray_details", $trayData);
-                }
+                };
+                // $getSum = $getModel->innerJoin("dish_price",
+                //     ["tray_details","dish","trays"],
+                //     ["dish_id","tray_id",$trayId]
+                // );
+                $where = $trayId;
+                $getSum = $getModel->sumPrice($where);
+                $sumPrice = $getSum["SUM(dish_price)"];
+                $price = [
+                    "tray_id" => $trayId,
+                    "price" => $sumPrice
+                ];
+                $getModel->insert("tray_prices",$price);
                 header("Location: ?url=product/index/1");
             }
         }

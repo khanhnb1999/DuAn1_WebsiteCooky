@@ -3,7 +3,7 @@
 class App {
     protected $controller = "Product" ;
     protected $action = "index";
-    protected $params = [1];
+    protected $params = [];
     function __construct() {
         $arr = $this->UlrProcess();
         if(file_exists("./mvc/controllers/".ucfirst($arr[0])."Controller.php")) {
