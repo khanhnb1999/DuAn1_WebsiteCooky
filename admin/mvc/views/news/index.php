@@ -1,5 +1,5 @@
 <?php
-    require_once "./mvc/views/layouts/header.php";
+require_once "./mvc/views/layouts/header.php";
 ?>
 
 <div class="content p-3 " style="margin: 120px auto;">
@@ -16,31 +16,32 @@
                         <tr class="table-primary">
                             <th>CHECK</th>
                             <th>ID</th>
-                            <th>IMAGES</th>
                             <th>TITLE</th>
+                            <th>IMAGES</th>
                             <th>DATE</th>
                             <th>ACTIONS</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($data["new"] as $value): ?>
+                        <?php foreach ($data["new"] as $value) : ?>
                         <tr>
                             <td>
-                                <input type="checkbox" name='ids[]' id='check_all' value='<?= $value['new_id'] ?? 0; ?>'>
+                                <input type="checkbox" name='ids[]' id='check_all'
+                                    value='<?= $value['new_id'] ?? 0; ?>'>
                             </td>
-                            <td><?=$value['new_id']?></td>
-                            <td><?=$value['new_title']?></td>
+                            <td><?= $value['new_id'] ?></td>
+                            <td><?= $value['new_title'] ?></td>
                             <td>
                                 <img src="./mvc/views/news/image/<?= $value['image_new'] ?>" width="100px" alt="">
                             </td>
-                            <td><?=$value['new_date']?></td>
+                            <td><?= $value['new_date'] ?></td>
                             <td>
-                                <a href="?url=news/update/<?=$value['new_id']?>" class="btn btn-info">UPDATE</a>
+                                <a href="?url=news/update/<?= $value['new_id'] ?>" class="btn btn-info">UPDATE</a>
                                 <a onclick="return confirm('Bạn có muốn xóa không!!!')"
-                                    href="?url=news/delete/<?=$value['new_id']?>" class="btn btn-danger">DELETE</a>
+                                    href="?url=news/delete/<?= $value['new_id'] ?>" class="btn btn-danger">DELETE</a>
                             </td>
                         </tr>
-                        <?php endforeach;?>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
@@ -53,21 +54,21 @@
     </div>
     <div class="pagination d-flex justify-content-center mt-5">
         <div class="pagination__item">
-            
-        <?php
-                $total_record = $data["total"];
-                $page = $data['page'];
-                $pages_one = $data['page_one'];
-                $total_page = ceil($total_record / $pages_one);
-                for ($i = 1; $i <= $total_page; $i++) {
-                    if ($i == $page) {
-                        echo "<a class='active btn btn-info text-white'>$i</a>";
-                    } else {
-                        echo "<a href='?url=news/index/$i' class=' btn btn-secondary mx-1'>$i</a>";
-                    }
+
+            <?php
+            $total_record = $data["total"];
+            $page = $data['page'];
+            $pages_one = $data['page_one'];
+            $total_page = ceil($total_record / $pages_one);
+            for ($i = 1; $i <= $total_page; $i++) {
+                if ($i == $page) {
+                    echo "<a class='active btn btn-info text-white'>$i</a>";
+                } else {
+                    echo "<a href='?url=news/index/$i' class=' btn btn-secondary mx-1'>$i</a>";
                 }
-                ?>
-            
+            }
+            ?>
+
 
         </div>
     </div>
