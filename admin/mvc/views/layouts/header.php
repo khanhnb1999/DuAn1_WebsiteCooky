@@ -52,7 +52,7 @@
                     </li>
                     <li class="sidebar__nav--group">
                         <button class="dropdown__btn">
-                            <i class="fas fa-newspaper"></i>
+                            <i class="fas fa-newspaper icon__left"></i>
                             <span>News</span>
                             <i class="fal fa-angle-down icon__right"></i>
                         </button>
@@ -76,7 +76,7 @@
                     </li>
                     <li class="sidebar__nav--group">
                         <button class="dropdown__btn">
-                            <i class="fas fa-comment-alt-check "></i>
+                            <i class="fas fa-comment-alt-check icon__left"></i>
                             <span>Comments</span>
                             <i class="fal fa-angle-down icon__right"></i>
                         </button>
