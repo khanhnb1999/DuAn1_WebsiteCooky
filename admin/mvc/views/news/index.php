@@ -11,13 +11,13 @@ require_once "./mvc/views/layouts/header.php";
     <div class="content__list--catalog">
         <form action="?url=news/deleteAll" method="post" multipart="multipart/form-data">
             <div class="content__list--fruit">
-                <table class="table table-hover">
+                <table class="table table-hover text-center">
                     <thead>
                         <tr class="table-primary">
                             <th>CHECK</th>
                             <th>ID</th>
-                            <th>TITLE</th>
                             <th>IMAGES</th>
+                            <th>TITLE</th>
                             <th>DATE</th>
                             <th>ACTIONS</th>
                         </tr>
@@ -30,10 +30,10 @@ require_once "./mvc/views/layouts/header.php";
                                     value='<?= $value['new_id'] ?? 0; ?>'>
                             </td>
                             <td><?= $value['new_id'] ?></td>
-                            <td><?= $value['new_title'] ?></td>
                             <td>
                                 <img src="./mvc/views/news/image/<?= $value['image_new'] ?>" width="100px" alt="">
                             </td>
+                            <td><?= $value['new_title'] ?></td>
                             <td><?= $value['new_date'] ?></td>
                             <td>
                                 <a href="?url=news/update/<?= $value['new_id'] ?>" class="btn btn-info"><i
