@@ -487,10 +487,6 @@ h6 {
     margin-top: 20px;
 }
 
-.cook__detail {
-    background-color: var(--color-white);
-    border-radius: 15px;
-}
 
 .cate__cook {
     display: flex;
@@ -510,6 +506,7 @@ h6 {
 .cook__detail {
     padding: 15px;
     background-color: var(--color-white);
+    border-radius: 15px;
 }
 .cook__detail img {
     width: 100%;
@@ -542,8 +539,6 @@ h6 {
 
 /* end delicious food */
 
-
-/*côk end pagination */
 .slider__food--outstanding {
     background-color: #f7f7f7;
     margin: 20px 0;

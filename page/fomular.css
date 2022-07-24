@@ -112,6 +112,7 @@ h6 {
     color: var(--color-white);
     text-decoration: underline;
 }
+
 /* end menu left */
 
 .search__right {
@@ -168,10 +169,11 @@ h6 {
     margin: 0;
     padding: 0;
 }
+
 .list__item {
     list-style: none;
     border-bottom: 1px solid rgb(219, 213, 213);
-    font-size:15px;
+    font-size: 15px;
     padding: 5px 0;
 }
 
@@ -405,288 +407,265 @@ h6 {
 
 /* end banner carousel */
 .main_content {
-  margin: 10px 350px;
+    margin: 10px 350px;
 }
+
 .main__title h4 {
-  margin: 20px 0;
+    margin: 20px 0;
 }
 
 .horizontal {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .filter-bar {
-  background-color: var(--color-white);
-  border-radius: 10px;
-  border: 1px solid #c0bdbd;
+    background-color: var(--color-white);
+    border-radius: 10px;
+    border: 1px solid #c0bdbd;
 }
+
 .main__search {
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid #c0bdbd;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #c0bdbd;
 }
 
 .search__filter {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
 }
 
 .filter__item {
-  flex-basis: 20%;
+    flex-basis: 20%;
+}
+
+.dropdown__selected {
+    border: 1px solid #c0bdbd;
+    border-radius: 10px;
+    background-color: #e0dada;
+    padding: 9px 25px;
+    margin-left:10px;
 }
 
 .dropdown__selected a {
-  text-decoration: none;
-  color: var(--color-black);
-  font-size: 20px;
-  margin-top: 5px;
-}
-.dropdown__selected {
-  border: 1px solid #c0bdbd;
-  padding: 5px 20px;
-  border-radius: 10px;
-  background-color: #e0dada;
-  /* margin-right: 580px;
-  margin-left: 20px; */
+    text-decoration: none;
+    color: var(--color-black);
+    font-size: 20px;
 }
 
-.search__dish {
-  border: 1px solid var(--color--black);
-  border-radius: 10px;
-  background-color: #e0dada;
-  flex-basis: 23%;
-}
-
-.search__fomular {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 5px;
-  padding: 10px;
-}
-
-.form_sr {
-  border: none;
-  outline: none;
-  font-size: 14px;
-  font-weight: 600;
-  background-color: #e0dada;
-  margin-left: 10px;
-}
-
-.btn__search {
-  border: none;
-  outline: none;
-  background-color: #e0dada;
-}
 /* ----------------------end content details--------------- */
 .delicious__foods {
-  margin-top: 20px;
+    margin-top: 20px;
 }
 
 .cook__detail {
-  background-color: var(--color-white);
-  border-radius: 20px;
+    padding: 15px;
+    background-color: var(--color-white);
+    border-radius: 15px;
 }
 
 .cate__cook {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-
-  border-radius: 20px;
-  margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-radius: 15px;
+    margin-top: 20px;
 }
 
 .first__item {
-  flex-basis: 25%;
-  margin-bottom: 20px;
-  padding: 10px 8px 0 8px;
+    border-radius: 15px;
+    flex-basis: 24%;
+    margin-bottom: 20px;
+    border: 1px solid rgb(218, 208, 208);
 }
 
 .cook__detail img {
-  width: 100%;
-  height: 260px;
-  border-radius: 20px 20px 0 0;
-  padding-bottom: 10px;
-}
-.cook__detail {
-  background-color: var(--color-white);
-  display: flex;
-  flex-direction: column;
+    width: 100%;
+    height:300px;
+    border-radius: 15px 15px 0 0;
+    padding-bottom: 10px;
 }
 
+
 .cook__name {
-  text-decoration: none;
-  font-weight: 700;
-  color: var(--color-black);
-  font-size: 20px;
-  text-justify: center;
-  margin: 0px auto;
+    text-decoration: none;
+    font-weight: 700;
+    color: var(--color-black);
+    font-size: 20px;
+    text-justify: center;
+    margin: 0px auto;
 }
 
 .shows {
-  display: flex;
-  margin-top: 10px;
-  color: rgb(167, 158, 158);
-  font-size: 14px;
-  margin-left: 20px;
-  padding-bottom: 20px;
+    display: flex;
+    margin-top: 10px;
+    color: rgb(167, 158, 158);
+    font-size: 14px;
+    margin-left: 20px;
+    padding-bottom: 20px;
 }
 
 .likes {
-  margin-left: 30px;
+    margin-left: 30px;
 }
-.page__item a {
-  text-decoration: none;
-  color: var(--color-black);
-  font-size: 24px;
-  background-color: var(--color-white);
-  border-bottom: 1px solid #c0bdbd;
 
-  padding: 3px 8px;
-  margin: 0 10px;
+.pagination {
+    margin-top:20px;
 }
-.page {
-  text-align: center;
+
+.page__item a {
+    text-decoration: none;
+    color: var(--color-white);
+    font-size: 24px;
+    background-color: var(--color-violet);
+    padding: 3px 8px;
+    margin: 0 10px;
 }
+
 
 /* ---------------è=nd page--------------- */
 
 .item__title {
-  font-size: 24px;
-  font-weight: 600;
-  margin: 15px 0;
+    font-size: 24px;
+    font-weight: 600;
+    margin: 15px 0;
 }
 
 .blog__dish {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 2px solid #c0bdbd;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #c0bdbd;
 }
 
 .item__dish--blog {
-  background-color: var(--color-white);
-  border-radius: 20px;
+    background-color: var(--color-white);
+    border-radius: 20px;
 }
-.featured-item {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
 
-  margin-bottom: 20px;
+.featured-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+
+    margin-bottom: 20px;
 }
+
 .blog__dish:last-child {
-  border-bottom: none;
+    border-bottom: none;
 }
+
 .featured__image img {
-  width: 150px;
-  height: 100%;
-  border-radius: 10px;
+    width: 150px;
+    height: 100%;
+    border-radius: 10px;
 }
+
 .featured__text {
-  margin-left: 15px;
+    margin-left: 15px;
 }
 
 .featured__text a {
-  text-decoration: none;
-  color: var(--color-black);
+    text-decoration: none;
+    color: var(--color-black);
 }
 
 .featured__text p {
-  padding: 20px 0;
-  margin: 0;
-  font-size: 13px;
+    padding: 20px 0;
+    margin: 0;
+    font-size: 13px;
 }
+
 .item__user {
-  margin: 20px 0;
+    margin: 20px 0;
 }
+
 /* end form registration */
 .footer {
-  background-color: var(--color-violet);
-  color: var(--color-white);
+    background-color: var(--color-violet);
+    color: var(--color-white);
 }
 
 .footer .main__footer {
-  margin: 0 350px;
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem 0;
+    margin: 0 350px;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
 }
 
 .footer .main__footer h6 {
-  text-transform: uppercase;
-  font-size: 1.4rem;
-  letter-spacing: -1px;
-  padding: 1rem 0;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    letter-spacing: -1px;
+    padding: 1rem 0;
 }
 
 .footer .item {
-  flex-basis: 24%;
+    flex-basis: 24%;
 }
 
 .footer .item p {
-  line-height: 2rem;
+    line-height: 2rem;
 }
 
 .footer .list__menu a {
-  display: block;
-  color: var(--color-white);
-  text-decoration: none;
-  line-height: 2rem;
+    display: block;
+    color: var(--color-white);
+    text-decoration: none;
+    line-height: 2rem;
 }
 
 .footer .list__menu a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .footer .form__group {
-  display: flex;
-  background-color: var(--color-white);
+    display: flex;
+    background-color: var(--color-white);
 }
 
 .footer .side__input {
-  flex-basis: 80%;
-  border: none;
-  outline: none;
+    flex-basis: 80%;
+    border: none;
+    outline: none;
 }
 
 .footer .send__email {
-  padding: 0.3rem 0.5rem;
+    padding: 0.3rem 0.5rem;
 }
 
 .footer .side__send button {
-  outline: none;
-  padding: 0.3rem;
-  border: none;
+    outline: none;
+    padding: 0.3rem;
+    border: none;
 }
 
 .footer .logo__store img {
-  width: 5rem;
+    width: 5rem;
 }
 
 .footer .footer__sidebar {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  z-index: 1;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1;
 }
 
 .footer__sidebar--message {
-  background-color: white;
-  border-radius: 50%;
-  margin-bottom: 0.3rem;
-  width: 3.1rem;
-  height: 3rem;
-  text-align: center;
+    background-color: white;
+    border-radius: 50%;
+    margin-bottom: 0.3rem;
+    width: 3.1rem;
+    height: 3rem;
+    text-align: center;
 }
 
 .footer .message__link {
-  color: #269300;
-  font-size: 1.8rem;
-  padding-bottom: 0.3rem;
+    color: #269300;
+    font-size: 1.8rem;
+    padding-bottom: 0.3rem;
 }
