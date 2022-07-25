@@ -6,28 +6,32 @@
           <table class="table table-bordered">
                <thead class="text-center">
                     <tr>
-                         <th>ID</th>
-                         <th>LOGO</th>
+                         <!-- <th>ID</th> -->
+                         <!-- <th>LOGO</th> -->
                          <th>BANNER</th>
-                         <th>CONTACT</th>
+                         <th>EMAIL</th>
+                         <th>ADDRESS</th>
+                         <th>PHONE NUMBER</th>
                          <th>DESCRIPTION</th>
                          <th>ACTIONS</th>
                     </tr>
                </thead>
                <tbody>
-                    <?php foreach ($setting as $key => $value) : ?>
+                    <?php foreach ($data["settings"] as $value ) : ?>
                          <tr>
-                              <td><?= $value['setting_id'] ?></td>
+                              <input type="hidden" value="<?= $value['setting_id'] ?>">
+                              <!-- <td>
+                                   <img src="./mvc/views/settings/image/<?= $value['logo'] ?>" width="100" height="100" alt="">
+                              </td> -->
                               <td>
-                                   <img src="../settings/image/<?= $value['logo'] ?>" width="100" height="100" alt="">
+                                   <img src="./mvc/views/settings/image/<?= $value['banner'] ?>" width="200" height="100" alt="">
                               </td>
-                              <td>
-                                   <img src="../settings/image/<?= $value['banner'] ?>" width="200" height="100" alt="">
-                              </td>
-                              <td><?= $value['contact'] ?></td>
+                              <td><?= $value['email'] ?></td>
+                              <td><?= $value['address'] ?></td>
+                              <td><?= '0'.$value['phone_number'] ?></td> 
                               <td><?= $value['description'] ?></td>
                               <td class="text-center ">
-                                   <a href="update.php?id=<?= $value['setting_id'] ?>" class="btn btn-info m-1 text-center">Update</a>
+                                   <a href="?url=setting/update/<?= $value['setting_id'] ?>" class="btn btn-info m-1 text-center">Update</a>
                               </td>
                          </tr>
                     <?php endforeach; ?>

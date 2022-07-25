@@ -154,7 +154,7 @@
                     </span>
                     <ul class="dropdown__menu" id="myDropdown">
                         <li class="nav__item">
-                            <a href="../settings/list.php" class="nav__link"><i class="far fa-cog "></i> Settings</a>
+                            <a href="?url=setting/index/1" class="nav__link"><i class="far fa-cog "></i> Settings</a>
                         </li>
                         <li class="nav__item">
                             <a href="?url=login/profile" class="nav__link"><i class="far fa-user "></i> Profile</a>
