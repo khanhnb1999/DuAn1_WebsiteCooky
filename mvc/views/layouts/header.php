@@ -10,6 +10,8 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" href="./public/css/header.css">
     <link rel="stylesheet" href="./public/css/home.css">
+    <link rel="stylesheet" href="./public/css/formula.css">
+    <link rel="stylesheet" href="./public/css/news.css">
     <link rel="stylesheet" href="./public/css/footer.css">
     <link rel="icon" href="./public/image/60.ico">
     <title>Home</title>
@@ -143,22 +145,22 @@
                 <div class="menu__left">
                     <ul class="nav__bar">
                         <li class="nav__item ">
-                            <span class="logo"><a href="">Cooky</a></span>
+                            <span class="logo"><a href="home">Cooky</a></span>
                         </li>
                         <li class="nav__item">
-                            <a href="./index.html" class="nav__link">Home</a>
+                            <a href="home" class="nav__link">Home</a>
                         </li>
                         <li class="nav__item">
-                            <a href="" class="nav__link">Công Thức</a>
+                            <a href="formula" class="nav__link">Công Thức</a>
                         </li>
                         <li class="nav__item">
-                            <a href="./blog.html" class="nav__link">Bài Viết</a>
+                            <a href="news" class="nav__link">Bài Viết</a>
                         </li>
                         <li class="nav__item">
                             <a href="./blog.html" class="nav__link">Tạo món</a>
                         </li>
                         <li class="nav__item dropdown__menu">
-                            <a href="javascript:void(0)" class="nav__link">Mâm Cơm
+                            <a href="javascript:void(0)" class="nav__link">Bàn ăn
                                 <i class="far fa-angle-down"></i>
                             </a>
                             <div class="price__trays" id="active_tray">

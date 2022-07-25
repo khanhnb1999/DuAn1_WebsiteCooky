@@ -1,9 +1,9 @@
 <?php require_once "./mvc/views/layouts/header.php" ?>
-<div class="content p-3" style="margin-top:90px">
+<div class="content p-3" style="margin-top:100px">
     <div class="content__list--user">
         <form action="?url=user/deleteAll" method="post">
             <div class="content__list--user">
-                <table class="table table-hover text-center">
+                <table class="table table-hover text-center border border-1">
                     <thead>
                         <tr class="table-primary">
                             <th>CHECK</th>

@@ -91,7 +91,9 @@
                 <?php foreach ($data["news"] as $value) : ?>
                     <div class="latest__news">
                         <div class="info__image">
-                            <img src="./admin/mvc/views/news/image/<?= $value['image_new'] ?>" alt="">
+                            <a href="">
+                                <img src="./admin/mvc/views/news/image/<?= $value['image_new'] ?>" alt="">
+                            </a>
                         </div>
                         <div class="details">
                             <a href="">

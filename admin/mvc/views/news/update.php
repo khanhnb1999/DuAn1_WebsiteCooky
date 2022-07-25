@@ -5,16 +5,18 @@
 
 ?>
 <session>
-<div  style="width:1080px; margin: 160px auto" class="border p-3">
+<div  style="width:1580px; margin: 160px auto" class="border border-5 p-3">
     <form action="?url=news/update/<?=$value['new_id']?>" method="post" enctype="multipart/form-data">
         <input type="hidden" name="new_id" value="<?= $value['new_id'] ?>">
         <div class="row description">
-            <div class="col-lg-6 input__fruit">
+            <div class="col-lg-6 input__fruit text-center">
+                <h3>TIÊU ĐỀ</h3>
                 <textarea type="text" class="form-control" name="new_title" rows="3"  id="editor1">
                     <?= $value['new_title'] ?>
                 </textarea>
             </div>
-            <div class="col-lg-6 input__fruit ">
+            <div class="col-lg-6 input__fruit text-center">
+                <h3>NỘI DUNG TIN TỨC</h3>
                 <textarea type="text" class="form-control" name="new_description" rows="7"  id="editor2">
                     <?= $value['new_description'] ?>
                 </textarea>
@@ -23,11 +25,13 @@
         <div class="row news__image mt-3">
             <div class="col-lg-6 input__fruit">
                 <input type="hidden" name="fileToUpload" value="<?=$value['image_new']?>">
-                <input type="file" class="form-control" name="fileToUpload">
-                <div class="my-1"><img src="./mvc/views/news/image/<?=$value['image_new']?>" width="100px" alt=""></div>
+                <input type="file" class="form-control p-3" name="fileToUpload">
+                <div class="my-1">
+                    <img class="border border-5" src="./mvc/views/news/image/<?=$value['image_new']?>" width="120px" alt="">
+                </div>
             </div>
             <div class="col-lg-6 input__fruit">
-                <input type="date" class="form-control" name="new_date" placeholder="Enter created date" value="<?= $value['new_date'] ?>">
+                <input type="date" class="form-control p-3" name="new_date" placeholder="Enter created date" value="<?= $value['new_date'] ?>">
             </div>
         </div>
         <div class="input__fruit my-3">

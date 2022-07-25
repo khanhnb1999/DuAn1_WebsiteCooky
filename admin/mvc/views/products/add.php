@@ -32,7 +32,7 @@
             <div class="choice__dish d-flex">
                 <div class="dish" style="width: 200px">
                     <select name="tray_id" class="form-control input__control text-center p-1 border border-success border-3">
-                        <option>Chọn Loại Mâm Cơm</option>
+                        <option>Chọn Loại Bàn Ăn</option>
                         <?php foreach($data['tray'] as $cat): ?>
                             <option value="<?= $cat['tray_id'] ?>"><?= $cat['tray_name'] ?></option>
                         <?php endforeach; ?>

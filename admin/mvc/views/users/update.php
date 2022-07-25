@@ -2,7 +2,7 @@
 <?php require_once "./mvc/views/layouts/header.php" ?>
 <?php $value = $data['user'] ?? "" ?>
 <div class="update__user">
-    <div class="tab__form">
+    <div class="tab__form border border-5">
         <form action="?url=user/update/<?=$value['user_id']?>" method="post">
             <input type="hidden" name="user_id" value="<?= $value['user_id'] ?>">
             <div class="tab__form--body">
@@ -67,7 +67,7 @@
                                     <label for="<?= $value['role_id'] ?>">
                                         <?= $value["name"] ?>
                                     </label>
-                                    <input type="checkbox" class="form-check-input" id="<?= $value['role_id'] ?>"
+                                    <input type="checkbox" class="form-check-input mx-3" id="<?= $value['role_id'] ?>"
                                     name="role[]" value="<?= $value['role_id'] ?>"
                                     <?php if(in_array($value['role_id'],$data['roleOfUser'])) echo ' checked '; ?>/>
                                 <?php } ?>    

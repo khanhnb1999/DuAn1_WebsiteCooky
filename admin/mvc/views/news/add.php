@@ -3,26 +3,26 @@
     
     
 ?>
-<div style="width:1080px; margin: 160px auto" class="border p-3">
+<div style="width:1580px; margin: 160px auto" class="border border-5 p-3">
     <form action="?url=news/add" method="post" enctype="multipart/form-data">
-       <div class="row description">
+       <div class="row description text-center">
             <div class="col-lg-6 input__fruit">
-                <h6>TIÊU ĐỀ</h6>
+                <h3>TIÊU ĐỀ</h3>
                 <textarea type="text" class="form-control" name="new_title" rows="3" id="editor1"></textarea>
             </div>
             <div class="col-lg-6 input__fruit ">
-            <h6>NỘI DUNG TIN TỨC</h6>
+            <h3>NỘI DUNG TIN TỨC</h3>
                 <textarea type="text" class="form-control" name="new_content" rows="7" id="editor2"></textarea>
             </div>
        </div>
-        <div class="row news__image mt-3">
+        <div class="row news__image mt-3 text-center">
             <div class="col-lg-6 input__fruit">
                 <h6>IMAGES</h6>
-                <input type="file" class="form-control" name="fileToUpload">
+                <input type="file" class="form-control p-3" name="fileToUpload">
             </div>
             <div class="col-lg-6 input__fruit">
                 <h6>NGÀY ĐĂNG TIN</h6>
-                <input type="date" class="form-control" name="new_date" placeholder="Enter created date">
+                <input type="date" class="form-control p-3" name="new_date" placeholder="Enter created date">
             </div>
         </div>
         <div class="input__fruit my-3">

@@ -6,7 +6,7 @@
         </div>
     </div>
     <div class="content__list--catalog">
-        <form action="?url=catalog/deleteAll" method="post">
+        <form action="?url=tray/deleteAll" method="post">
             <div class="content__list--fruit">
                 <table class="table table-hover text-center">
                     <thead>
@@ -14,7 +14,6 @@
                             <th>CHECK</th>
                             <th>ID</th>
                             <th>NAME</th>
-                            <th>PRICE</th>
                             <th>ACTIONS</th>
                         </tr>
                     </thead>
@@ -27,7 +26,6 @@
                                 </td>
                                 <td><?=$value['tray_id']?></td>
                                 <td><?=$value['tray_name']?></td>
-                                <td><?=$value['tray_price']?></td>
                                 <td>
                                     <a href="?url=tray/update/<?=$value['tray_id']?>"class="btn btn-info"><i class="fas fa-edit"></i></a>
                                     <a onclick="return confirm('Bạn có muốn xóa không!!!')"

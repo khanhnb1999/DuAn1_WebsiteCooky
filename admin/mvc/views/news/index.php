@@ -11,7 +11,7 @@ require_once "./mvc/views/layouts/header.php";
     <div class="content__list--catalog">
         <form action="?url=news/deleteAll" method="post" multipart="multipart/form-data">
             <div class="content__list--fruit">
-                <table class="table table-hover">
+                <table class="table table-hover border">
                     <thead>
                         <tr class="table-primary text-center">
                             <th>CHECK</th>

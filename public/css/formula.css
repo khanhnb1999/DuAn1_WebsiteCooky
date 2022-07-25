@@ -1,0 +1,169 @@
+
+.main_content {
+    margin: 10px 350px;
+}
+
+.main__title h4 {
+    margin: 20px 0;
+}
+
+.horizontal {
+    cursor: pointer;
+}
+
+.filter-bar {
+    background-color: var(--color-white);
+    border-radius: 10px;
+    border: 1px solid #c0bdbd;
+}
+
+.main__search {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #c0bdbd;
+}
+
+.search__filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.filter__item {
+    flex-basis: 20%;
+}
+
+.dropdown__selected {
+    border: 1px solid #c0bdbd;
+    border-radius: 10px;
+    background-color: #e0dada;
+    padding: 9px 25px;
+    margin-left:10px;
+}
+
+.dropdown__selected a {
+    text-decoration: none;
+    color: var(--color-black);
+    font-size: 20px;
+}
+
+/* ----------------------end content details--------------- */
+.delicious__foods {
+    margin-top: 20px;
+}
+
+.cook__detail {
+    padding: 15px;
+    background-color: var(--color-white);
+    border-radius: 15px;
+}
+
+.cate__cook {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+.first__item {
+    border-radius: 15px;
+    flex-basis: 24%;
+    margin-bottom: 20px;
+    border: 1px solid rgb(218, 208, 208);
+}
+
+.cook__detail img {
+    width: 100%;
+    height:300px;
+    border-radius: 15px 15px 0 0;
+    padding-bottom: 10px;
+}
+
+
+.cook__name {
+    text-decoration: none;
+    font-weight: 700;
+    color: var(--color-black);
+    font-size: 20px;
+    text-justify: center;
+    margin: 0px auto;
+}
+
+.shows {
+    display: flex;
+    margin-top: 10px;
+    color: rgb(167, 158, 158);
+    font-size: 14px;
+    margin-left: 20px;
+    padding-bottom: 20px;
+}
+
+.likes {
+    margin-left: 30px;
+}
+
+
+
+/* ---------------è=nd page--------------- */
+
+.item__title {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 20px 0;
+}
+
+.blog__dish {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #c0bdbd;
+    padding: 15px;
+}
+
+.item__dish--blog {
+    background-color: var(--color-white);
+    border-radius: 15px;
+}
+
+.featured-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.blog__dish:last-child {
+    border-bottom: none;
+}
+
+.featured__image img {
+    width: 150px;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.featured__text {
+    margin-left: 35px;
+}
+
+.featured__text a {
+    text-decoration: none;
+    color: var(--color-black);
+}
+
+.featured__text a:hover {
+    color: var(--color-violet);
+}
+
+.featured__text p {
+    padding: 20px 0;
+    margin: 0;
+    font-size: 15px;
+}
+
+.item__user {
+    margin: 20px 0;
+}

@@ -1,13 +1,9 @@
     <?php
         $value =$data['comment'];
         require_once "./mvc/views/layouts/header.php";
-    
     ?>
-
-
-
 <div class="box__comment">
-     <div class="content">
+     <div class="content border border-5">
           <form action="?url=comment/update/<?= $value['comment_id'] ?>" method="POST">
                <input type="hidden" name="comment-id" value="<?= $value['comment_id'] ?>">
                <div class="description">
@@ -16,16 +12,18 @@
                </div>
                <div class="check__box">
                     <div class="check__right">
-                         <div class="form-check">
-                              <input class="form-check-input" name="status" type="checkbox" value="1" >
-                              <label class="form-check-label" >Show</label>
-                         </div>
+                            <div class="form-check">
+                                <input class="form-check-input" 
+                                name="status" type="checkbox" value="1" >
+                                <label class="form-check-label" >Show</label>
+                            </div>
                     </div>
                     <div class="check__left">
-                         <div class="form-check">
-                              <input class="form-check-input" name="status" type="checkbox" value="0" >
-                              <label class="form-check-label" >Hide</label>
-                         </div>
+                        <div class="form-check">
+                            <input  class="form-check-input" 
+                            name="status" type="checkbox" value="0" >
+                            <label class="form-check-label" >Hide</label>
+                        </div>
                     </div>
                </div>
                <div class="check__submit">
