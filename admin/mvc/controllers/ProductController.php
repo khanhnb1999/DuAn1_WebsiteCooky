@@ -79,6 +79,24 @@ class Product extends Controller {
         $getModel = $this->model("ProductModel");
         $pr = $getModel->getOne("dish","dish_id=$id");
         $result = $getModel->getAll("catalogs");
+        // $getTray = $getModel->getPrice($id);
+        // Lấy tất cả bàn ăn khi update 1 món ăn có $id
+        // $getAllTray = [];
+        // foreach ($getTray as $value) {
+        //     $getAllTray[] = $value['tray_id'];
+        //     $oldPrice = $value['dish_price'];
+        // }
+
+        // foreach ($getAllTray as $val) {
+        //     $totalTray = $getModel->totalPrice($val);
+        // }
+
+        // $sumPrice = [];
+        // foreach ($totalTray as $val) {
+        //     $sumPrice[] = $val['price'];
+        // }
+        // echo "<pre>";
+        // print_r($sumPrice); die;
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
             $image = $_FILES['fileToUpload'];
             if(!empty($image['name'])) {
@@ -107,6 +125,16 @@ class Product extends Controller {
                     'user_id' => 1
                 ];
             }
+
+            // foreach ($getAllTray as $valTray) {
+            //     foreach ($sumPrice as $valSum) {
+            //         $dataPrice = [
+            //             "tray_id" => $valTray,
+            //             "price" => $valSum - $oldPrice + $_POST['dish_price']
+            //         ];
+            //     }
+            //     $getModel->update("tray_prices", $dataPrice);
+            // }
             $dish_image = $image['name'];
             $where = "dish_id = $id";
             $getModel->update("dish",$data,$where);
