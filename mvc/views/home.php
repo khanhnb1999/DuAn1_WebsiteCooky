@@ -56,7 +56,7 @@
 
         <div class="outstanding__foods">
             <div class="food__title">
-                <h3><i class="far fa-star"></i> Món ngon nổi bật</h3>
+                <h3><i class="far fa-star"></i> Món ngon mỗi ngày</h3>
             </div>
             <div class="slider__food--outstanding">
                 <div class="slider__horizontal" id="slider-food">
