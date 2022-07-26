@@ -9,7 +9,7 @@
             <div class="slider__bar">
                 <div class="horizontal__scrollbar" id="slider">
                     <?php foreach ($data['home'] as $value) :?>
-                        <div class="item">
+                        <div class="items">
                             <div class="avatar__cate">
                                 <img src="./admin/mvc/views/catalogs/image/<?= $value['catalog_image'] ?>" alt="">
                             </div>

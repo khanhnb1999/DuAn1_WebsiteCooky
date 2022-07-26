@@ -22,7 +22,7 @@
                         </div>
                     </div>
                     <div class="col-xl-5">
-                        <div class="item">
+                        <div class="item__small">
                             <div class="item--image">
                                 <a href=""><img src="./page/img/new9.jpg" alt=""></a>
                             </div>
@@ -31,7 +31,7 @@
                                 <p>5386 lượt xem</p>
                             </div>
                         </div>
-                        <div class="item">
+                        <div class="item__small">
                             <div class="item--image">
                                 <a href=""><img src="./page/img/new9.jpg" alt=""></a>
                             </div>
@@ -40,7 +40,7 @@
                                 <p>5386 lượt xem</p>
                             </div>
                         </div>
-                        <div class="item">
+                        <div class="item__small">
                             <div class="item--image">
                                 <a href=""><img src="./page/img/new9.jpg" alt=""></a>
                             </div>
@@ -49,7 +49,7 @@
                                 <p>5386 lượt xem</p>
                             </div>
                         </div>
-                        <div class="item">
+                        <div class="item__small">
                             <div class="item--image">
                                 <a href=""><img src="./page/img/new9.jpg" alt=""></a>
                             </div>
@@ -90,7 +90,9 @@
                     <?php foreach ($data["news"] as $value) : ?>
                         <div class="group-item">
                             <h4>
-                                <a href=""><?= $value["new_title"] ?></a>
+                                <a href="news/newDetail/<?= $value['new_id'] ?>">
+                                    <?= $value["new_title"] ?>
+                                </a>
                             </h4>
                             <a href="./detail_blog.html">
                                 <img src="./admin/mvc/views/news/image/<?= $value['image_new'] ?>" alt="">

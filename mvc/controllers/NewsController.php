@@ -9,6 +9,14 @@ class News extends controller {
             "news" => $getAllNews
         ]);
     }
+
+    function newDetail($id) {
+        $getModel = $this->model("NewModel");
+        $newDetail = $getModel->getOne("news","new_id=$id");
+        $this->view("new_detail",[
+            "newDetail" => $newDetail
+        ]);
+    }
 }
 
 ?>
