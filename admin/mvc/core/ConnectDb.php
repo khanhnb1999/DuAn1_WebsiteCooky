@@ -4,7 +4,7 @@ class ConnectDb
 {
     public $conn;
     protected $username = "root";
-    protected $password = "root";
+    protected $password = "";
     protected $url = "mysql:host=localhost; dbname=cooky_food";
     function __construct()
     {
