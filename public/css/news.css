@@ -120,7 +120,7 @@
 }
 
 .group-item {
-    flex-basis: 48.9%;
+    flex-basis: 32%;
     background-color: var(--color-white);
     padding: 20px;
     margin-bottom: 30px;
@@ -128,10 +128,10 @@
 }
 
 .group-item img {
-    width: 650px;
-    height: 406px;
+    width: 413px;
+    height: 280px;
     border-radius: 10px;
-    margin-bottom:15px;
+    margin-bottom: 15px;
 }
 
 .group-item h4 {
@@ -142,3 +142,17 @@
     text-decoration: none;
     color: var(--color-black);
 }
+
+.group-item p:hover {
+    color: var(--color-violet);
+}
+
+.group-item strong {
+    display:inherit;
+}
+
+.group-item em {
+    font-size:13px;
+    color:#bba4a4;
+}
+

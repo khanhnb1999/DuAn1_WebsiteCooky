@@ -19,13 +19,14 @@
                 </div>
             </div>
             <div class="search__filter">
-                <?php foreach ($data["cate"] as $value) : ?>
+                <?php foreach ($data["cate"] as $key => $value) : ?>
                     <div class="filter__item">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="">
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <label class="form-check-label" for="<?= $value["catalog_id"] ?>">
                                <?= $value["catalog_name"] ?>
                             </label>
+                            <input type="checkbox" class="form-check-input tab-links <?php if (!$key) { echo ' has-content active';} ?>" 
+                            id="<?= $value["catalog_id"] ?> "data-tab="tab-<?= $value["catalog_id"] ?>">
                         </div>
                     </div>
                 <?php endforeach; ?>
@@ -34,31 +35,35 @@
     </div>
 
     <div class="delicious__foods">
-        <div class="food__title">
+        <div class="foods__title">
             <h3>Món ngon mỗi ngày</h3>
         </div>
-        <div class="cate__cook">
-            <?php foreach ($data["dish"] as $value) : ?>
-                <div class="first__item">
-                    <div class="cook__detail">
-                        <a href="">
-                            <img src="./admin/mvc/views/products/image/<?= $value['dish_image'] ?>" alt="">
-                        </a>
-                        <a href="" class="cook__name">
-                            <?= $value['dish_name'] ?>
-                        </a>
-                        <div class="shows">
-                            <div class="views">
-                                <i class="fas fa-eye"></i> 12
-                            </div>
-                            <div class="likes">
-                                <i class="fas fa-thumbs-up"></i> 22
+        <?php foreach ($data["cate"] as $key => $value) : ?>
+            <div id="tab-<?= $value["catalog_id"] ?>">
+                <div class="cates__cook tab-content <?php if (!$key) { echo " active ";} ?>">
+                    <?php foreach ($data["dish"] as $value) : ?>
+                        <div class="firsts__item">
+                            <div class="cooks__detail">
+                                <a href="">
+                                    <img src="./admin/mvc/views/products/image/<?= $value['dish_image'] ?>" alt="">
+                                </a>
+                                <a href="" class="cook__name">
+                                    <?= $value['dish_name'] ?>
+                                </a>
+                                <div class="shows">
+                                    <div class="views">
+                                        <i class="fas fa-eye"></i> 12
+                                    </div>
+                                    <div class="likes">
+                                        <i class="fas fa-thumbs-up"></i> 22
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    <?php endforeach; ?>    
                 </div>
-            <?php endforeach; ?>    
-        </div>
+            </div>
+        <?php endforeach; ?>        
     </div>
     <div class="item__iner">
         <div class="item__title">

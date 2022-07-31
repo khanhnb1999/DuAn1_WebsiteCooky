@@ -50,7 +50,6 @@ require_once "./mvc/views/layouts/header.php";
             <div class="checkbox">
                 <a href="#" class="btn btn-success" id="btn1">Check all</a>
                 <a href="#" class="btn btn-warning text-white mx-3" id="btn2">Uncheck all</a>
-                <button type="submit" class="btn btn-danger">Delete</button>
             </div>
         </form>
     </div>

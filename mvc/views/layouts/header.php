@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="./public/css/home.css">
     <link rel="stylesheet" href="./public/css/formula.css">
     <link rel="stylesheet" href="./public/css/news.css">
-    <link rel="stylesheet" href="../../public/css/new_detail.css">
     <link rel="stylesheet" href="./public/css/footer.css">
     <link rel="icon" href="./public/image/60.ico">
     <title>Home</title>
