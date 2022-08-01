@@ -19,14 +19,14 @@
                          <tr>
                                 <input type="hidden" value="<?= $value['setting_id'] ?>">
                                 <td>
-                                    <img src="./mvc/views/settings/image/<?= $value['banner'] ?>" width="200" height="100" alt="">
+                                    <img src="<?php echo SITE_URL; ?>/mvc/views/settings/image/<?= $value['banner'] ?>" width="200" height="100" alt="">
                                 </td>
                                 <td><?= $value['email'] ?></td>
                                 <td><?= $value['address'] ?></td>
                                 <td><?= '0'.$value['phone_number'] ?></td> 
                                 <td><?= $value['description'] ?></td>
                                 <td class="text-center ">
-                                    <a href="?url=setting/update/<?= $value['setting_id'] ?>" class="btn btn-info m-1 text-center">Update</a>
+                                    <a href="<?php echo SITE_URL; ?>/setting/update/<?= $value['setting_id'] ?>" class="btn btn-info m-1 text-center">Update</a>
                                 </td>
                          </tr>
                     <?php endforeach; ?>

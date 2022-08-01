@@ -4,7 +4,7 @@
     ?>
 <div class="box__comment">
      <div class="content border border-5">
-          <form action="?url=comment/update/<?= $value['comment_id'] ?>" method="POST">
+          <form action="<?php echo SITE_URL; ?>/comment/update/<?= $value['comment_id'] ?>" method="POST">
                <input type="hidden" name="comment-id" value="<?= $value['comment_id'] ?>">
                <div class="description">
                     <h4>Nội dung</h4>

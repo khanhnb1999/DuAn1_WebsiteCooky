@@ -3,7 +3,7 @@
 <?php $value = $data['user'] ?? "" ?>
 <div class="update__user">
     <div class="tab__form border border-5">
-        <form action="?url=user/update/<?=$value['user_id']?>" method="post">
+        <form action="<?php echo SITE_URL; ?>/user/update/<?=$value['user_id']?>" method="post">
             <input type="hidden" name="user_id" value="<?= $value['user_id'] ?>">
             <div class="tab__form--body">
                 <div class="up__user">

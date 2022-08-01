@@ -4,10 +4,10 @@
     <div class="content p-3" style=" margin: 100px auto">
         <div class="content__button--add d-flex justify-content-end mb-3">
             <div class="add__device">
-                <a href="?url=product/add" class="btn btn-success">ADD </a>
+                <a href="<?php echo SITE_URL; ?>/product/add" class="btn btn-success">ADD </a>
             </div>
         </div>
-        <form action="?url=product/upload" method="post">
+        <form action="<?php echo SITE_URL; ?>/product/upload" method="post">
             <div class="content__list border border-3 border-bottom-0 mb-3">
                 <table class="table table-hover text-center">
                     <thead>
@@ -30,13 +30,13 @@
                                 <td><?= $value['dish_id'] ?></td>
                                 <td style="font-weight:600"><?= $value['dish_name'] ?></td>
                                 <td>
-                                    <img src="./mvc/views/products/image/<?= $value['dish_image'] ?>" width="70px" alt="">
+                                    <img src="<?php echo SITE_URL; ?>/mvc/views/products/image/<?= $value['dish_image'] ?>" width="70px" alt="">
                                 </td>
                                 <td style="font-weight:600"><?= number_format($value['dish_price']) ?></td>
                                 <td>
-                                    <a href="?url=product/update/<?= $value['dish_id'] ?>" class="btn btn-info"><i class="fas fa-edit"></i></a>
+                                    <a href="<?php echo SITE_URL; ?>/product/update/<?= $value['dish_id'] ?>" class="btn btn-info"><i class="fas fa-edit"></i></a>
                                     <a onclick="return confirm('Bạn có muốn xóa không!!!')" 
-                                    href="?url=product/delete/<?= $value['dish_id'] ?>" class="btn btn-danger"><i class="fas fa-backspace"></i></a>
+                                    href="<?php echo SITE_URL; ?>/product/delete/<?= $value['dish_id'] ?>" class="btn btn-danger"><i class="fas fa-backspace"></i></a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
@@ -67,7 +67,7 @@
                     if ($i == $page) {
                         echo "<a class='active btn btn-info text-white'>$i</a>";
                     } else {
-                        echo "<a href='?url=product/index/$i' class=' btn btn-secondary mx-1'>$i</a>";
+                        echo "<a href='".SITE_URL."/product/index/$i' class=' btn btn-secondary mx-1'>$i</a>";
                     }
                 }
             ?>

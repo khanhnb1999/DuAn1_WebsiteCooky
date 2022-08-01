@@ -5,7 +5,7 @@
 
 <session>
     <div class="content p-3" style=" margin: 100px auto">
-        <form action="?url=comment/deleteAll" method="post">
+        <form action="<?php echo SITE_URL; ?>/comment/deleteAll" method="post">
             <div class="content__list">
                     <table class="table table-hover text-center">
                         <thead>
@@ -31,8 +31,8 @@
                                     <td style="font-weight:600"><?= $value['status'] ?></td>
                                     <td>
                                         <a onclick="return confirm('Bạn có muốn xóa không!!!')" 
-                                        href="?url=comment/delete/<?= $value['comment_id'] ?>" class="btn btn-danger"><i class="fas fa-backspace"></i></a>
-                                        <a href="?url=comment/update/<?= $value['comment_id'] ?>" class="btn btn-info"><i class="fas fa-edit"></i></a>
+                                        href="<?php echo SITE_URL; ?>/comment/delete/<?= $value['comment_id'] ?>" class="btn btn-danger"><i class="fas fa-backspace"></i></a>
+                                        <a href="<?php echo SITE_URL; ?>/comment/update/<?= $value['comment_id'] ?>" class="btn btn-info"><i class="fas fa-edit"></i></a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -55,7 +55,7 @@
                         if ($i == $page) {
                         echo "<a class='active btn btn-info text-white'>$i</a>";
                         } else {
-                        echo "<a href='?url=comment/index/$i' class=' btn btn-secondary mx-1'>$i</a>";
+                        echo "<a href='".SITE_URL."/comment/index/$i' class=' btn btn-secondary mx-1'>$i</a>";
                         }
                     }
                 ?>

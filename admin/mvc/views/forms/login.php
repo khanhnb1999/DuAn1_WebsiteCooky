@@ -19,7 +19,7 @@
                     <h4>Welcome back</h4>
                     <p>Please sign in to your account below</p>
                 </div>
-                <form action="?url=login" method="post">
+                <form action="<?php echo SITE_URL; ?>/login" method="post">
                     <div class="form__sign--in--account">
                         <div class="form__sign--in--account--user">
                             <input type="text" name="username" class="form-control" placeholder="Enter username">

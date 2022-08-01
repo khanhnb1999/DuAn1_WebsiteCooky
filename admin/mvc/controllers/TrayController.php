@@ -23,7 +23,7 @@ class Tray extends Controller {
                 "tray_name" => $_POST['tray_name']
             ];
             $getModel->insert("trays",$data);
-            header("Location: ?url=tray/index/1");
+            header("Location: ".SITE_URL."/tray/index/1");
         }
         $this->view("trays/add");
     }
@@ -37,7 +37,7 @@ class Tray extends Controller {
             ];
             $where = "tray_id = $id";
             $getModel->update("trays",$data,$where);
-            header("Location: ?url=tray/index/1");
+            header("Location: ".SITE_URL."/tray/index/1");
         }
         $this->view("trays/update",
         [
@@ -50,7 +50,7 @@ class Tray extends Controller {
         if(isset($id)) {
             $where = "tray_id = $id";
             $getModel->delete("trays",$where);
-            header("Location: ?url=tray/index/1");
+            header("Location: ".SITE_URL."/tray/index/1");
         }
     }
 
@@ -62,7 +62,7 @@ class Tray extends Controller {
                 $where = "tray_id = $id";
                 $getModel->delete('trays', $where);
             }
-            header("Location: ?url=tray/index/1");
+            header("Location: ".SITE_URL."/tray/index/1");
         }
     }
 

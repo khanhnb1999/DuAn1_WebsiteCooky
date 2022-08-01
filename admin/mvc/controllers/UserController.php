@@ -54,7 +54,7 @@ class User extends Controller {
                     $getModel->insert("users_role", $dataRole);
                 }
             }
-            header("Location: ?url=user/index/1");
+            header("Location: ".SITE_URL."/user/index/1");
         }
         $this->view("users/update",
         [
@@ -71,7 +71,7 @@ class User extends Controller {
         if(isset($id)) {
             $where = "user_id = $id";
             $getModel->delete("users",$where);
-            header("Location: ?url=user/index/1");
+            header("Location: ".SITE_URL."/user/index/1");
         }
     }
 
@@ -84,7 +84,7 @@ class User extends Controller {
                 $where = "user_id = $id";
                 $getModel->delete('users', $where);
             }
-            header("Location: ?url=user/index/1");
+            header("Location: ".SITE_URL."/user/index/1");
         }
     }
 

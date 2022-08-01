@@ -1,7 +1,7 @@
 
 </div>
 <footer class="footer"></footer>
-<script type="text/javascript" src="./public/script/main.js"></script>
+<script type="text/javascript" src="<?php echo SITE_URL; ?>/public/script/main.js"></script>
 <script>
     $(document).ready(function(){
         if($("#editor1").length){

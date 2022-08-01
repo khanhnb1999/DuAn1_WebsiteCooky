@@ -5,11 +5,11 @@ require_once "./mvc/views/layouts/header.php";
 <div class="content p-3 " style="margin: 120px auto;">
     <div class="content__button d-flex justify-content-end mb-3">
         <div class="content__button">
-            <a href="?url=news/add" class="btn btn-success">ADD NEWS</a>
+            <a href="<?php echo SITE_URL; ?>/news/add" class="btn btn-success">ADD NEWS</a>
         </div>
     </div>
     <div class="content__list--catalog">
-        <form action="?url=news/deleteAll" method="post" multipart="multipart/form-data">
+        <form action="<?php echo SITE_URL; ?>/news/deleteAll" method="post" multipart="multipart/form-data">
             <div class="content__list--fruit">
                 <table class="table table-hover border">
                     <thead>
@@ -31,15 +31,15 @@ require_once "./mvc/views/layouts/header.php";
                             </td>
                             <td class="text-center"><?= $value['new_id'] ?></td>
                             <td class="text-center">
-                                <img src="./mvc/views/news/image/<?= $value['image_new'] ?>" width="100px" alt="">
+                                <img src="<?php echo SITE_URL; ?>/mvc/views/news/image/<?= $value['image_new'] ?>" width="100px" alt="">
                             </td>
                             <td><?= $value['new_title'] ?></td>
                             <td class="text-center"><?= $value['new_date'] ?></td>
                             <td class="text-center">
-                                <a href="?url=news/update/<?= $value['new_id'] ?>" class="btn btn-info"><i
+                                <a href="<?php echo SITE_URL; ?>/news/update/<?= $value['new_id'] ?>" class="btn btn-info"><i
                                         class="fas fa-edit"></i></a>
                                 <a onclick="return confirm('Bạn có muốn xóa không!!!')"
-                                    href="?url=news/delete/<?= $value['new_id'] ?>" class="btn btn-danger"><i
+                                    href="<?php echo SITE_URL; ?>/news/delete/<?= $value['new_id'] ?>" class="btn btn-danger"><i
                                         class="fas fa-backspace"></i></a>
                             </td>
                         </tr>
@@ -65,7 +65,7 @@ require_once "./mvc/views/layouts/header.php";
                 if ($i == $page) {
                     echo "<a class='active btn btn-info text-white'>$i</a>";
                 } else {
-                    echo "<a href='?url=news/index/$i' class=' btn btn-secondary mx-1'>$i</a>";
+                    echo "<a href='".SITE_URL."/news/index/$i' class=' btn btn-secondary mx-1'>$i</a>";
                 }
             }
             ?>

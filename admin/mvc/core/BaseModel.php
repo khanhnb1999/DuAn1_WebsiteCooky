@@ -52,6 +52,13 @@ class BaseModel extends ConnectDb {
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
+    public function getMany($table, $where){
+        $sql = "SELECT * FROM $table where $where";
+        $stmt = ($this->conn)->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     // Lấy 1 dòng dữ liệu với 2 điều kiện
     public function getTwoCondition($table,$where1,$where2) {
         $sql = "SELECT * FROM $table WHERE $where1 AND $where2";

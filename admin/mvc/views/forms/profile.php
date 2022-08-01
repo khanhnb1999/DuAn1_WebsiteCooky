@@ -6,7 +6,7 @@
                <div class="header__title">
                     <h5>Cập nhật tài khoản</h5>
                </div>
-               <form action="?url=login/profile" method="post">
+               <form action="<?php echo SITE_URL; ?>/login/profile" method="post">
                     <?php $value = $data['getUser'] ?>
                     <div class="info__manager">
                         <div class="title">
@@ -62,7 +62,7 @@
           <div class="header__title">
                     <h5>Thêm thành viên quản trị</h5>
                </div>
-               <form action="?url=login/profile" method="post">
+               <form action="<?php echo SITE_URL; ?>/login/profile" method="post">
                     <div class="member__news">
                         <div class="title">
                             <span>Username</span>

@@ -33,7 +33,7 @@ class Catalog extends Controller {
             $getModel = $this->model("CatalogModel");
             $getModel->insert("catalogs",$data);
             move_uploaded_file($_FILES['fileToUpload']['tmp_name'], './mvc/views/catalogs/image/' .$catalog_image);
-            header("Location: ?url=catalog/index/1");
+            header("Location: ".SITE_URL."/catalog/index/1");
         }
         $this->view("catalogs/add");
     }
@@ -60,7 +60,7 @@ class Catalog extends Controller {
             $where = "catalog_id = $id";
             $getModel->update("catalogs",$data,$where);
             move_uploaded_file($image['tmp_name'], './mvc/views/catalogs/image/' .$catalog_image);
-            header("Location: ?url=catalog/index/1");
+            header("Location: ".SITE_URL."/catalog/index/1");
         }
         $this->view("catalogs/update",
         [
@@ -75,7 +75,7 @@ class Catalog extends Controller {
         if(isset($id)) {
             $where = "catalog_id = $id";
             $getModel->delete("catalogs",$where);
-            header("Location: ?url=catalog/index/1");
+            header("Location: ".SITE_URL."/catalog/index/1");
         }
     }
 
@@ -87,7 +87,7 @@ class Catalog extends Controller {
                 $where = "catalog_id = $id";
                 $getModel->delete('catalogs', $where);
             }
-            header("Location: ?url=catalog/index/1");
+            header("Location: ".SITE_URL."/catalog/index/1");
         }
     }
 
