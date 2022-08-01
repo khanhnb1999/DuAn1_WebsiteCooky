@@ -4,25 +4,24 @@ class Formula extends controller {
     function index() {
         $getModel = $this->model("FormulaModel");
         $result = $getModel->getAll("catalogs");
-        $getAllDish  = [];
-        $dataDish = [];
-        foreach ($result as $key => $value) {
-            $cateId = $value["catalog_id"];
-            $getAllDish[] = $getModel->getDish($cateId);
-            foreach ($getAllDish as $val) {
-                foreach ($val as $field) {
-                    $dataDish[] = $field;
-                }
-            }
-        }
-        // echo "<pre>";
-        // print_r($dataDish);die;
+        $cateId = 1;
+        $getOneDish = $getModel->getDish($cateId);
         $this->view("formula",
         [
             "cate" => $result,
-            "dish" => $dataDish
+            "getOneDish" => $getOneDish
         ]);
     }
-}
 
+    function getCatalog($id) {
+        $getModel = $this->model("FormulaModel");
+        $cateId = $id;
+        $result = $getModel->getDish($cateId);
+        $this->view("filter-product",
+        [
+            "getOneDish" => $result
+        ]);
+        die();
+    }
+}
 ?>

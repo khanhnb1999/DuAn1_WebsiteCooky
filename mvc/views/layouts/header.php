@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="./public/css/home.css">
     <link rel="stylesheet" href="./public/css/formula.css">
     <link rel="stylesheet" href="./public/css/news.css">
+    <link rel="stylesheet" href="./public/css/tray.css">
     <link rel="stylesheet" href="./public/css/footer.css">
     <link rel="icon" href="./public/image/60.ico">
     <title>Home</title>
@@ -160,17 +161,7 @@
                             <a href="./blog.html" class="nav__link">Tạo món</a>
                         </li>
                         <li class="nav__item dropdown__menu">
-                            <a href="javascript:void(0)" class="nav__link">Bàn ăn
-                                <i class="far fa-angle-down"></i>
-                            </a>
-                            <div class="price__trays" id="active_tray">
-                                <ul>
-                                    <li class="list__item"><a href="">Mâm cơm: 1 người</a></li>
-                                    <li class="list__item"><a href="">Mâm cơm: 2 người</a></li>
-                                    <li class="list__item"><a href="">Mâm cơm: 3 người</a></li>
-                                    <li class="list__item"><a href="">Mâm cơm: 4 người</a></li>
-                                </ul>
-                            </div>
+                            <a href="tray" class="nav__link">Bàn ăn</a>
                         </li>
                     </ul>
                 </div>

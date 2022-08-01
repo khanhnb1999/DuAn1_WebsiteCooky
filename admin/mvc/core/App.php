@@ -3,13 +3,9 @@
 class App {
     protected $controller = "Product" ;
     protected $action = "index";
-    protected $params = [];
+    protected $params = [1];
     function __construct() {
         $arr = $this->UlrProcess();
-        // echo '<pre>';
-        // print_r($_get["url"]);
-        // print_r($arr);
-        // die;
         if(file_exists("./mvc/controllers/".ucfirst($arr[0])."Controller.php")) {
             $this->controller = ucfirst($arr[0]);
             unset($arr[0]);

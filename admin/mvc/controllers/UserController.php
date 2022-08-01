@@ -5,7 +5,7 @@ class User extends Controller {
     // list user
     public function index($id) {
         $getModel = $this->model("UserModel");
-        $result = $getModel->paging("users","user_id",3,$id);
+        $result = $getModel->paging("users","user_id",8,$id);
         $totalRecord = $getModel->totalRecord("users");
         $this->view("users/index",
         [

@@ -1,18 +1,4 @@
 $(document).ready(function () {
-    $(".dropdown__menu").click(function () {
-        $("#active_tray").slideToggle(400);
-    });
-    // End dropdown menu
-
-    $("#btn__open").click(function () {
-        $("#myForm").slideToggle();
-    });
-
-    $(".btn__close").click(function () {
-        $("#myForm").slideUp();
-    });
-    // End click id have myForm
-
     $(".user-switch-form").click(function () {
         var tab = $(this).data('tab');
         $(".user-tab-body").removeClass("active");

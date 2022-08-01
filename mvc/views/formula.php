@@ -25,8 +25,8 @@
                             <label class="form-check-label" for="<?= $value["catalog_id"] ?>">
                                <?= $value["catalog_name"] ?>
                             </label>
-                            <input type="checkbox" class="form-check-input tab-links <?php if (!$key) { echo ' has-content active';} ?>" 
-                            id="<?= $value["catalog_id"] ?> "data-tab="tab-<?= $value["catalog_id"] ?>">
+                            <input type="checkbox" class="form-check-input" id="<?= $value["catalog_id"] ?>"
+                            onclick="listCate(<?= $value['catalog_id'] ?>)">
                         </div>
                     </div>
                 <?php endforeach; ?>
@@ -38,32 +38,28 @@
         <div class="foods__title">
             <h3>Món ngon mỗi ngày</h3>
         </div>
-        <?php foreach ($data["cate"] as $key => $value) : ?>
-            <div id="tab-<?= $value["catalog_id"] ?>">
-                <div class="cates__cook tab-content <?php if (!$key) { echo " active ";} ?>">
-                    <?php foreach ($data["dish"] as $value) : ?>
-                        <div class="firsts__item">
-                            <div class="cooks__detail">
-                                <a href="">
-                                    <img src="./admin/mvc/views/products/image/<?= $value['dish_image'] ?>" alt="">
-                                </a>
-                                <a href="" class="cook__name">
-                                    <?= $value['dish_name'] ?>
-                                </a>
-                                <div class="shows">
-                                    <div class="views">
-                                        <i class="fas fa-eye"></i> 12
-                                    </div>
-                                    <div class="likes">
-                                        <i class="fas fa-thumbs-up"></i> 22
-                                    </div>
-                                </div>
+        <div class="cates__cook" id="list-cate">
+            <?php foreach ($data["getOneDish"] as $value) : ?>
+                <div class="firsts__item">
+                    <div class="cooks__detail">
+                        <a href="">
+                            <img src="./admin/mvc/views/products/image/<?= $value['dish_image'] ?>" alt="">
+                        </a>
+                        <a href="" class="cook__name">
+                            <?= $value['dish_name'] ?>
+                        </a>
+                        <div class="shows">
+                            <div class="views">
+                                <i class="fas fa-eye"></i> 12
+                            </div>
+                            <div class="likes">
+                                <i class="fas fa-thumbs-up"></i> 22
                             </div>
                         </div>
-                    <?php endforeach; ?>    
+                    </div>
                 </div>
-            </div>
-        <?php endforeach; ?>        
+            <?php endforeach; ?>    
+        </div>
     </div>
     <div class="item__iner">
         <div class="item__title">

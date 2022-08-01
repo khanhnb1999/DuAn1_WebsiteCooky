@@ -46,13 +46,15 @@ function deleteNl(index){
             data: {},
             success: function(data){
                 console.log(data);
-            },
+            },      
             dataType: "application/json"
           });
     }
     $("#current_" + index).remove();
     
 }
+
+
 var dropdown = document.getElementsByClassName("dropdown__btn");
 var i;
 for (i = 0; i < dropdown.length; i++) {

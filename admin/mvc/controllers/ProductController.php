@@ -5,7 +5,7 @@ class Product extends Controller {
     // list sản phẩm
     function index($id) {
         $getModel = $this->model("ProductModel");
-        $pr = $getModel->paging("dish","dish_id",6,$id);
+        $pr = $getModel->paging("dish","dish_id",5,$id);
         $trays = $getModel->getAll("trays");
         $totalRecord = $getModel->totalRecord("dish");
         $this->view("products/index",
@@ -14,7 +14,7 @@ class Product extends Controller {
             "totalRecord" => $totalRecord,
             "tray" => $trays,
             "page" => $id,
-            "page_one" => 6
+            "page_one" => 5
         ]);
     }
 
@@ -73,6 +73,7 @@ class Product extends Controller {
             "tray" => $trays 
         ]);
     }
+    
     function removeNl($id) {
         if(!empty($id)){
             $getModel = $this->model("ProductModel");
@@ -88,13 +89,9 @@ class Product extends Controller {
         $getModel = $this->model("ProductModel");
         $pr = $getModel->getOne("dish","dish_id=$id");
         $ingredient = $getModel->getMany("ingredients","dish_id=$id");
-        // echo "<pre>";
-        // var_dump($ingredient);die;
         $result = $getModel->getAll("catalogs");
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
             $dataIngredient = $_POST['ingredient'];
-            // echo "<pre>";
-            // print_r($dataIngredient);die;
             foreach($dataIngredient as $value) {
                 $data = [
                     "name" => $value['name'],
@@ -136,16 +133,6 @@ class Product extends Controller {
                     'user_id' => 1
                 ];
             }
-
-            // foreach ($getAllTray as $valTray) {
-            //     foreach ($sumPrice as $valSum) {
-            //         $dataPrice = [
-            //             "tray_id" => $valTray,
-            //             "price" => $valSum - $oldPrice + $_POST['dish_price']
-            //         ];
-            //     }
-            //     $getModel->update("tray_prices", $dataPrice);
-            // }
             $dish_image = $image['name'];
             $where = "dish_id = $id";
             $getModel->update("dish",$data,$where);
