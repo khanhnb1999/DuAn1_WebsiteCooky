@@ -377,7 +377,15 @@ body {
 .main__content {
   margin: 0 350px;
 }
-
+.recipe-detail-content {
+  display: flex;
+  justify-content: space-between;
+}
+.details {
+  background-color: var(--color-white);
+  padding: 15px;
+  border-radius: 20px;
+}
 .details h4 {
   font-size: 20px;
   color: #acacac;
@@ -389,7 +397,6 @@ body {
 }
 .details_name a {
   text-decoration: none;
-
   color: #0f0f0f;
   font-size: 24px;
   font-weight: 600;
@@ -397,40 +404,8 @@ body {
   padding: 8px 0;
   width: 100%;
 }
-.details_icon {
-  display: flex;
-  align-items: center;
-  margin: 10px 0;
-  font-size: 18px;
-}
-.icon_eye {
-  margin-left: 30px;
-}
-.icon_heart {
-  margin-left: 30px;
-}
-.details_logo_image {
-  margin: 15px 0;
-  display: flex;
-}
 
-.logo_image img {
-  width: 50px;
-  border: 1px solid black;
-  border-radius: 200px;
-  margin-right: 20px;
-}
-p.logo_min {
-  margin: 0;
-}
-.logo_min a {
-  color: black;
-  font-size: 18px;
-  text-decoration: none;
-  font-weight: 500;
-}
-.details_text a {
-  text-decoration: none;
+.details_text {
   color: #111;
   font-size: 16px;
   padding-top: 16px;
@@ -453,7 +428,13 @@ p.logo_min {
 
 /* --------------end col xl 9---------------- */
 .link-absolute {
-  padding-left: 10px;
+  margin-left: 40px;
+  width: 600px;
+  height: 100%;
+  flex-direction: column-reverse;
+  background-color: var(--color-white);
+  padding: 15px;
+  border-radius: 20px;
 }
 .link-absolute h4 {
   font-size: 20px;
@@ -463,37 +444,38 @@ p.logo_min {
 }
 .link-absolute__image img {
   width: 100%;
-  transform: scale(1);
-  transition: all 0.5s;
-  display: block;
-  margin-top: 40px;
-  margin-bottom: 10px;
+  margin-top: 20px;
 }
-.link-absolute__image img :hover {
-  transform: scale(1.1);
-}
-
-.link-absolute h4 {
-  margin-bottom: 20px;
+.text_name {
+  margin-top: 10px;
+  white-space: normal;
+  font-size: 18px;
+  font-weight: 600;
 }
 .text_name a {
   text-decoration: none;
-  color: black;
-  font-size: 18px;
+  color: var(--color-black);
 }
-.item {
+.similar-recipe-name {
   display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
 }
-
 .item_user {
-  margin-right: 60px;
+  font-size: 16px;
+  color: #626262;
+  float: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .item_user a {
   text-decoration: none;
-  color: black;
-  font-size: 16px;
+  color: #919191;
 }
-
+.item_date {
+  color: #919191;
+}
 /* End main content */
 
 /* end form registration */
