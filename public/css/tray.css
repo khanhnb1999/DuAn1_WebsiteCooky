@@ -1,0 +1,133 @@
+.main__content {
+    margin: 0 350px;
+}
+
+.filter__group {
+    border: 1px solid var(--color-violet);
+}
+
+.horizontals-scroll {
+    height: 420px;
+    overflow-y: scroll;
+}
+
+.title__head {
+    text-align: center;
+    background-color: var(--color-violet);
+    color: var(--color-white);
+    padding: 15px 0;
+}
+
+.floating__enabled {
+    margin-top: 30px;
+    border: 1px solid var(--color-violet);
+    margin-bottom: 30px;
+}
+
+.item__product {
+    display:flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: var(--color-white);
+    border-bottom:1px solid rgb(194, 179, 179);
+}
+
+.item__product:last-child {
+    border-bottom: none;
+}
+
+.item__avatar {
+    flex-basis: 35%;
+}
+
+.item__avatar img {
+    width: 70%;
+    border-radius: 10px;
+    border: 1px solid rgb(194, 179, 179);
+}
+
+.item__introduction {
+    flex-basis: 57%;
+    font-weight: 700;
+}
+
+.content__intro {
+    display:flex;
+    justify-content: space-between;
+}
+
+.side__left {
+    flex-basis: 25%;
+}
+
+.side__right {
+    flex-basis: 73%;
+}
+
+.aside__content {
+    padding: 10px 50px;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: var(--color-white);
+}
+
+.tray__titles {
+    margin: 28px 0;
+    font-weight: 700;
+}
+
+.tray__titles h6 {
+    font-weight: 700;
+}
+
+.info-family {
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.tray__items {
+    position:relative;
+    flex-basis: 48%;
+    background-color: var(--color-white);
+    border-radius: 15px;
+    border: 3px solid rgb(212, 202, 202);
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.horizontals {
+    position: absolute;
+    top: 105px;
+    left: 155px;
+    z-index: 1;
+}
+
+.tray__image {
+    padding: 10px;
+    display:flex;
+    justify-content: space-between;
+}
+
+.router {
+    border-radius: 50%;
+    padding: 10px;
+    margin: 27px 10px;
+    border: 1px solid rgb(88, 81, 81);
+}
+
+
+.tray__items img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+}
+
+
+.tray__price h5 {
+    color: rgb(255, 174, 0);
+    font-weight: 700;
+    font-size: 30px;
+    margin-bottom: 15px;
+}

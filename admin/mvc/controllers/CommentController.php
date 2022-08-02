@@ -25,7 +25,7 @@
                 $where ="comment_id = $id";
                 $getModel->update("comments",$data,$where);
                 // print_r($where);die;  
-                header("Location: ?url=comment/index/1");
+                header("Location: ".SITE_URL."/comment/index/1");
             }
             $this->view("comments/update",[
                 "comment" => $result
@@ -40,7 +40,7 @@
             if(isset($id)){
                 $where = "comment_id=$id";
                 $getModel->delete("comments",$where);
-                header("Location: ?url=comment/index/1");
+                header("Location: ".SITE_URL."/comment/index/1");
             }
         }
         // Delete all cmt
@@ -52,7 +52,7 @@
                     $where = "comment_id = $id";
                     $getModel->delete("comments",$where);
                 };
-                header("Location: ?url=comment/index/1");
+                header("Location: ".SITE_URL."/comment/index/1");
             }
         }
         

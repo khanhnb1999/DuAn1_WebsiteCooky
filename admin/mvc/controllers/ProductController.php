@@ -5,7 +5,7 @@ class Product extends Controller {
     // list sản phẩm
     function index($id) {
         $getModel = $this->model("ProductModel");
-        $pr = $getModel->paging("dish","dish_id",6,$id);
+        $pr = $getModel->paging("dish","dish_id",10,$id);
         $trays = $getModel->getAll("trays");
         $totalRecord = $getModel->totalRecord("dish");
         $this->view("products/index",
@@ -14,7 +14,7 @@ class Product extends Controller {
             "totalRecord" => $totalRecord,
             "tray" => $trays,
             "page" => $id,
-            "page_one" => 6
+            "page_one" => 10
         ]);
     }
 
@@ -44,7 +44,7 @@ class Product extends Controller {
                 $getModel->insert("tray_details",$dataTray);
                 $getModel->insert("dish",$dataDish);
                 move_uploaded_file($_FILES['fileToUpload']['tmp_name'], './mvc/views/products/image/' .$dish_image);
-                header("Location: ?url=product/index/1");
+                header("Location: ".SITE_URL."/product/index/1");
             } else {
                 $userId = $_SESSION['userId'];
                 $dish_image = $_FILES['fileToUpload']['name'] ?? "";
@@ -62,7 +62,7 @@ class Product extends Controller {
                 $getModel = $this->model("ProductModel");
                 $getModel->insert("dish",$data);
                 move_uploaded_file($_FILES['fileToUpload']['tmp_name'], './mvc/views/products/image/' .$dish_image);
-                header("Location: ?url=product/index/1");
+                header("Location: ".SITE_URL."/product/index/1");
             }
         }
         $getModel = $this->model("ProductModel");
@@ -73,31 +73,39 @@ class Product extends Controller {
             "tray" => $trays 
         ]);
     }
+    
+    function removeNl($id) {
+        if(!empty($id)){
+            $getModel = $this->model("ProductModel");
+            $getModel->delete("ingredients", "id=$id"); 
+            die(json_encode(['status' => 1, 'messg' => 'Xóa thành công.']));
+        }
+        die(['status' => 0, 'messg' => 'Xóa thất bại']);
 
+        
+    }
     // edit sản phẩm
     function update($id) {
         $getModel = $this->model("ProductModel");
         $pr = $getModel->getOne("dish","dish_id=$id");
+        $ingredient = $getModel->getMany("ingredients","dish_id=$id");
         $result = $getModel->getAll("catalogs");
-        // $getTray = $getModel->getPrice($id);
-        // Lấy tất cả bàn ăn khi update 1 món ăn có $id
-        // $getAllTray = [];
-        // foreach ($getTray as $value) {
-        //     $getAllTray[] = $value['tray_id'];
-        //     $oldPrice = $value['dish_price'];
-        // }
-
-        // foreach ($getAllTray as $val) {
-        //     $totalTray = $getModel->totalPrice($val);
-        // }
-
-        // $sumPrice = [];
-        // foreach ($totalTray as $val) {
-        //     $sumPrice[] = $val['price'];
-        // }
-        // echo "<pre>";
-        // print_r($sumPrice); die;
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $dataIngredient = $_POST['ingredient'];
+            foreach($dataIngredient as $value) {
+                $data = [
+                    "name" => $value['name'],
+                    "quantity" => $value['quantity'],
+                    "unit" => $value["unit"],
+                    "note" => $value['note'],
+                    "dish_id" => $id,
+                ];
+                if(isset($value['id']) && !empty($value['id'])) {
+                    $getModel->update("ingredients",$data, "id=".$value['id']);
+                } else {
+                    $getModel->insert("ingredients",$data);
+                }
+            }
             $image = $_FILES['fileToUpload'];
             if(!empty($image['name'])) {
                 $data = [
@@ -125,26 +133,17 @@ class Product extends Controller {
                     'user_id' => 1
                 ];
             }
-
-            // foreach ($getAllTray as $valTray) {
-            //     foreach ($sumPrice as $valSum) {
-            //         $dataPrice = [
-            //             "tray_id" => $valTray,
-            //             "price" => $valSum - $oldPrice + $_POST['dish_price']
-            //         ];
-            //     }
-            //     $getModel->update("tray_prices", $dataPrice);
-            // }
             $dish_image = $image['name'];
             $where = "dish_id = $id";
             $getModel->update("dish",$data,$where);
             move_uploaded_file($image['tmp_name'], './mvc/views/products/image/' .$dish_image);
-            header("Location: ?url=product/index/1");
+            header("Location: ".SITE_URL."/product/index/1");
         }
         $this->view("products/update",
         [
             "catalog" => $result,
-            "product" => $pr
+            "product" => $pr,
+            "ingredient" => $ingredient
         ]);
     }
 
@@ -154,7 +153,7 @@ class Product extends Controller {
         if(isset($id)) {
             $where = "dish_id = $id";
             $getModel->delete('dish',$where);
-            header("Location: ?url=product/index/1");
+            header("Location: ".SITE_URL."/product/index/1");
         }
     }
 
@@ -169,7 +168,7 @@ class Product extends Controller {
                     $where = "dish_id = $id";
                     $getModel->delete('dish', $where);
                 }
-                header("Location: ?url=product/index/1");
+                header("Location: ".SITE_URL."/product/index/1");
             }
         } else {
             if (!empty($ids)) {
@@ -193,7 +192,7 @@ class Product extends Controller {
                     "price" => $sumPrice
                 ];
                 $getModel->insert("tray_prices",$price);
-                header("Location: ?url=product/index/1");
+                header("Location: ".SITE_URL."/product/index/1");
             }
         }
     }

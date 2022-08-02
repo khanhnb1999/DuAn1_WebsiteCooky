@@ -2,11 +2,11 @@
 <div class="content p-3"style="margin: 120px auto;">
     <div class="content__button d-flex justify-content-end mb-3">
         <div class="content__button">
-            <a href="?url=catalog/add" class="btn btn-success">ADD CATALOG</a>
+            <a href="<?php echo SITE_URL; ?>/catalog/add" class="btn btn-success">ADD CATALOG</a>
         </div>
     </div>
     <div class="content__list--catalog">
-        <form action="?url=catalog/deleteAll" method="post">
+        <form action="<?php echo SITE_URL; ?>/catalog/deleteAll" method="post">
             <div class="content__list--fruit">
                 <table class="table table-hover text-center">
                     <thead>
@@ -28,12 +28,12 @@
                                 <td><?=$value['catalog_id']?></td>
                                 <td><?=$value['catalog_name']?></td>
                                 <td>
-                                    <img src="./mvc/views/catalogs/image/<?= $value['catalog_image'] ?>" width="80px" alt="">
+                                    <img src="<?php echo SITE_URL; ?>/mvc/views/catalogs/image/<?= $value['catalog_image'] ?>" width="80px" alt="">
                                 </td>
                                 <td>
-                                    <a href="?url=catalog/update/<?=$value['catalog_id']?>"class="btn btn-info"><i class="fas fa-edit"></i></a>
+                                    <a href="<?php echo SITE_URL; ?>/catalog/update/<?=$value['catalog_id']?>"class="btn btn-info"><i class="fas fa-edit"></i></a>
                                     <a onclick="return confirm('Bạn có muốn xóa không!!!')"
-                                        href="?url=catalog/delete/<?=$value['catalog_id']?>"
+                                        href="<?php echo SITE_URL; ?>/catalog/delete/<?=$value['catalog_id']?>"
                                         class="btn btn-danger"><i class="fas fa-backspace"></i></a>
                                 </td>
                             </tr>
@@ -44,7 +44,6 @@
             <div class="checkbox">
                 <a href="#" class="btn btn-success" id="btn1">Check all</a>
                 <a href="#" class="btn btn-warning text-white mx-3" id="btn2">Uncheck all</a>
-                <button type="submit" class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa không')">Delete All</button>
             </div>
         </form>
         <div class="pagination d-flex justify-content-center mt-5">
@@ -58,7 +57,7 @@
                         if ($i == $page) {
                             echo "<a class='active btn btn-info text-white'>$i</a>";
                         } else {
-                            echo "<a href='?url=catalog/index/$i' class=' btn btn-secondary mx-1'>$i</a>";
+                            echo "<a href='".SITE_URL."/catalog/index/$i' class=' btn btn-secondary mx-1'>$i</a>";
                         }
                     }
                 ?>

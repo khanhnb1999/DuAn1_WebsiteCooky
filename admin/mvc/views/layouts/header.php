@@ -7,8 +7,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
-    <script src="./public/ckeditor/ckeditor.js"></script>
-    <link rel="stylesheet" href="./public/sass/style.css">
+    <script src="<?php echo SITE_URL; ?>/public/ckeditor/ckeditor.js"></script>
+    <link rel="stylesheet" href="<?php echo SITE_URL; ?>/public/sass/style.css">
     <title>
           <?php
                // basename() trả lại tên tệp đường dẫn được chỉ định
@@ -17,6 +17,9 @@
             //    echo getTitle($currentFileName);
           ?>
      </title>
+    <script type="text/javascript">
+        var BaseUrl = '<?php echo SITE_URL; ?>';
+    </script>
 </head>
 <body>
     <div class="sidebar">
@@ -31,10 +34,10 @@
                         </button>
                         <ul class="dropdown__nav">
                             <li class="dropdown__item">
-                                <a href="?url=product/index/1" class="dropdown__item--link">List product</a>
+                                <a href="<?php echo SITE_URL; ?>/product/index/1" class="dropdown__item--link">List product</a>
                             </li>
                             <li class="dropdown__item">
-                                <a href="?url=unit/index/1" class="dropdown__item--link">Units</a>
+                                <a href="<?php echo SITE_URL; ?>/unit/index/1" class="dropdown__item--link">Units</a>
                             </li>
                         </ul>
                     </li>
@@ -46,7 +49,7 @@
                         </button>
                         <ul class="dropdown__nav">
                             <li class="dropdown__item">
-                                <a href="?url=catalog/index/1" class="dropdown__item--link">List catalog</a>
+                                <a href="<?php echo SITE_URL; ?>/catalog/index/1" class="dropdown__item--link">List catalog</a>
                             </li>
                         </ul>
                     </li>
@@ -58,7 +61,7 @@
                         </button>
                         <ul class="dropdown__nav">
                             <li class="dropdown__item">
-                                <a href="?url=news/index/1" class="dropdown__item--link">List news</a>
+                                <a href="<?php echo SITE_URL; ?>/news/index/1" class="dropdown__item--link">List news</a>
                             </li>
                         </ul>
                     </li>
@@ -70,7 +73,7 @@
                         </button>
                         <ul class="dropdown__nav">
                             <li class="dropdown__item">
-                                <a href="?url=user/index/1" class="dropdown__item--link">List user</a>
+                                <a href="<?php echo SITE_URL; ?>/user/index/1" class="dropdown__item--link">List user</a>
                             </li>
                         </ul>
                     </li>
@@ -82,7 +85,7 @@
                         </button>
                         <ul class="dropdown__nav">
                             <li class="dropdown__item">
-                                <a href="?url=comment/index/1" class="dropdown__item--link">List comments</a>
+                                <a href="<?php echo SITE_URL; ?>/comment/index/1" class="dropdown__item--link">List comments</a>
                             </li>
                         </ul>
                     </li>
@@ -94,7 +97,7 @@
                         </button>
                         <ul class="dropdown__nav">
                             <li class="dropdown__item">
-                                <a href="?url=role/index/1" class="dropdown__item--link">Role</a>
+                                <a href="<?php echo SITE_URL; ?>/role/index/1" class="dropdown__item--link">Role</a>
                             </li>
                         </ul>
                     </li>
@@ -106,7 +109,7 @@
                         </button>
                         <ul class="dropdown__nav">
                             <li class="dropdown__item">
-                                <a href="?url=tray/index/1" class="dropdown__item--link">Tray table</a>
+                                <a href="<?php echo SITE_URL; ?>/tray/index/1" class="dropdown__item--link">Tray table</a>
                             </li>
                         </ul>
                     </li>
@@ -154,13 +157,13 @@
                     </span>
                     <ul class="dropdown__menu" id="myDropdown">
                         <li class="nav__item">
-                            <a href="?url=setting/index/1" class="nav__link"><i class="far fa-cog "></i> Settings</a>
+                            <a href="<?php echo SITE_URL; ?>/setting/index/1" class="nav__link"><i class="far fa-cog "></i> Settings</a>
                         </li>
                         <li class="nav__item">
-                            <a href="?url=login/profile" class="nav__link"><i class="far fa-user "></i> Profile</a>
+                            <a href="<?php echo SITE_URL; ?>/login/profile" class="nav__link"><i class="far fa-user "></i> Profile</a>
                         </li>
                         <li class="nav__item">
-                            <a href="?url=login/logout" class="nav__link"><i class="fal fa-sign-out "></i> Logout</a>
+                            <a href="<?php echo SITE_URL; ?>/login/logout" class="nav__link"><i class="fal fa-sign-out "></i> Logout</a>
                         </li>
                     </ul>
                 </li>

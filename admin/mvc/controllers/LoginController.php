@@ -15,7 +15,7 @@ class Login extends controller {
                 $_SESSION['username'] = $user['user_name'];
                 $_SESSION['password'] = $user['user_password'];
                 $_SESSION['userId'] = $user['user_id'];
-                header("Location: ?url=product/index/1");
+                header("Location: ".SITE_URL."/product/index/1");
             } else {
                 exit("error");
             }
@@ -27,7 +27,7 @@ class Login extends controller {
     function logout() {
         session_start();
         session_destroy();
-        header("Location: ?url=login");
+        header("Location: ".SITE_URL."/login");
         die;
     }
 

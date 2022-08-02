@@ -4,7 +4,7 @@
     
 ?>
 <div style="width:1580px; margin: 160px auto" class="border border-5 p-3">
-    <form action="?url=news/add" method="post" enctype="multipart/form-data">
+    <form action="<?php echo SITE_URL; ?>/news/add" method="post" enctype="multipart/form-data">
        <div class="row description text-center">
             <div class="col-lg-6 input__fruit">
                 <h3>TIÊU ĐỀ</h3>

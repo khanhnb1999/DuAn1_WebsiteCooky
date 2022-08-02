@@ -6,7 +6,7 @@
         <div class="content__title mb-3 text-center">
             <h2>THÊM MÓN ĂN</h2>
         </div>
-        <form action="?url=product/add" method="post" enctype="multipart/form-data">
+        <form action="<?php echo SITE_URL; ?>/product/add" method="post" enctype="multipart/form-data">
             <div class="input__news">
                 <div class="item ">
                     <input type="text" class="form-control input__control border border-success border-3"

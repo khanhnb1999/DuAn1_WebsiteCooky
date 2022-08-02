@@ -23,7 +23,7 @@ class Unit extends Controller {
             ];
             $getModel = $this->model("UnitModel");
             $getModel->insert("units",$data);
-            header("Location: ?url=unit/index/1");
+            header("Location: ".SITE_URL."/unit/index/1");
         }
         $this->view("units/add");
     }
@@ -39,7 +39,7 @@ class Unit extends Controller {
             ];
             $where = "unit_id = $id";
             $getModel->update("units",$data,$where);
-            header("Location: ?url=unit/index/1");
+            header("Location: ".SITE_URL."/unit/index/1");
         }
         $this->view("units/update",
         [
@@ -54,7 +54,7 @@ class Unit extends Controller {
         if(isset($id)) {
             $where = "unit_id = $id";
             $getModel->delete("units",$where);
-            header("Location: ?url=unit/index/1");
+            header("Location: ".SITE_URL."/unit/index/1");
         }
     }
 
@@ -66,7 +66,7 @@ class Unit extends Controller {
                 $where = "unit_id = $id";
                 $getModel->delete('units', $where);
             }
-            header("Location: ?url=unit/index/1");
+            header("Location: ".SITE_URL."/unit/index/1");
         }
     }
 }

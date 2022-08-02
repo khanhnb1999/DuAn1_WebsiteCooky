@@ -42,7 +42,7 @@
                 $where = "setting_id=$id";
                 $getModel->update("settings",$data,$where);
                 move_uploaded_file($image['tmp_name'],'./mvc/views/settings/image/'.$image_new);
-                header("Location: ?url=setting/index/1");
+                header("Location: ".SITE_URL."/setting/index/1");
             }$this->view("settings/update",[
                 'setting' =>$result
             ]);

@@ -3,7 +3,7 @@
 <?php require_once "./mvc/views/layouts/header.php" ?>
     <session>
         <div style="margin: 250px 550px">
-            <form action="?url=catalog/update/<?=$value['catalog_id']?>" method="post" enctype="multipart/form-data">
+            <form action="<?php echo SITE_URL; ?>/catalog/update/<?=$value['catalog_id']?>" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="catalog_id" value="<?= $value["catalog_id"] ?>">
                 <div class="border border-5 p-3">
                     <div>
@@ -14,7 +14,7 @@
                         <input type="hidden" name="fileToUpload" value=<?= $value["catalog_image"] ?>>
                         <input type="file" name="fileToUpload" class="form-control mb-1 border-success p-3">
                         <div class="">
-                            <img class="border border-5" src="./mvc/views/catalogs/image/<?= $value["catalog_image"] ?>" width="120px" alt="">
+                            <img class="border border-5" src="<?php echo SITE_URL; ?>/mvc/views/catalogs/image/<?= $value["catalog_image"] ?>" width="120px" alt="">
                         </div>
                     </div>
                     <div>

@@ -4,13 +4,24 @@ class Formula extends controller {
     function index() {
         $getModel = $this->model("FormulaModel");
         $result = $getModel->getAll("catalogs");
-        $getAllDish = $getModel->getAllLimit("dish","dish_id","DESC",0,16);
+        $cateId = 1;
+        $getOneDish = $getModel->getDish($cateId);
         $this->view("formula",
         [
             "cate" => $result,
-            "dish" => $getAllDish
+            "getOneDish" => $getOneDish
         ]);
     }
-}
 
+    function getCatalog($id) {
+        $getModel = $this->model("FormulaModel");
+        $cateId = $id;
+        $result = $getModel->getDish($cateId);
+        $this->view("filter-product",
+        [
+            "getOneDish" => $result
+        ]);
+        die();
+    }
+}
 ?>

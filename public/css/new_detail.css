@@ -1,10 +1,11 @@
 .main__detail {
-    margin: 20px 350px;
+    margin: 40px 350px;
 }
 
-.title h4 {
-    margin: 20px 0;
-    color: var(--color-title);
+.detail__hot-title h3 {
+    text-align: center;
+    color: var(--color-violet);
+    padding-bottom:10px;
 }
 
 .group__detail {
@@ -60,12 +61,16 @@
 
 .detail__product {
     display: flex;
+    padding: 20px 0;
+    border-bottom: 1px solid rgb(236, 231, 231);
+}
 
-    margin-top: 50px;
+.detail__product:last-child {
+    border-bottom: none;
 }
 
 .detail__product--image img {
-    width: 100px;
+    width: 110px;
     height: 80px;
 }
 
@@ -73,15 +78,11 @@
     margin-left: 15px;
 }
 
-.detail__product--text p a {
+.detail__product--text a {
     text-decoration: none;
     color: var(--color-black);
-    font-size: 15px;
-    font-weight: bold;
 }
 
-.detail__product--text span a {
-    text-decoration: none;
-    color: #8a8787;
-    font-size: 13px;
+.detail__product--text a:hover {
+    color: var(--color-violet);
 }

@@ -24,7 +24,7 @@ class Role extends Controller {
             ];
             $getModel = $this->model("RoleModel");
             $getModel->insert("roles",$data);
-            header("Location: ?url=role/index/1");
+            header("Location: ".SITE_URL."/role/index/1");
         }
         $this->view("roles/add");
     }
@@ -40,7 +40,7 @@ class Role extends Controller {
             ];
             $where = "role_id = $id";
             $getModel->update("roles",$data,$where);
-            header("Location: ?url=role/index/1");
+            header("Location: ".SITE_URL."/role/index/1");
         }
         $this->view("roles/update",
         [
@@ -53,7 +53,7 @@ class Role extends Controller {
         if(isset($id)) {
             $where = "role_id = $id";
             $getModel->delete("roles",$where);
-            header("Location: ?url=role/index/1");
+            header("Location: ".SITE_URL."/role/index/1");
         }
     }
 
@@ -65,7 +65,7 @@ class Role extends Controller {
                 $where = "role_id = $id";
                 $getModel->delete('roles', $where);
             }
-            header("Location: ?url=role/index/1");
+            header("Location: ".SITE_URL."/role/index/1");
         }
     }
 

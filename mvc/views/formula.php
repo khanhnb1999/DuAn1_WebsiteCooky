@@ -19,13 +19,14 @@
                 </div>
             </div>
             <div class="search__filter">
-                <?php foreach ($data["cate"] as $value) : ?>
+                <?php foreach ($data["cate"] as $key => $value) : ?>
                     <div class="filter__item">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="">
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <label class="form-check-label" for="<?= $value["catalog_id"] ?>">
                                <?= $value["catalog_name"] ?>
                             </label>
+                            <input type="checkbox" class="form-check-input" id="<?= $value["catalog_id"] ?>"
+                            onclick="listCate(<?= $value['catalog_id'] ?>)">
                         </div>
                     </div>
                 <?php endforeach; ?>
@@ -34,13 +35,13 @@
     </div>
 
     <div class="delicious__foods">
-        <div class="food__title">
+        <div class="foods__title">
             <h3>Món ngon mỗi ngày</h3>
         </div>
-        <div class="cate__cook">
-            <?php foreach ($data["dish"] as $value) : ?>
-                <div class="first__item">
-                    <div class="cook__detail">
+        <div class="cates__cook" id="list-cate">
+            <?php foreach ($data["getOneDish"] as $value) : ?>
+                <div class="firsts__item">
+                    <div class="cooks__detail">
                         <a href="">
                             <img src="./admin/mvc/views/products/image/<?= $value['dish_image'] ?>" alt="">
                         </a>

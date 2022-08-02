@@ -6,7 +6,7 @@
 ?>
 <session>
 <div  style="width:1580px; margin: 160px auto" class="border border-5 p-3">
-    <form action="?url=news/update/<?=$value['new_id']?>" method="post" enctype="multipart/form-data">
+    <form action="<?php echo SITE_URL; ?>/news/update/<?=$value['new_id']?>" method="post" enctype="multipart/form-data">
         <input type="hidden" name="new_id" value="<?= $value['new_id'] ?>">
         <div class="row description">
             <div class="col-lg-6 input__fruit text-center">
@@ -27,7 +27,7 @@
                 <input type="hidden" name="fileToUpload" value="<?=$value['image_new']?>">
                 <input type="file" class="form-control p-3" name="fileToUpload">
                 <div class="my-1">
-                    <img class="border border-5" src="./mvc/views/news/image/<?=$value['image_new']?>" width="120px" alt="">
+                    <img class="border border-5" src="<?php echo SITE_URL; ?>/mvc/views/news/image/<?=$value['image_new']?>" width="120px" alt="">
                 </div>
             </div>
             <div class="col-lg-6 input__fruit">

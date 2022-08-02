@@ -2,7 +2,7 @@
 <?php $value = $data['role'] ?>
     <session>
         <div style="margin: 250px 550px">
-            <form action="?url=role/update" method="post" enctype="multipart/form-data">
+            <form action="<?php echo SITE_URL; ?>/role/update" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="role_id" value="<?= $value['role_id'] ?>">
                 <div class="border border-5 p-3">
                     <div>

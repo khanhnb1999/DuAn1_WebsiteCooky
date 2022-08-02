@@ -36,7 +36,7 @@ class News extends Controller
             $getModel = $this->model('NewModel');
             $getModel->insert('news', $data);
             move_uploaded_file($_FILES['fileToUpload']['tmp_name'], './mvc/views/news/image/' . $image_new);
-            header('Location: ?url=news/index/1');
+            header('Location: ".SITE_URL."/news/index/1');
         }
         $this->view('news/add');
     }
@@ -80,7 +80,7 @@ class News extends Controller
             move_uploaded_file($image['tmp_name'], './mvc/views/news/image/' . $image_new);
             // print_r($getModel);die;
 
-            header("Location: ?url=news/index/1");
+            header("Location: ".SITE_URL."/news/index/1");
         }
         $this->view(
             "news/update",
@@ -95,7 +95,7 @@ class News extends Controller
         if (isset($id)) {
             $where = "new_id = $id";
             $getModel->delete("news", $where);
-            header("Location: ?url=news/index/1");
+            header("Location: ".SITE_URL."/news/index/1");
         }
     }
     // delete all
@@ -108,7 +108,7 @@ class News extends Controller
                 $where = "new_id = $id";
                 $getModel->delete('news', $where);
             }
-            header("Location: ?url=news/index/1");
+            header("Location: ".SITE_URL."/news/index/1");
         }
     }
 }

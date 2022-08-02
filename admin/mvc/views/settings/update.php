@@ -2,7 +2,7 @@
 $value = $data['setting'];
 require_once "./mvc/views/layouts/header.php";?>
 <div style="width:1700px; margin: 150px auto" class="border border-5  p-3">
-    <form action="?url=setting/update/<?=$value['setting_id']?>" method="post" enctype="multipart/form-data">
+    <form action="<?php echo SITE_URL; ?>/setting/update/<?=$value['setting_id']?>" method="post" enctype="multipart/form-data">
         <input type="hidden" name="setting_id" value="<?= $value['setting_id'] ?>">
         <div class="row store__info mb-3 text-center">
             <div class="col-lg-4 contact mb-3">
@@ -30,7 +30,7 @@ require_once "./mvc/views/layouts/header.php";?>
                 <input type="hidden" name="banner" value="<?=$value['banner']?>">
                 <input type="file" class="form-control border border-success p-3" name="banner">
                 <div class="mt-1 border border-5">
-                    <img src="./mvc/views/settings/image/<?=$value['banner']?>" width="810px" alt="">
+                    <img src="<?php echo SITE_URL; ?>/mvc/views/settings/image/<?=$value['banner']?>" width="810px" alt="">
                 </div>
             </div>
         </div>

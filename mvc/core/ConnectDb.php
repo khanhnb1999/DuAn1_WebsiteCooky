@@ -9,4 +9,3 @@ class ConnectDb {
         $this->conn = new PDO($this->url, $this->username, $this->password);
     }
 }
-?>
