@@ -5,7 +5,7 @@ class Product extends Controller {
     // list sản phẩm
     function index($id) {
         $getModel = $this->model("ProductModel");
-        $pr = $getModel->paging("dish","dish_id",5,$id);
+        $pr = $getModel->paging("dish","dish_id",10,$id);
         $trays = $getModel->getAll("trays");
         $totalRecord = $getModel->totalRecord("dish");
         $this->view("products/index",
@@ -14,7 +14,7 @@ class Product extends Controller {
             "totalRecord" => $totalRecord,
             "tray" => $trays,
             "page" => $id,
-            "page_one" => 5
+            "page_one" => 10
         ]);
     }
 

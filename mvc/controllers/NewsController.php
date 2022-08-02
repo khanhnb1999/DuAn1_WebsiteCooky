@@ -13,8 +13,10 @@ class News extends controller {
     function newDetail($id) {
         $getModel = $this->model("NewModel");
         $newDetail = $getModel->getOne("news","new_id=$id");
+        $result = $getModel->getNew();
         $this->view("new_detail",[
-            "newDetail" => $newDetail
+            "newDetail" => $newDetail,
+            "new" => $result
         ]);
     }
 }

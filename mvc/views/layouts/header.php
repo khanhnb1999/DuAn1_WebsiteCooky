@@ -158,7 +158,7 @@
                             <a href="news" class="nav__link">Bài Viết</a>
                         </li>
                         <li class="nav__item">
-                            <a href="./blog.html" class="nav__link">Tạo món</a>
+                            <a href="./blog.html" class="nav__link">Thêm công thức</a>
                         </li>
                         <li class="nav__item dropdown__menu">
                             <a href="tray" class="nav__link">Bàn ăn</a>
