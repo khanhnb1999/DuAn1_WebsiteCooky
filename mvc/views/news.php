@@ -94,7 +94,7 @@
                                     <?= $value["new_title"] ?>
                                 </a>
                             </h4>
-                            <a href="./detail_blog.html">
+                            <a href="">
                                 <img src="./admin/mvc/views/news/image/<?= $value['image_new'] ?>" alt="">
                             </a>
                             <p>Có thể mẹ chưa biết, yến mạch là loại thực phẩm chứa hàm lượng dinh dưỡng cũng
