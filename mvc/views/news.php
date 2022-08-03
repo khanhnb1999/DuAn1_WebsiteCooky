@@ -97,7 +97,6 @@
                                     <?= $value["new_title"] ?>
                                 </a>
                             </h4>
-<<<<<<< HEAD
                             <a href="">
                                 <img src="./admin/mvc/views/news/image/<?= $value['image_new'] ?>" alt="">
                             </a>
@@ -107,13 +106,10 @@
                                     ít gây dị ứng
                                     nên mẹ hoàn toàn có thể nấu cháo yến mạch cho bé khi bước vào giai đoạn ăn dặm.
                             </p>
-                            <span><?= $value["new_date"] ?></span>
-=======
                             <strong>
                                 <i class="fal fa-user-edit"></i> Khanhnb
                             </strong>
-                            <em><?= $value["new_date"] ?></em>
->>>>>>> c1b63f6ee9efa0cef0c7b6df7c47f3b1e3e8b9c4
+                            <span><?= $value["new_date"] ?></span>
                         </div>
                     <?php endforeach; ?>
                 </div>

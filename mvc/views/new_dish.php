@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="../../public/css/formula.css">
     <link rel="stylesheet" href="../../public/css/news.css">
     <link rel="stylesheet" href="../../public/css/new_detail.css">
+    <link rel="stylesheet" href="../../public/css/new_dish.css">
     <link rel="stylesheet" href="../../public/css/tray.css">
     <link rel="stylesheet" href="../../public/css/footer.css">
     <link rel="icon" href="../../public/image/60.ico">
@@ -205,7 +206,120 @@
     </style>
 
     <session class="session">
-        
+        <div class="main__content">
+            <div class="main_details">
+                <div class="recipe-detail-content">
+                    <div class=" details">
+                        <h4>Công thức/Cheesecake Dâu Sữa Chua</h4>
+                        <div class="details_image">
+                            <a href=""><img src="../page/img/new1.jpg" alt=""></a>
+                        </div>
+                        <div class="details_name">
+                            <h3><a href="">Cheesecake Dâu Sữa Chua</a></h3>
+                        </div>
+                        <div class="details_text">
+                            <p>Dalatmilk Cheesecake sữa chua là một món tráng miệng đẹp mắt, ngon miệng và
+                                cực dễ thực hiện. Chỉ cần một chút khéo léo
+                                bạn sẽ có ngay một ổ bánh đẹp mắt mà không cần đến lò nướng. Cùng Cooky thực hiện
+                                nha!</p>
+                            <div class="text_element">
+                                <h3>Thành phần</h3>
+                            </div>
+                            <div class="text_element_list">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Bơ lạt 50gr</li>
+                                    <li class="list-group-item">Whipping cream 250gr</li>
+                                    <li class="list-group-item">Cream cheese 250gr</li>
+                                    <li class="list-group-item">Sữa chua uống Đà Lạt Milk 150ml</li>
+                                </ul>
+                            </div>
+                            <div class="text_element_guide">
+                                <h3>Hướng dẫn thực hiện</h3>
+                                <p>
+                                    1.
+                                    Đế bánh: Nghiền nhuyễn 120gr bánh quy. Đem 50gr bơ lạt đi đun cách thủy hoặc
+                                    quay lò vi sóng 30 giây cho chảy. Cho bơ
+                                    vào bánh rồi trộn đều. Dùng khuôn có đường kính 16cm, cho bánh đã trộn bơ vào
+                                    khuôn, ép xuống đều để để bánh được chắc
+                                    chắn. Cho vào ngăn đá đến khi cứng lại, khoảng 1 tiếng.
+                                </p>
+                                <a href=""><img src="./img/blog2.jpg" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" link-absolute">
+                        <h4>Món ăn ưa thích</h4>
+                        <div class="similar-recipes-item">
+                            <div class="link-absolute__image">
+                                <a href=""><img src="../page/img/list3.jpg" alt=""></a>
+                            </div>
+                            <div class="link-absolute__text">
+                                <h5 class="text_name"><a href="">Sữa chua dâu tây</a></h5>
+                                <div class="similar-recipe-name">
+                                    <p class="item_user">by: <span><a href="">Mai đình</a></span></p>
+                                    <p class="item_date"> 22 july 2021 </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class=" container bootdey ">
+                <div class="col-xl-9 col-md-9 bootstrap snippets ">
+                    <div class="panel">
+                        <div class="panel-body">
+                            <textarea class="form-control" rows="2" placeholder="What are you thinking?"></textarea>
+                            <div class="mar-top clearfix">
+                                <button class="btn btn-sm btn-primary pull-right" type="submit"><i class="fa fa-pencil fa-fw"></i> Share</button>
+                                <a class="btn btn-trans btn-icon fa fa-video-camera add-tooltip" href="#"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-body">
+                            <div class="media-block">
+                                <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar1.png"></a>
+                                <div class="media-body">
+                                    <div class="mar-btm">
+                                        <a href="#" class="btn-link text-semibold media-heading box-inline">Lisa D.</a>
+                                        <p class="text-muted text-sm"><i class="fa fa-mobile fa-lg"></i> - From Mobile - 11 min ago</p>
+                                    </div>
+                                    <p>consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+                                    <div class="pad-ver">
+                                        <div class="btn-group">
+                                            <a class="btn btn-sm btn-default btn-hover-success" href="#"><i class="fa fa-thumbs-up"></i></a>
+                                            <a class="btn btn-sm btn-default btn-hover-danger" href="#"><i class="fa fa-thumbs-down"></i></a>
+                                        </div>
+                                        <a class="btn btn-sm btn-default btn-hover-primary" href="#">Comment</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="media-block pad-all">
+                                <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar1.png"></a>
+                                <div class="media-body">
+                                    <div class="mar-btm">
+                                        <a href="#" class="btn-link text-semibold media-heading box-inline">John Doe</a>
+                                        <p class="text-muted text-sm"><i class="fa fa-mobile fa-lg"></i> - From Mobile - 11 min ago</p>
+                                    </div>
+                                    <p>Lorem ipsum dolor sit amet.</p>
+                                    <img class="img-responsive thumbnail" src="https://via.placeholder.com/400x300" alt="Image">
+                                    <div class="pad-ver">
+                                        <span class="tag tag-sm"><i class="fa fa-heart text-danger"></i> 250 Likes</span>
+                                        <div class="btn-group">
+                                            <a class="btn btn-sm btn-default btn-hover-success" href="#"><i class="fa fa-thumbs-up"></i></a>
+                                            <a class="btn btn-sm btn-default btn-hover-danger" href="#"><i class="fa fa-thumbs-down"></i></a>
+                                        </div>
+                                        <a class="btn btn-sm btn-default btn-hover-primary" href="#">Comment</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
     </session>
 
     <div class="footer">

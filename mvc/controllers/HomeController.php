@@ -15,6 +15,14 @@ class Home extends Controller {
             "news" => $getAllNew
         ]);
     }
+
+    function detailDish($id) {
+        $getModel = $this->model("HomeModel");
+        $newDetail = $getModel->getOne("dish","dish_id=$id");
+        $this->view("new_dish",[
+            "dish" => $newDetail
+        ]);
+    }
 }
 
 ?>
