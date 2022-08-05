@@ -1,4 +1,5 @@
 <?php
+    error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
 class App {
     protected $controller = "Home" ;
@@ -10,6 +11,7 @@ class App {
             $this->controller = ucfirst($arr[0]);
             unset($arr[0]);
         }
+        // print_r($arr);die;
         require_once("./mvc/controllers/".ucfirst($this->controller)."Controller.php");
         $this->controller = new $this->controller;
           
@@ -21,6 +23,7 @@ class App {
         }
         $this->params = $arr ? array_values($arr) : [];
         call_user_func_array([$this->controller,$this->action], $this->params);
+
     }
     function UlrProcess() { 
         if(isset($_GET["url"])) {

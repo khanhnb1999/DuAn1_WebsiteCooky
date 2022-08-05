@@ -35,7 +35,7 @@
                 <?php foreach ($data["dish"] as $value) : ?>
                     <div class="first__item">
                         <div class="cook__detail">
-                            <a href="">
+                            <a href="home/detailDish/<?= $value['dish_id'] ?? "" ?>">
                                 <img src="./admin/mvc/views/products/image/<?= $value['dish_image'] ?>" alt="">
                             </a>
                             <a href="" class="cook__name">
