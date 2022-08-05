@@ -65,6 +65,7 @@
     <script type="text/javascript" src="./public/script/main.js"></script>
     <script type="text/javascript" src="./public/script/formula.js"></script>
     <script type="text/javascript" src="./public/script/home.js"></script>
+    <script type="text/javascript" src="./public/script/add-formula.js"></script>
     <script>
     $(document).ready(function(){
         if($("#editor1").length){

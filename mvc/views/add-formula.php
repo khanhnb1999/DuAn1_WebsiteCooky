@@ -6,61 +6,71 @@
 </style>
 
 <session class="session">
-    <div class="grid__app">
-        <div class="add__formula">
-            <div class="form__product">
-                <div class="content">
-                    <div class="content__title mt-3 mb-5 text-center">
-                        <h2>THÊM MÓN ĂN MỚI</h2>
+    <form action="" method="post" enctype="multipart/form-data">
+        <div class="grid__app">
+            <div class="add__formula">
+                <div class="title__add-formula">
+                    <p>Tạo công thức mới</p>
+                </div>
+                <div class="step">
+                    <div class="introduction__step">
+                        <p>
+                            <span>Bước 1: </span> Hãy mô tả "<strong>Tên món ăn</strong>" của bạn nhé!
+                        </p>
                     </div>
-                    <form action="AddFormula/add" method="post" enctype="multipart/form-data">
-                        <div class="input__news">
-                            <div class="item ">
-                                <input type="text" name="dish_name" id="hidden-message" 
-                                class="form-control input__control border border-3" placeholder="Tên món ăn">
-                                <div class="current__message" id="current-message">
-                                    <span>Tên món ăn</span>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <input type="text"  name="catalog_name" 
-                                class="form-control input__control border border-3" placeholder="Loại món ăn...">
-                            </div>
-                            <div class="item">
-                                <input type="text" name="dish_price"
-                                class="form-control input__control border  border-3" placeholder="Giá món ăn">
-                            </div>
-                            <div class="item">
-                                <input type="file" name="fileToUpload" 
-                                class="form-control input__control border border-3" >
-                            </div>
+                    <div class="input__step--dish">
+                        <textarea type="text" class="form-control" name="dish_intro" rows="10" id="editor2"></textarea>
+                    </div>
+                </div>
+                <div class="step">
+                   <div class="introduction__step">
+                        <p>
+                            <span>Bước 2:</span>&nbsp;Hãy nhập "<strong>Tên món ăn</strong>" và 
+                            nhớ chọn ảnh đại diện là một hình thành phẩm thật hấp dẫn nhé!
+                        </p>
+                   </div>
+                    <div class="input__group--dish">
+                        <div class="dish-name mb-3">
+                            <strong>2.1 - Tên món ăn</strong>
+                            <input type="text" name="dish_name" class="form-control p-3" placeholder="Tên món ăn...">
                         </div>
-                        <div class="row input__fruit intro my-3 text-center mt-5">
-                            <div class="col-md-6 desc__item">
-                                <h4>GIỚI THIỆU MÓN ĂN</h4>
-                                <textarea type="text" class="form-control " name="dish_desc" rows="10" id="editor1"></textarea>
-                            </div>
-                            <div class=" col-md-6 desc__item">
-                                <h4>CÁC BƯỚC THỰC HIỆN</h4>
-                                <textarea type="text" class="form-control" name="dish_intro" rows="10" id="editor2"></textarea>
-                            </div>
+                        <div class="dish-images">
+                            <strong>2.2 - Chọn ảnh</strong>
+                            <input type="file" name="fileToUpload" class="form-control p-3">
                         </div>
-                        <div class="content-box mb-5">
-                            <div class="product-add">
-                                <button type="button" id="btn-click" class="btn btn-info my-3 border border-3">Thêm Nguyên Liệu</button>
-                            </div>
-                            <div class="add__content">
-                            </div>
-                        </div>
-                        <div class="input__fruit my-3">
-                            <button type="submit" class="btn btn-success" name="add-tray" 
-                            value="add-tray">Thêm Mới</button>
-                        </div>
-                    </form>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="introduction__step">
+                        <p>
+                            <span>Bước 3 :</span>&nbsp;Nhập thông tin nguyên vật liệu cần chuẩn bị cho món ăn của bạn.
+                        </p>
+                    </div>
+                    <div class="product-add">
+                        <button type="button" id="btn-click" class="btn btn-info mb-3">Thêm Nguyên Liệu</button>
+                    </div>
+                    <div class="add__contents"></div>
+                </div>
+
+                <div class="step">
+                    <div class="introduction__step">
+                        <p>
+                            <span>Bước 4 :</span>&nbsp;Nhập các bước thực hiện món ăn.Nhớ kèm theo hình ảnh minh họa nhé!
+                        </p>
+                    </div>
+                    <div class="input__step--dish">
+                        <textarea type="text" class="form-control " name="dish_desc" rows="10" id="editor1"></textarea>
+                    </div>
+                </div>
+
+                <div class="post__dish">
+                    <strong>Bây giờ, bạn hãy chia sẻ công thức của bạn ngay nhé!</strong><br>
+                    <button type="submit" class="btn btn-success my-3">Đăng công thức</button>
                 </div>
             </div>
         </div>
-    </div>
+    </form>
 </session>
 
 <?php require_once "./mvc/views/layouts/footer.php";?>

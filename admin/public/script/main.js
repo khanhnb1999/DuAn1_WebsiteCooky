@@ -47,7 +47,6 @@ function deleteNl(index){
           });
     }
     $("#current_" + index).remove();
-    
 }
 
 
