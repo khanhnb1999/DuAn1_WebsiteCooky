@@ -64,6 +64,18 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="./public/script/main.js"></script>
     <script type="text/javascript" src="./public/script/formula.js"></script>
+    <script type="text/javascript" src="./public/script/home.js"></script>
+    <script>
+    $(document).ready(function(){
+        if($("#editor1").length){
+            CKEDITOR.replace('editor1');
+        }
+        if($("#editor2").length){
+            CKEDITOR.replace('editor2');
+        }
+    });
+     
+</script>
 </body>
 
 </html>

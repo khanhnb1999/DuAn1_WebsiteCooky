@@ -11,7 +11,9 @@
                     <?php foreach ($data['home'] as $value) :?>
                         <div class="items">
                             <div class="avatar__cate">
-                                <img src="./admin/mvc/views/catalogs/image/<?= $value['catalog_image'] ?>" alt="">
+                                <a href="javascript:void()" onclick="showDish(<?= $value['catalog_id'] ?>)">
+                                    <img src="./admin/mvc/views/catalogs/image/<?= $value['catalog_image'] ?>" alt="">
+                                </a>
                             </div>
                             <div class="name__cate">
                                 <span>
@@ -39,15 +41,13 @@
                             <a href="" class="cook__name">
                                 <?= $value['dish_name'] ?>
                             </a>
-                            <div class="shows">
-                                <div class="views">
-                                    <i class="fas fa-eye"></i> 12
-                                </div>
-                                <div class="likes">
-                                    <i class="fas fa-thumbs-up"></i> 22
-                                </div>
+                            <div class="add__dish--table">
+                                <span>
+                                    <a href="tableTray/add/<?= $value["dish_id"] ?>">Thêm</a>
+                                </span>
                             </div>
                         </div>
+
                     </div>
                 <?php endforeach; ?>
             </div>
@@ -68,15 +68,13 @@
                             <a href="" class="cook__name">
                                 <?= $value['dish_name'] ?>
                             </a>
-                            <div class="shows">
-                                <div class="views">
-                                    <i class="fas fa-eye"></i> 12
-                                </div>
-                                <div class="likes">
-                                    <i class="fas fa-thumbs-up"></i> 22
-                                </div>
+                            <div class="add__dish--table">
+                                <span>
+                                    <a href="tableTray/add/<?= $value["dish_id"] ?>">Thêm</a>
+                                </span>
                             </div>
                         </div>
+
                     <?php endforeach; ?>
                 </div>
             </div>
@@ -91,12 +89,12 @@
                 <?php foreach ($data["news"] as $value) : ?>
                     <div class="latest__news">
                         <div class="info__image">
-                            <a href="">
+                            <a href="news/newDetail/<?= $value['new_id'] ?>">
                                 <img src="./admin/mvc/views/news/image/<?= $value['image_new'] ?>" alt="">
                             </a>
                         </div>
                         <div class="details">
-                            <a href="">
+                            <a href="news/newDetail/<?= $value['new_id'] ?>">
                                 <?= $value['new_title'] ?>
                             </a>
                             <em>14/09/2022</em>

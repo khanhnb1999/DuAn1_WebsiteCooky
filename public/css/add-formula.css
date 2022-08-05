@@ -1,0 +1,84 @@
+.grid__app {
+    margin: 60px 350px;
+}
+
+.item {
+    position: relative;
+}
+
+.current__message {
+    position: absolute;
+    left: 29px;
+    top: -14px;
+    font-size: 20px;
+    background-color: white;
+    padding: 0 15px;
+    display:none;
+    color: rgb(62 67 72);
+}
+
+.form__product {
+    background-color: var(--color-white);
+    border: 1px solid black;
+    padding: 20px;
+}
+
+.form__product .input__news {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form__product .item {
+    flex-basis: 24%;
+    margin-bottom: 32px;
+}
+
+.form__product .input__control {
+    padding: 16px;
+}
+
+.form__product .group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form__product .item__images {
+    flex-basis: 100%;
+}
+
+.form__product .add__fields {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1100px;
+    margin-bottom: 20px;
+}
+
+.form__product .ingredient {
+    flex-basis: 47%;
+}
+
+.form__product .quantity {
+    flex-basis: 10%;
+}
+
+.form__product .unit {
+    flex-basis: 10%;
+}
+
+.form__product .note {
+    flex-basis: 26%;
+}
+
+.form__product .delete-input {
+    text-align: center;
+    flex-basis: 5%;
+    color: red;
+    font-size: 30px;
+}
+
+.form__product .btn__danger {
+    padding: 10px;
+}

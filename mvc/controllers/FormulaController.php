@@ -13,6 +13,18 @@ class Formula extends controller {
         ]);
     }
 
+    function homeDish($id) {
+        $getModel = $this->model("FormulaModel");
+        $result = $getModel->getAll("catalogs");
+        $cateId = $id;
+        $getOneDish = $getModel->getDish($cateId);
+        $this->view("formula",
+        [
+            "cate" => $result,
+            "getOneDish" => $getOneDish
+        ]);
+    }
+
     function getCatalog($id) {
         $getModel = $this->model("FormulaModel");
         $cateId = $id;
@@ -22,6 +34,16 @@ class Formula extends controller {
             "getOneDish" => $result
         ]);
         die();
+    }
+
+    function getCate($id) {
+        $getModel = $this->model("FormulaModel");
+        $cateId = $id;
+        $result = $getModel->getDish($cateId);
+        $this->view("filter-product",
+        [
+            "getOneDish" => $result
+        ]);
     }
 }
 ?>

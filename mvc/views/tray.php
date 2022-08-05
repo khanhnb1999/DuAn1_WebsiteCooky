@@ -15,13 +15,13 @@
                     <div class="side__left">
                         <div class="filter__group">
                             <div class="title__head">
-                                <h4>MÂM CƠM GIA ĐÌNH</h4>
+                                <h6>MÂM CƠM GIA ĐÌNH</h6>
                             </div>
                             <div class="horizontals-scroll">
                                 <?php foreach ($data["tray"] as $value) : ?>
                                     <div class="aside__content">
                                         <input type="checkbox" class="form-check-input" id="<?= $value["tray_id"] ?>">
-                                        <label class="form-check-label mx-3" for="<?= $value["tray_id"] ?>">
+                                        <label class="form-check-label mx-3 list-name" for="<?= $value["tray_id"] ?>">
                                             <?= $value["tray_name"] ?>
                                         </label>
                                     </div>
@@ -30,7 +30,7 @@
                         </div>
                         <div class="floating__enabled">
                             <div class="title__head">
-                                <h4>MÓN ĂN NỔI BẬT</h4>
+                                <h6>MÓN ĂN NỔI BẬT</h6>
                             </div>
                             <?php foreach ($data["dish"] as $value) : ?>
                                 <div class="item__product">
@@ -51,28 +51,26 @@
                             <?php foreach ($data["tray-price"] as $value) : ?>
                                 <div class="tray__items">
                                     <div class="tray__image">
-                                        <div class="image">
-                                            <div class="router">
-                                                <img src="./page/img/demo1.jpg" alt="">
-                                            </div>
-                                            <div class="router">
-                                                <img src="./page/img/demo1.jpg" alt="">
-                                            </div>
-                                            <div class="router horizontals">
-                                                <img src="./page/img/demo1.jpg" alt="">
-                                            </div>
+                                        <div class="router">
+                                            <a href=""><img src="./page/img/demo1.jpg" alt=""></a>
                                         </div>
-                                        <div class="image">
-                                            <div class="router">
-                                                <img src="./page/img/demo1.jpg" alt="">
-                                            </div>
-                                            <div class="router">
-                                                <img src="./page/img/demo1.jpg" alt="">
-                                            </div>
+                                        <div class="router">
+                                            <a href=""><img src="./page/img/demo1.jpg" alt=""></a>
+                                        </div>
+                                        <div class="router">
+                                            <a href=""><img src="./page/img/demo1.jpg" alt=""></a>
+                                        </div>
+                                        <div class="router">
+                                            <a href=""><img src="./page/img/demo1.jpg" alt=""></a>
+                                        </div>
+                                        <div class="router">
+                                            <a href=""><img src="./page/img/demo1.jpg" alt=""></a>
                                         </div>
                                     </div>
                                     <div class="tray__price">
-                                        <h5><?= number_format($value["price"],0) ?><sup>đ</sup></h5>
+                                        <div class="current-price">
+                                            <h5><?= number_format($value["price"],0) ?><sup>đ</sup></h5>
+                                        </div>
                                     </div>
                                 </div>
                             <?php endforeach; ?>    

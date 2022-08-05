@@ -1,0 +1,232 @@
+.app__table {
+    margin: 40px 350px;
+}
+
+.introduction-tray {
+    display:flex;
+    justify-content: space-between;
+}
+
+.aside__left {
+    flex-basis: 40%;
+}
+
+.title__table {
+    background-color: rgb(93, 125, 231);
+    border-radius: 7px;
+    text-align: center;
+    width: 170px;
+    padding: 16px 32px;
+}
+
+.title__table h6 {
+    color: white;
+}
+
+.formula__items {
+    display:flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: var(--color-white);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top:15px;
+}
+
+.formula__intro {
+    position: relative;
+    border-radius: 5px;
+    border: 1px solid rgb(167 149 149);
+    margin-bottom: 20px;
+    transition: 0.3s ease;
+}
+
+.formula__intro img {
+    padding: 7px;
+    width: 158px;
+    height: 155px;
+    cursor: pointer;
+    border-radius: 13px;
+    opacity: 1;
+    transition: 0.3s ease;
+
+}
+
+.icon__current {
+    position: absolute;
+    z-index: 1;
+    top: 60px;
+    left: 44px;
+    display:none;
+}
+
+.formula__intro:hover .icon__current {
+    display:block;
+    background-color: rgb(116, 90, 90);
+}
+
+.formula__intro:hover img {
+    opacity: 0.6;
+}
+
+.btn__show {
+    background-color: #e9ebee;
+    padding: 4px 8px;
+    color: black;
+}
+
+
+
+.btn__show i:hover {
+    color: var(--color-violet);
+}
+
+.box__container {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top:30px;
+}
+
+.add__dish a {
+    text-decoration: none;
+    background-color: #113fd8;
+    color: white;
+    padding: 10px;
+    border-radius: 7px;
+    opacity: 1;
+    
+}
+
+.update__trays {
+    flex-basis: 20%;
+}
+
+.update__trays a {
+    text-decoration: none;
+}
+
+.btn__update {
+    position: relative;
+    border: none;
+    background-color: #05c1e6;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 7px;
+    left:60px;
+}
+
+
+.btn__update:hover {
+    background-color:#f27e00;
+    color: white;
+    transition: 0.3s ease;
+}
+
+.add__dish a:hover {
+    background-color:#002ec8;
+}
+
+.introduction__customer {
+    margin-top:30px;
+    border:1px solid #d3c6c6;
+    border-radius: 7px;
+    padding: 15px;
+    background-color: white;
+}
+
+.introduction__store {
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.logo__stores {
+    background-color: #ea0000;
+    border-radius: 50%;
+    padding: 17px 10px;
+}
+
+.logo__stores a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+}
+
+.name__store {
+    margin-left: 19px;
+}
+
+.name__store h6 {
+    font-size:20px;
+    margin-bottom: 5px;
+}
+
+.name__store span {
+    font-size: 15px;
+    opacity: 0.7;
+}
+
+.introduction__customer p {
+    padding-top:20px;
+}
+
+.price__table span {
+    font-size:25px;
+    font-weight: 700;
+}
+
+.aside__right {
+    flex-basis: 58%;
+    border-radius: 10px;
+}
+
+.formula__details {
+    background-color: var(--color-white);
+    margin-top: 15px;
+    border-radius: 7px;
+    padding: 20px;
+}
+
+.formula__details img {
+    width: 130px;
+    height: 110px;
+}
+
+.group__button h6 {
+    padding: 16px 32px;
+    border-radius: 7px;
+    background-color: #5d7de7;
+    color: white;
+    width: 389px;
+    text-transform: uppercase;
+}
+
+.title__head--dish {
+    font-size:20px;
+    font-weight: 660;
+    padding-bottom:16px;
+}
+
+.ingredient__title h4 {
+    font-weight: 640;
+    font-size:32px;
+}
+
+.ingredients__title h4 {
+    font-weight: 640;
+    font-size:32px;
+    padding: 15px 0;
+}
+
+.ingredient__name {
+    padding: 10px 0;
+    border-bottom: 1px solid rgb(235, 229, 229);
+}
+
+.ingredient__name span {
+    font-weight: 500;
+}
+
+

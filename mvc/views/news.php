@@ -89,7 +89,7 @@
                 <div class="group">
                     <?php foreach ($data["news"] as $value) : ?>
                         <div class="group-item">
-                            <a href="./detail_blog.html">
+                            <a href="news/newDetail/<?= $value['new_id'] ?>">
                                 <img src="./admin/mvc/views/news/image/<?= $value['image_new'] ?>" alt="">
                             </a>
                             <h4>
