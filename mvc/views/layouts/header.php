@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="./public/css/news.css">
     <link rel="stylesheet" href="./public/css/tray.css">
     <link rel="stylesheet" href="./public/css/footer.css">
+    <link rel="stylesheet" href="./public/css/detail_dish.css">
+
     <link rel="icon" href="./public/image/60.ico">
     <title>Home</title>
 </head>
