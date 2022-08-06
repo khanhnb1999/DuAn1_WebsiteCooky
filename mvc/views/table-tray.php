@@ -1,3 +1,9 @@
+<?php
+    if(isset($_POST['update']) && ($_POST['update'] == 'update')){
+        $_SESSION['table'] = $_POST['table'] ?? '';
+    } 
+    
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,9 +20,13 @@
     <link rel="stylesheet" href="../../public/css/news.css">
     <link rel="stylesheet" href="../../public/css/new_detail.css">
     <link rel="stylesheet" href="../../public/css/tray.css">
+    <link rel="stylesheet" href="../../public/css/table-tray.css">
     <link rel="stylesheet" href="../../public/css/footer.css">
     <link rel="icon" href="../../public/image/60.ico">
     <title>Home</title>
+    <script type="text/javascript">
+        var BaseUrl = '<?php echo SITE_URL; ?>';
+    </script>
 </head>
 <body>
     <header class="header">
@@ -46,27 +56,27 @@
                                         <span>Welcome</span>
                                     </div>
                                     <div class="input__control">
-                                        <input type="text" name="username" require class="form-control form__control"
+                                        <input type="text" name="username" require class="form-control form__controls"
                                             placeholder="Username">
                                     </div>
                                     <div class="input__control">
-                                        <input type="email" name="email" require class="form-control form__control"
+                                        <input type="email" name="email" require class="form-control form__controls"
                                             placeholder="Username@gmail.com">
                                     </div>
                                     <div class="input__control">
                                         <input type="password" name="password" require
-                                            class="form-control form__control" placeholder="Password">
+                                            class="form-control form__controls" placeholder="Password">
                                     </div>
                                     <div class="input__control">
-                                        <input type="password" class="form-control form__control"
+                                        <input type="password" class="form-control form__controls"
                                             placeholder="Re-password">
                                     </div>
                                     <div class="input__control">
-                                        <input type="address" name="address" class="form-control form__control"
+                                        <input type="address" name="address" class="form-control form__controls"
                                             placeholder="Address">
                                     </div>
                                     <div class="input__control">
-                                        <input type="phone" name="phone" class="form-control form__control"
+                                        <input type="phone" name="phone" class="form-control form__controls"
                                             placeholder="Phone">
                                     </div>
                                     <div class="form__check">
@@ -84,11 +94,11 @@
                                         <p>Please sign in to your account below</p>
                                     </div>
                                     <div class="input__control">
-                                        <input type="text" name="username1" class="form-control form__control"
+                                        <input type="text" name="username1" class="form-control form__controls"
                                             placeholder="Username">
                                     </div>
                                     <div class="input__control">
-                                        <input type="password" name="password1" class="form-control form__control"
+                                        <input type="password" name="password1" class="form-control form__controls"
                                             placeholder="Enter password">
                                     </div>
                                     <div class="keep__me">
@@ -109,7 +119,7 @@
                                         </div>
                                         <div class="tab__body ">
                                             <div class="tab__body--input">
-                                                <input type="email" class="form-control form__control" name="email2"
+                                                <input type="email" class="form-control form__controls" name="email2"
                                                     placeholder="Username@gmail.com">
                                             </div>
                                         </div>
@@ -137,32 +147,30 @@
                     </form>
                 </div>
             </div>
-
             <!-- end form register -->
         </div>
         <!-- Introduction and call contact about store -->
         <div class="grid-header">
             <div class="header__navigation">
-
                 <div class="menu__left">
                     <ul class="nav__bar">
                         <li class="nav__item ">
                             <span class="logo"><a href="home">Cooky</a></span>
                         </li>
                         <li class="nav__item">
-                            <a href="home" class="nav__link">Home</a>
+                            <a href="<?php echo SITE_URL; ?>/home" class="nav__link">Home</a>
                         </li>
                         <li class="nav__item">
-                            <a href="formula" class="nav__link">Công Thức</a>
+                            <a href="<?php echo SITE_URL; ?>/formula" class="nav__link">Công Thức</a>
                         </li>
                         <li class="nav__item">
-                            <a href="news" class="nav__link">Bài Viết</a>
+                            <a href="<?php echo SITE_URL; ?>/news" class="nav__link">Bài Viết</a>
                         </li>
                         <li class="nav__item">
                             <a href="./blog.html" class="nav__link">Thêm công thức</a>
                         </li>
                         <li class="nav__item dropdown__menu">
-                            <a href="tray" class="nav__link">Bàn ăn</a>
+                            <a href="<?php echo SITE_URL; ?>/tray" class="nav__link">Bàn ăn</a>
                         </li>
                     </ul>
                 </div>
@@ -202,45 +210,102 @@
                 </div>
             </div>
         </div>
-
     </header>
-
-    <?php  $value = $data["newDetail"];?>
     <style>
         .banner__carousel {
             display: none;
         }
     </style>
-
-    <session class="session">  
-        <div class="main__detail">
-            <div class="group__main--content">
-                <div class="row">
-                    <div class="col-xl-8 group__detail">
-                        <?= $value["new_description"] ?>
-                    </div>
-                    <div class="col-xl-4 "> 
-                        <div class="detail__hot">
-                            <div class="detail__hot-title">
-                                <h3>TIN TỨC NỔI BẬT</h3>
-                            </div>
-                            <div>
-                                <?php foreach ($data["new"] as $value) : ?>
-                                    <div class="detail__product">
-                                        <div class="detail__product--image">
-                                            <img src="../../admin/mvc/views/news/image/<?= $value['image_new'] ?>" alt="">
-                                        </div>
-                                        <div class="detail__product--text">
-                                            <a href=""><?= $value['new_title'] ?></a>
+    <session class="session">
+        <form action="<?php echo SITE_URL; ?>/tableTray/add" method="post">
+            <div class="app__table">
+                <div class="introduction-tray">
+                    <div class="aside__left">
+                        <div class="title__table">
+                            <h6><i class="fas fa-utensils-alt"></i> BÀN ĂN</h6>
+                        </div>
+                        <form action="" method="post" enctype="multipart/form-data">
+                            <div class="formula__items">
+                                <?php $totalMoney = 0 ?>
+                                <?php foreach ($data["dish"] as $value) : ?>
+                                    <div class="formula__intro" id="current_<?= $value['dish_id'] ?>">
+                                        <img src="../../admin/mvc/views/products/image/<?= $value['dish_image'] ?>" alt="">
+                                        <div class="icon__current">
+                                            <a href="javascript:void()" class="btn__show" onclick=viewDish(<?= $value["dish_id"] ?>)>
+                                                <i class="fas fa-eye"></i>
+                                            </a>
+                                            <a href="javascript:void()" onclick="removeDish(<?= $value['dish_id'] ?>)"
+                                             class="btn__show">
+                                                <i class="far fa-trash"></i>
+                                            </a>
                                         </div>
                                     </div>
-                                <?php endforeach; ?>    
+                                    <?php
+                                        $sumMoney = $value["dish_price"];
+                                        $totalMoney += $sumMoney;
+                                    ?>
+                                <?php endforeach; ?>
+                            </div>
+                        </form>
+                        <div class="box__container">
+                            <div class="price__table">
+                                <span>Giá: <?= number_format($totalMoney) ?><sup>đ</sup></span>
+                            </div>
+                            <div class="update__trays">
+                                <a href="" class="btn__update">Cập nhật</a>
+                            </div>
+                            <div class="add__dish">
+                                <a href="<?php echo SITE_URL; ?>/formula">Thêm món ăn</a>
+                            </div>
+                        </div>
+                        <div class="introduction__customer">
+                            <div class="introduction__store">
+                                <div class="logo__stores">
+                                    <a href="<?php echo SITE_URL; ?>/home">Cooky</a>
+                                </div>
+                                <div class="name__store">
+                                    <h6>Cooky</h6>
+                                    <span><?= $data['totalRecord'] ?> Công thức</span>
+                                </div>
+                            </div>
+                            <h5>Hôm nay bạn ăn gì!</h5>
+                            <p>Để mâm cơm của gia đình bạn luôn đầy đủ chất dinh dưỡng,
+                                đảm bảo sức khỏe cho mọi người bằng cách bạn hãy chọn món 
+                                ăn, giá cả phù hợp cho gia đình bạn...
+                            </p>
+                        </div>
+                    </div> 
+                    <div class="aside__right">
+                        <div class="group__button">
+                            <h6>Thành phần và các bước thực hiện</h6>
+                        </div>
+                        <div class="show__content--details" id="show-dish">
+                            <div class="formula__details" >
+                                <div class="ingredient__title">
+                                    <h4>Thành phần</h4>
+                                </div>
+                                <div class="intro__ingredient">
+                                    <?php foreach ($data['ingredient'] as $value) : ?>
+                                        <div class="ingredient__name">
+                                            <span>
+                                                <?= $value['name']?> <?=$value['quantity'] ?> <?=  $value['unit']?>
+                                            </span>
+                                        </div>
+                                    <?php endforeach; ?>    
+                                </div>
+                                <div class="ingredients__title">
+                                    <h4>Các bước thực hiện</h4>
+                                </div>
+                                <div class="title__head--dish">
+                                    <span>MÓN ĂN : <?= $data['intro']['dish_name'] ?></span>
+                                </div>
+                                <?= $data['intro']['dish_intro'] ?>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </form>    
     </session>
 
     <div class="footer">
@@ -309,6 +374,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="../../public/script/main.js"></script>
     <script type="text/javascript" src="../../public/script/formula.js"></script>
+    <script type="text/javascript" src="../../public/script/table-tray.js"></script>
 </body>
 
 </html>

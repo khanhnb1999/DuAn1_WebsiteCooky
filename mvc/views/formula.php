@@ -48,13 +48,10 @@
                         <a href="DetailDish/dishDetail/<?= $value['dish_id'] ?>" class="cook__name">
                             <?= $value['dish_name'] ?>
                         </a>
-                        <div class="shows">
-                            <div class="views">
-                                <i class="fas fa-eye"></i> 12
-                            </div>
-                            <div class="likes">
-                                <i class="fas fa-thumbs-up"></i> 22
-                            </div>
+                        <div class="add__dish--table">
+                            <span>
+                                <a href="tableTray/add/<?= $value["dish_id"] ?>">Thêm</a>
+                            </span>
                         </div>
                     </div>
                 </div>

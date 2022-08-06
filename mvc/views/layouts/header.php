@@ -7,17 +7,23 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./public/ckeditor/ckeditor.js"></script>
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" href="./public/css/header.css">
     <link rel="stylesheet" href="./public/css/home.css">
     <link rel="stylesheet" href="./public/css/formula.css">
     <link rel="stylesheet" href="./public/css/news.css">
     <link rel="stylesheet" href="./public/css/tray.css">
+    <link rel="stylesheet" href="./public/css/add-formula.css">
+    <link rel="stylesheet" href="./public/css/table-tray.css">
     <link rel="stylesheet" href="./public/css/footer.css">
     <link rel="stylesheet" href="./public/css/detail_dish.css">
 
     <link rel="icon" href="./public/image/60.ico">
     <title>Home</title>
+    <script type="text/javascript">
+        var BaseUrl = '<?php echo SITE_URL; ?>';
+    </script>
 </head>
 <body>
     <header class="header">
@@ -47,27 +53,27 @@
                                         <span>Welcome</span>
                                     </div>
                                     <div class="input__control">
-                                        <input type="text" name="username" require class="form-control form__control"
+                                        <input type="text" name="username" require class="form-control form__controls"
                                             placeholder="Username">
                                     </div>
                                     <div class="input__control">
-                                        <input type="email" name="email" require class="form-control form__control"
+                                        <input type="email" name="email" require class="form-control form__controls"
                                             placeholder="Username@gmail.com">
                                     </div>
                                     <div class="input__control">
                                         <input type="password" name="password" require
-                                            class="form-control form__control" placeholder="Password">
+                                            class="form-control form__controls" placeholder="Password">
                                     </div>
                                     <div class="input__control">
-                                        <input type="password" class="form-control form__control"
+                                        <input type="password" class="form-control form__controls"
                                             placeholder="Re-password">
                                     </div>
                                     <div class="input__control">
-                                        <input type="address" name="address" class="form-control form__control"
+                                        <input type="address" name="address" class="form-control form__controls"
                                             placeholder="Address">
                                     </div>
                                     <div class="input__control">
-                                        <input type="phone" name="phone" class="form-control form__control"
+                                        <input type="phone" name="phone" class="form-control form__controls"
                                             placeholder="Phone">
                                     </div>
                                     <div class="form__check">
@@ -85,11 +91,11 @@
                                         <p>Please sign in to your account below</p>
                                     </div>
                                     <div class="input__control">
-                                        <input type="text" name="username1" class="form-control form__control"
+                                        <input type="text" name="username1" class="form-control form__controls"
                                             placeholder="Username">
                                     </div>
                                     <div class="input__control">
-                                        <input type="password" name="password1" class="form-control form__control"
+                                        <input type="password" name="password1" class="form-control form__controls"
                                             placeholder="Enter password">
                                     </div>
                                     <div class="keep__me">
@@ -110,7 +116,7 @@
                                         </div>
                                         <div class="tab__body ">
                                             <div class="tab__body--input">
-                                                <input type="email" class="form-control form__control" name="email2"
+                                                <input type="email" class="form-control form__controls" name="email2"
                                                     placeholder="Username@gmail.com">
                                             </div>
                                         </div>
@@ -148,7 +154,7 @@
                 <div class="menu__left">
                     <ul class="nav__bar">
                         <li class="nav__item ">
-                            <span class="logo"><a href="home">Cooky</a></span>
+                            <span class="logo"><a href="home">Kitchen</a></span>
                         </li>
                         <li class="nav__item">
                             <a href="home" class="nav__link">Home</a>
@@ -160,7 +166,7 @@
                             <a href="news" class="nav__link">Bài Viết</a>
                         </li>
                         <li class="nav__item">
-                            <a href="./blog.html" class="nav__link">Thêm công thức</a>
+                            <a href="addFormula" class="nav__link">Thêm công thức</a>
                         </li>
                         <li class="nav__item dropdown__menu">
                             <a href="tray" class="nav__link">Bàn ăn</a>

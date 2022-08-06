@@ -11,10 +11,6 @@ $(document).ready(function () {
 // hide/show tab sidebar
 $(document).ready(function () {
     $(".icon__bars").click(function () {
-        // Phương thức toggle() ẩn hiện 1 phần tử
-        // $(".sidebar").toggle();
-
-        // Phương thức fadeToggle() làm mờ phần tử khi ẩn/hiện.Giá trị trong hàm(hiệu ứng nhanh chậm)
         $(".sidebar").fadeToggle(300);
     });
 
@@ -51,7 +47,6 @@ function deleteNl(index){
           });
     }
     $("#current_" + index).remove();
-    
 }
 
 

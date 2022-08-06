@@ -31,9 +31,7 @@ class Product extends Controller {
                     'dish_image' => $dish_image,
                     'dish_desc' => $_POST['dish_desc'],
                     'dish_intro' => $_POST['dish_intro'],
-                    'dish_view' => 0,
                     'dish_price' => $_POST['dish_price'],
-                    'dish_like' => 0,
                     'catalog_id' => $_POST['cate_id'],
                     'user_id' => $userId
                 ];
@@ -53,9 +51,7 @@ class Product extends Controller {
                     'dish_image' => $dish_image,
                     'dish_desc' => $_POST['dish_desc'],
                     'dish_intro' => $_POST['dish_intro'],
-                    'dish_view' => 0,
                     'dish_price' => $_POST['dish_price'],
-                    'dish_like' => 0,
                     'catalog_id' => $_POST['cate_id'],
                     'user_id' => $userId
                 ];
@@ -114,9 +110,7 @@ class Product extends Controller {
                     'dish_image' => $image['name'] ?? 'no-image.png',
                     'dish_desc' => $_POST['dish_desc'],
                     'dish_intro' => $_POST['dish_intro'],
-                    'dish_view' => 0,
                     'dish_price' => $_POST['dish_price'],
-                    'dish_like' => 0,
                     'catalog_id' => $_POST['cate_id'],
                     'user_id' => 1
                 ];
@@ -126,9 +120,7 @@ class Product extends Controller {
                     'dish_name' => $_POST['dish_name'],
                     'dish_desc' => $_POST['dish_desc'],
                     'dish_intro' => $_POST['dish_intro'],
-                    'dish_view' => 0,
                     'dish_price' => $_POST['dish_price'],
-                    'dish_like' => 0,
                     'catalog_id' => $_POST['cate_id'],
                     'user_id' => 1
                 ];

@@ -103,7 +103,7 @@ h6 {
     text-decoration: none;
     padding-left: 55px;
     color: var(--color-white);
-    font-weight: 600;
+    font-weight: 400;
     font-size: 18px;
 }
 
@@ -274,7 +274,7 @@ h6 {
     color: #3547ec;
 }
 
-.box__overlay .form__control {
+.box__overlay .form__controls {
     padding: 0.6rem;
 }
 
