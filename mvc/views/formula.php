@@ -45,7 +45,7 @@
                         <a href="">
                             <img src="./admin/mvc/views/products/image/<?= $value['dish_image'] ?>" alt="">
                         </a>
-                        <a href="" class="cook__name">
+                        <a href="DetailDish/dishDetail/<?= $value['dish_id'] ?>" class="cook__name">
                             <?= $value['dish_name'] ?>
                         </a>
                         <div class="add__dish--table">

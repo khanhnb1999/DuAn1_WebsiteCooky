@@ -67,6 +67,14 @@ class BaseModel extends ConnectDb {
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    // Hàm lấy tất cả dữ liệu 2 điều kiện
+    public function getAll2Cond($table,$where1,$where2){
+        $sql = "SELECT * FROM $table WHERE $where1 AND $where2 ";
+        // SELECT * FROM A comments  INNER JOIN  B users ON A.user_id =.user_id WHERE A.user_id=1 AND A.dish_id = 71
+        $stmt = ($this->conn)->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 
     // Hàm lấy theo limit
     public function getAllLimit($table,$tableId,$sort,$condition1,$condition2) {
@@ -91,13 +99,5 @@ class BaseModel extends ConnectDb {
         $stmt= ($this->conn)->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
-
-    public function checkInput($arr) {
-        foreach ($arr as $value) {
-            if(empty($value)) {
-                
-            }
-        }
     }
 }

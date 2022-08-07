@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="./public/css/add-formula.css">
     <link rel="stylesheet" href="./public/css/table-tray.css">
     <link rel="stylesheet" href="./public/css/footer.css">
+    <link rel="stylesheet" href="./public/css/detail_dish.css">
+
     <link rel="icon" href="./public/image/60.ico">
     <title>Home</title>
     <script type="text/javascript">
