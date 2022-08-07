@@ -130,11 +130,9 @@
                             <div class="modal__footer">
                                 <div class="form__account">
                                     <ul class="group__account">
-                                        <li class="user-switch-form box-register d-none" data-tab="tab-register">
-                                            Sign up</li>
-                                        <li class="user-switch-form box-login" data-tab="tab-login">Login</li>
-                                        <li class="user-switch-form box-forgot" data-tab="tab-forgot">Forgot
-                                            password</li>
+                                        <li class="user-switch-form box-register d-none" data-tab="tab-register">Đăng kí</li>
+                                        <li class="user-switch-form box-login" data-tab="tab-login">Đăng nhập</li>
+                                        <li class="user-switch-form box-forgot" data-tab="tab-forgot">Quên mật khẩu</li>
                                     </ul>
                                 </div>
                             </div>

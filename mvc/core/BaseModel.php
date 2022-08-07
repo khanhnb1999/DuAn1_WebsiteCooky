@@ -92,4 +92,12 @@ class BaseModel extends ConnectDb {
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function checkInput($arr) {
+        foreach ($arr as $value) {
+            if(empty($value)) {
+                
+            }
+        }
+    }
 }
