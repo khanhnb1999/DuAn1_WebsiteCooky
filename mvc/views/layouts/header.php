@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script src="./public/ckeditor/ckeditor.js"></script>
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" href="./public/css/header.css">
@@ -152,7 +153,7 @@
                 <div class="menu__left">
                     <ul class="nav__bar">
                         <li class="nav__item ">
-                            <span class="logo"><a href="home">Kitchen</a></span>
+                            <span class="logo"><a href="home">Tasty</a></span>
                         </li>
                         <li class="nav__item">
                             <a href="home" class="nav__link">Home</a>
@@ -171,8 +172,8 @@
                         </li>
                     </ul>
                 </div>
-                <div class="search__right">
-                    <form action="" class="search__cooking">
+                <div class="search__rights">
+                    <form action="" class="search__cookings">
                         <div class="sr__input">
                             <input type="text" name="keyword" class="form_sr" placeholder="Tìm món ăn">
                         </div>

@@ -1,158 +1,156 @@
-
 .main_blog {
-    margin-top: 30px;
+        margin-top: 30px;
 }
 
 .blog1 {
-    background-color: var(--color-white);
-    border-radius: 20px;
-    padding: 30px;
+        background-color: var(--color-white);
+        border-radius: 20px;
+        padding: 30px;
 }
 
 .blog1_image img {
-    width: 100%;
-    border-radius: 10px;
+        width: 100%;
+        border-radius: 10px;
 }
 
 .blog1_text {
-    margin-top: 20px;
+        margin-top: 20px;
 }
 
 .blog1_text h5 a {
-    text-decoration: none;
-    color: var(--color-black);
-    margin-left: 10px;
-    font-size: 20px;
+        text-decoration: none;
+        color: var(--color-black);
+        margin-left: 10px;
+        font-size: 20px;
 }
 
 .blog1_text p {
-    margin-left: 10px;
-    margin-top: 10px;
+        margin-left: 10px;
+        margin-top: 10px;
 }
 
 .blog1_text p a {
-    text-decoration: none;
-    color: var(--color-black);
+        text-decoration: none;
+        color: var(--color-black);
 }
 
 .item__small {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
 }
 
 .item__small:last-child {
-    border-bottom: none;
+        border-bottom: none;
 }
 
 .item--image img {
-    width: 100px;
-    height: 100px;
-    border-radius: 10px;
+        width: 100px;
+        height: 100px;
+        border-radius: 10px;
 }
 
 .item--text {
-    margin-left: 20px;
+        margin-left: 20px;
 }
 
 .item--text h6 a {
-    text-decoration: none;
-    color: var(--color-black);
-    font-size: 20px;
+        text-decoration: none;
+        color: var(--color-black);
+        font-size: 20px;
 }
 
 .item--text p {
-    font-size: 12px;
-    color: var(--color-title);
-    padding: 10px 0;
+        font-size: 12px;
+        color: var(--color-title);
+        padding: 10px 0;
 }
 
 .blog2 {
-    background-color: var(--color-white);
-    border-radius: 10px;
-    margin:30px 0;
+        background-color: var(--color-white);
+        border-radius: 10px;
+        margin: 30px 0;
 }
 
 .blog-headline {
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 20px;
-    padding: 15px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 20px;
+        padding: 15px 0;
 }
 
 .blog2_text h5 {
-    color: var(--color-black);
-    font-size: 24px;
+        color: var(--color-black);
+        font-size: 24px;
 }
 
 .blog-search-box {
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 300px;
-    border: 1px solid rgb(146, 140, 140);
-    border-radius: 10px;
-    padding: 13px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 300px;
+        border: 1px solid rgb(146, 140, 140);
+        border-radius: 10px;
+        padding: 13px 20px;
 }
 
 .btn_search {
-    border: none;
-    background-color: var(--color-white);
+        border: none;
+        background-color: var(--color-white);
 }
 
 .search__input {
-    flex-basis: 90%;
+        flex-basis: 90%;
 }
 
 .form__control {
-    outline: none;
-    border: none;
+        outline: none;
+        border: none;
 }
 
 .group {
-    display:flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
 }
 
 .group-item {
-    flex-basis: 32%;
-    background-color: var(--color-white);
-    padding: 20px;
-    margin-bottom: 30px;
-    border-radius: 10px;
+        flex-basis: 32%;
+        background-color: var(--color-white);
+        padding: 20px;
+        margin-bottom: 30px;
+        border-radius: 10px;
 }
 
 .group-item img {
-    width: 413px;
-    height: 280px;
-    border-radius: 10px;
-    margin-bottom: 15px;
+        width: 413px;
+        height: 280px;
+        border-radius: 10px;
+        margin-bottom: 15px;
 }
 
 .group-item h4 {
-    margin-bottom: 15px;
+        margin-bottom: 15px;
 }
 
 .group-item h4 a {
-    text-decoration: none;
-    color: var(--color-black);
+        text-decoration: none;
+        color: var(--color-black);
 }
 
 .group-item p:hover {
-    color: var(--color-violet);
+        color: var(--color-violet);
 }
 
 .group-item strong {
-    display:inherit;
+        display: inherit;
 }
 
 .group-item em {
-    font-size:13px;
-    color:#bba4a4;
+        font-size: 13px;
+        color: #bba4a4;
 }
-

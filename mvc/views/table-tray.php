@@ -155,7 +155,7 @@
                 <div class="menu__left">
                     <ul class="nav__bar">
                         <li class="nav__item ">
-                            <span class="logo"><a href="home">Cooky</a></span>
+                            <span class="logo"><a href="home">Tasty</a></span>
                         </li>
                         <li class="nav__item">
                             <a href="<?php echo SITE_URL; ?>/home" class="nav__link">Home</a>
