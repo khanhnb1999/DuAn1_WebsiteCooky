@@ -1,15 +1,6 @@
 <?php
 
 class DetailDish extends controller {
-    // function index() {
-    //     $getModel = $this->model("DetailDishModel");
-    //     $getAllNews = $getModel->getAllLimit("dish","dish_id","DESC",0,12);
-    //     $this->view("news",
-    //     [
-    //         "news" => $getAllNews
-    //     ]);
-    // }
-
     function dishDetail($id) {
         $getModel = $this->model("DetailDishModel");
         $dishDetail = $getModel->getOne("dish","dish_id=$id");
@@ -22,6 +13,7 @@ class DetailDish extends controller {
             // "new" => $result
         ]);
     }
+    
     
     
 }

@@ -253,24 +253,26 @@
                         <input type="text" name="comment" class="form-control space__input" placeholder="Nhập bình luận...">
                     </div>
                     <div class="send__message">
-                        <button type="submit" class="btn btn-info">Gửi bình luận</button>
+                        <button type="submit" class="btn btn-success">Gửi bình luận</button>
                     </div>
                 </div>
             </form>
         </div>
-        <div class="your__name">
-            <div class="avatar__user">
-                <!-- lay icon nem vao day -->
+        <?php foreach ($data['all_Cmt'] as $value3):?>
+       <div class="show_comment" >
+            <div class="img_user col-md-1">
+                <h4><img src="../../public/image/60.ico" alt=""></h4>
             </div>
-            <div class="message__content">
-                <div class="name__custormer">
-                    <!-- ten nguoi binh luan -->
+            <div class="cmt_user col-md-8">
+                <div class="name_user">
+                    <h4><b><?= $value3['user_name']?></b></h4>
                 </div>
-                <div class="name__comment">
-                    <!-- ten noi dung binh luan -->
+                <div class="detail_cmt">
+                    <p><?= $value3['content']?></p>
                 </div>
             </div>
-        </div>
+       </div>
+       <?php endforeach; ?>
     </div>
 
 

@@ -35,10 +35,10 @@
                 <?php foreach ($data["dish"] as $value) : ?>
                     <div class="first__item">
                         <div class="cook__detail">
-                            <a href="home/detailDish/<?= $value['dish_id'] ?? "" ?>">
+                            <a href="DetailDish/dishDetail/<?= $value['dish_id'] ?>">
                                 <img src="./admin/mvc/views/products/image/<?= $value['dish_image'] ?>" alt="">
                             </a>
-                            <a href="" class="cook__name">
+                            <a href="DetailDish/dishDetail/<?= $value['dish_id'] ?>" class="cook__name">
                                 <?= $value['dish_name'] ?>
                             </a>
                             <div class="add__dish--table">
@@ -62,7 +62,7 @@
                 <div class="slider__horizontal" id="slider-food">
                     <?php foreach ($data["outstanding"] as $value) : ?>
                         <div class="list__cate">
-                            <a href="">
+                            <a href="DetailDish/dishDetail/<?= $value['dish_id'] ?>">
                                 <img src="./admin/mvc/views/products/image/<?= $value['dish_image'] ?>" alt="">
                             </a>
                             <a href="" class="cook__name">

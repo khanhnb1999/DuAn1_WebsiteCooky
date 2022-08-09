@@ -8,21 +8,26 @@ class Catalog extends Controller {
     // 
     public function index($id) {
         $getModel = $this->model("CatalogModel");
-        $result = $getModel->paging("catalogs","catalog_id",3,$id);
+        $result = $getModel->paging("catalogs","catalog_id",8,$id);
         $totalRecord = $getModel->totalRecord("catalogs");
         $this->view("catalogs/index",
         [
             "catalog" => $result,
             "totalRecord" => $totalRecord,
             "page" => $id,
-            "page_one" => 3
+            "page_one" => 8
         ]);
     }
 
     // Thêm 
     public function add(){
+        $err = [
+        ];
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
             $catalog_name = $_POST['catalog_name'];
+            if(empty($catalog_name)){
+                $err['catalog_name'] = "mày chưa nhập tên cata";
+            }
             $catalog_image = "no_image.jpg";
             
             $catalog_image = $_FILES['fileToUpload']['name'];
@@ -30,12 +35,16 @@ class Catalog extends Controller {
                 'catalog_image' => $catalog_image,
                 'catalog_name' => $catalog_name,
             ];
-            $getModel = $this->model("CatalogModel");
+            if(empty($err)){
+                $getModel = $this->model("CatalogModel");
             $getModel->insert("catalogs",$data);
             move_uploaded_file($_FILES['fileToUpload']['tmp_name'], './mvc/views/catalogs/image/' .$catalog_image);
             header("Location: ".SITE_URL."/catalog/index/1");
+            }
         }
-        $this->view("catalogs/add");
+        $this->view("catalogs/add",[
+            "err"=>$err
+        ]);
     }
 
     // Sửa

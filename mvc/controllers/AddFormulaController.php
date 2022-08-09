@@ -7,6 +7,7 @@ class AddFormula extends controller {
     }
 
     function add() {
+        // $arr = [];  
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
             $data = [
                 "dish_name" => $_POST["dish_name"],
