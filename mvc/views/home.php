@@ -35,7 +35,7 @@
                 <?php foreach ($data["dish"] as $value) : ?>
                     <div class="first__item">
                         <div class="cook__detail">
-                            <a href="DetailDish/dishDetail/<?= $value['dish_id'] ?>">
+                            <a href="<?= SITE_URL ?>/formula/detailDish/<?= $value["dish_id"] ?>">
                                 <img src="./admin/mvc/views/products/image/<?= $value['dish_image'] ?>" alt="">
                             </a>
                             <a href="DetailDish/dishDetail/<?= $value['dish_id'] ?>" class="cook__name">
@@ -62,7 +62,7 @@
                 <div class="slider__horizontal" id="slider-food">
                     <?php foreach ($data["outstanding"] as $value) : ?>
                         <div class="list__cate">
-                            <a href="DetailDish/dishDetail/<?= $value['dish_id'] ?>">
+                            <a href="<?= SITE_URL ?>/formula/detailDish/<?= $value["dish_id"] ?>">
                                 <img src="./admin/mvc/views/products/image/<?= $value['dish_image'] ?>" alt="">
                             </a>
                             <a href="" class="cook__name">
@@ -89,7 +89,7 @@
                 <?php foreach ($data["news"] as $value) : ?>
                     <div class="latest__news">
                         <div class="info__image">
-                            <a href="news/newDetail/<?= $value['new_id'] ?>">
+                            <a href="<?= SITE_URL ?>news/newDetail/<?= $value['new_id'] ?>">
                                 <img src="./admin/mvc/views/news/image/<?= $value['image_new'] ?>" alt="">
                             </a>
                         </div>

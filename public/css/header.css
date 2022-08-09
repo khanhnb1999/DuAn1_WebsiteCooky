@@ -126,7 +126,7 @@ h6 {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 15px 15px;
+        padding: 10px 15px;
 }
 
 .sr__input {
@@ -137,7 +137,7 @@ h6 {
 .form_sr {
         border: none;
         outline: none;
-        font-size: 14px;
+        font-size: 18px;
         font-weight: 600;
 }
 

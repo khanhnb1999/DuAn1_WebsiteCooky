@@ -3,7 +3,7 @@
                 <?php foreach ($data["getOneDish"] as $value) : ?>
                 <div class="firsts__item">
                         <div class="cooks__detail">
-                        <a href="">
+                        <a href="<?= SITE_URL ?>/formula/detailDish/<?= $value["dish_id"] ?>">
                                 <img src="./admin/mvc/views/products/image/<?= $value['dish_image'] ?>" alt="">
                         </a>
                         <a href="" class="cook__name">

@@ -139,7 +139,7 @@
                                 <div class="menu__left">
                                 <ul class="nav__bar">
                                         <li class="nav__item ">
-                                        <span class="logo"><a href="<?= SITE_URL ?>/home">Cooky</a></span>
+                                        <span class="logo"><a href="<?= SITE_URL ?>/home">Tasty</a></span>
                                         </li>
                                         <li class="nav__item">
                                         <a href="<?= SITE_URL ?>/home" class="nav__link">Home</a>
@@ -216,9 +216,7 @@
                                                 <h4>Các bước thực hiện</h4>
                                         </div>
                                         <div class="description__step--dish">
-                                                <?php $detail = $data['dishDetail'];
-                                                        echo $detail['dish_intro']
-                                                ?>
+                                                <?=  $data["dishDetail"]["dish_intro"] ?>
                                         </div>
                                </div>
                         </div>
@@ -273,7 +271,6 @@
                         </div>
                 </div>
         </div>
-
         <div class="footer">
                 <div class="main__footer">
                 <div class="item regulation policy">
@@ -308,7 +305,7 @@
                 <div class="item about__as">
                         <div class="logo__store">
                         <h6>Về chúng tôi</h6>
-                        <!-- <a href=""><img src="./admin/settings/image/" alt=""></a> -->
+                        <a href=""><img src="./admin/settings/image/" alt=""></a>
                         <span>
                                 CÔNG TY CỔ PHẦN COOKY
                                 Giấy đăng ký kinh doanh số 0314498604 do Sở Kế hoạch Đầu tư TP Hồ Chí Minh cấp lần đầu ngày
@@ -319,75 +316,23 @@
                         </span>
                         </div>
                 </div>
-<<<<<<< HEAD
                 </div>
                 <div class="footer__sidebar">
-                <div class="footer__sidebar--message">
-                        <a href="" class="message__link"><i class="fab fa-facebook"></i></a>
-                </div>
-                <div class="footer__sidebar--message">
-                        <a href="" class="message__link"><i class="fab fa-facebook-messenger"></i></a>
-                </div>
-                <div class="footer__sidebar--message">
-                        <a href="" class="message__link"><i class="fab fa-google"></i></a>
-=======
-            </div>
-
-        </div>
-        <!-- end main content -->
-        <div class="comments__customer">
-            <form action="">
-                <div class="form__groups">
-                    <div class="input__message">
-                        <input type="text" name="comment" class="form-control space__input" placeholder="Nhập bình luận...">
-                    </div>
-                    <div class="send__message">
-                        <button type="submit" class="btn btn-success">Gửi bình luận</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-        <?php foreach ($data['all_Cmt'] as $value3):?>
-       <div class="show_comment" >
-            <div class="img_user col-md-1">
-                <h4><img src="../../public/image/60.ico" alt=""></h4>
-            </div>
-            <div class="cmt_user col-md-8">
-                <div class="name_user">
-                    <h4><b><?= $value3['user_name']?></b></h4>
-                </div>
-                <div class="detail_cmt">
-                    <p><?= $value3['content']?></p>
-                </div>
-            </div>
-       </div>
-       <?php endforeach; ?>
-    </div>
-
-
-    <footer class="footer">
-        <div class="text__footer">
-            <div class=" blog regulation">
-                <h6>Quy định - chính sách</h6>
-                <p>Hướng dẫn đặt hàng và thanh toán</p>
-                <p>Chính sách giao hàng và đổi trả</p>
-                <p>Chính sách bảo mật thông tin</p>
-            </div>
-            <div class="blog category">
-                <h6>Danh mục</h6>
-                <div class="list__menu">
-                    <a href="#">Home</a>
-                    <a href="#">Công thức</a>
-                    <a href="#">Blog</a>
-                    <a href="#">Tạo món</a>
-                    <a href="#">Mâm cơm</a>
->>>>>>> 6e83cdb69648f35b2ba9e928562e0020177b6a7c
-                </div>
-                <div class="footer__sidebar--message">
-                        <a href="" class="message__link"><i class="fab fa-instagram"></i></a>
+                        <div class="footer__sidebar--message">
+                                <a href="" class="message__link"><i class="fab fa-facebook"></i></a>
+                        </div>
+                        <div class="footer__sidebar--message">
+                                <a href="" class="message__link"><i class="fab fa-facebook-messenger"></i></a>
+                        </div>
+                        <div class="footer__sidebar--message">
+                                <a href="" class="message__link"><i class="fab fa-google"></i></a>
+                        </div>
+                        <div class="footer__sidebar--message">
+                                <a href="" class="message__link"><i class="fab fa-instagram"></i></a>
+                        </div>
                 </div>
                 </div>
-        </div>
+        </footer>
         <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <script type="text/javascript" src="../../public/script/main.js"></script>

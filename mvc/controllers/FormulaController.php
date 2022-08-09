@@ -50,7 +50,7 @@ class Formula extends controller {
                 $getModel = $this->model("FormulaModel");
                 $cateId = $id;
                 $ingredientId = $id;
-                $result = $getModel->getOne("dish", $cateId);
+                $result = $getModel->getOne("dish", "dish_id=$cateId");
                 $ingredient = $getModel->getIngredient($ingredientId);
                 $dishId = $result['catalog_id'];
                 $dishTop = $getModel->getDishTop($dishId);
