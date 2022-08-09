@@ -8,7 +8,7 @@
 <div class="scroll__product" id="has-content"></div>
 
 <session class="session">
-        <form action="<?= SITE_URL?>/addFormula/updateFormula" id="form-1" method="POST" enctype="multipart/form-data" >
+        <form action="" id="form-1" method="POST" enctype="multipart/form-data" >
                 <div class="grid__app">
                         <div class="add__formula">
                                 <div class="title__add-formula">
@@ -33,7 +33,7 @@
                                                 nhớ chọn "<strong>Ảnh đại diện</strong>" là một hình thành phẩm thật hấp dẫn nhé!
                                                 </p>
                                         </div>
-                                        <div class="input__group--dish">
+                                        <div class="both__name">
                                                 <div class="dish-name mb-3">
                                                         <strong>2.1 - Tên món ăn</strong>
                                                         <input type="text" id="filter-name" name="dish_name" data-tab="name-error"
@@ -50,39 +50,39 @@
                                 </div>
 
                                 <div class="step">
-                                <div class="introduction__step">
-                                        <p>
-                                                <span>Bước 3 :</span>&nbsp;Nhập thông tin nguyên vật liệu cần chuẩn bị cho món ăn của bạn.
-                                        </p>
-                                </div>
-                                <div class="add__contents">
-                                        <div class="add__fields content_row info__ingredient">
-                                                <div class=" space-1">
-                                                        <input type="text" name="ingredient[0][name]" id="igr-name" data-tab="igr-name-error"
-                                                        class="form-control p-3 border" placeholder="Tên nguyên liệu...">
-                                                        <span id="igr-name-error"></span>
-                                                </div>
-                                                <div class=" space-2">
-                                                        <input type="text" name="ingredient[0][quantity]" id="igr-quantity" data-tab="igr-quantity-error"
-                                                        class="form-control p-3 border" placeholder="Số lượng...">
-                                                        <span id="igr-quantity-error"></span>
-                                                </div>
-                                                <div class=" space-3">
-                                                        <input type="text" name="ingredient[0][unit]" id="igr-unit" data-tab="igr-unit-error"
-                                                        class="form-control p-3 border" placeholder="Đơn vị...">
-                                                        <span id="igr-unit-error"></span>
-                                                </div>
-                                                <div class=" space-4">
-                                                        <input type="text" name="ingredient[0][note]" id="igr-note"
-                                                        class="form-control p-3" placeholder="Ghi chú...">
-                                                </div>
-                                        </div>    
-                                </div>
-                                <div class="product-add">
-                                        <button type="button" id="btn-click" class="btn btn-success mb-3">
-                                                <i class="fas fa-plus"></i>
-                                        </button>
-                                </div>
+                                        <div class="introduction__step">
+                                                <p>
+                                                        <span>Bước 3 :</span>&nbsp;Nhập thông tin nguyên vật liệu cần chuẩn bị cho món ăn của bạn.
+                                                </p>
+                                        </div>
+                                        <div class="add__contents">
+                                                <div class="add__fields content_row info__ingredient">
+                                                        <div class=" space-1">
+                                                                <input type="text" name="ingredient[0][name]" id="igr-name" data-tab="igr-name-error"
+                                                                class="form-control p-3 border" placeholder="Tên nguyên liệu...">
+                                                                <span id="igr-name-error"></span>
+                                                        </div>
+                                                        <div class=" space-2">
+                                                                <input type="text" name="ingredient[0][quantity]" id="igr-quantity" data-tab="igr-quantity-error"
+                                                                class="form-control p-3 border" placeholder="Số lượng...">
+                                                                <span id="igr-quantity-error"></span>
+                                                        </div>
+                                                        <div class=" space-3">
+                                                                <input type="text" name="ingredient[0][unit]" id="igr-unit" data-tab="igr-unit-error"
+                                                                class="form-control p-3 border" placeholder="Đơn vị...">
+                                                                <span id="igr-unit-error"></span>
+                                                        </div>
+                                                        <div class=" space-4">
+                                                                <input type="text" name="ingredient[0][note]" id="igr-note"
+                                                                class="form-control p-3" placeholder="Ghi chú...">
+                                                        </div>
+                                                </div>    
+                                        </div>
+                                        <div class="product-add">
+                                                <button type="button" id="btn-click" class="btn btn-success mb-3">
+                                                        <i class="fas fa-plus"></i>
+                                                </button>
+                                        </div>
                                 </div>
 
                                 <div class="step">
@@ -92,8 +92,8 @@
                                                 </p>
                                         </div>
                                         <div class="input__step--dish">
-                                                <textarea type="text" name="dish_desc"  id="editor2" class="form-control  filter-description" rows="10"  data-tab="desc-error"></textarea>
-                                                <span id="desc-error"></span>
+                                                <span id="description-error"></span>
+                                                <textarea type="text" name="dish_desc" id="editor1"  class="form-control  filter-desc" rows="10"  data-tab="description-error"></textarea>
                                         </div>
                                 </div>
 

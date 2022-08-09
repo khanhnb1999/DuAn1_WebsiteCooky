@@ -150,16 +150,16 @@
                             <span class="logo"><a href="home">Cooky</a></span>
                         </li>
                         <li class="nav__item">
-                            <a href="home" class="nav__link">Home</a>
+                            <a href="<?php echo SITE_URL; ?>/home" class="nav__link">Home</a>
                         </li>
                         <li class="nav__item">
-                            <a href="formula" class="nav__link">Công Thức</a>
+                            <a href="<?php echo SITE_URL; ?>/formula" class="nav__link">Công Thức</a>
                         </li>
                         <li class="nav__item">
-                            <a href="news" class="nav__link">Bài Viết</a>
+                            <a href="<?php echo SITE_URL; ?>/news" class="nav__link">Bài Viết</a>
                         </li>
                         <li class="nav__item">
-                            <a href="./blog.html" class="nav__link">Thêm công thức</a>
+                            <a href="<?php echo SITE_URL; ?>/addFormula" class="nav__link">Thêm công thức</a>
                         </li>
                         <li class="nav__item dropdown__menu">
                             <a href="tray" class="nav__link">Bàn ăn</a>

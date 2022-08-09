@@ -155,7 +155,7 @@
                 <div class="menu__left">
                     <ul class="nav__bar">
                         <li class="nav__item ">
-                            <span class="logo"><a href="home">Tasty</a></span>
+                            <span class="logo"><a href="<?php echo SITE_URL; ?>/home">Tasty</a></span>
                         </li>
                         <li class="nav__item">
                             <a href="<?php echo SITE_URL; ?>/home" class="nav__link">Home</a>
@@ -167,15 +167,15 @@
                             <a href="<?php echo SITE_URL; ?>/news" class="nav__link">Bài Viết</a>
                         </li>
                         <li class="nav__item">
-                            <a href="./blog.html" class="nav__link">Thêm công thức</a>
+                            <a href="<?php echo SITE_URL; ?>/addFormula" class="nav__link">Thêm công thức</a>
                         </li>
                         <li class="nav__item dropdown__menu">
                             <a href="<?php echo SITE_URL; ?>/tray" class="nav__link">Bàn ăn</a>
                         </li>
                     </ul>
                 </div>
-                <div class="search__right">
-                    <form action="" class="search__cooking">
+                <div class="search__rights">
+                    <form action="" class="search__cookings">
                         <div class="sr__input">
                             <input type="text" name="keyword" class="form_sr" placeholder="Tìm món ăn">
                         </div>

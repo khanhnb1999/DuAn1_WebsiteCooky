@@ -49,9 +49,9 @@
                                 <i class="fas fa-times"></i>
                             </button>
                             <div class="modal__body">
-                                <div id="tab-register" class="user-tab-body active">
+                                <div id="tab-register" class="user-tab-body ">
                                     <div class="title">
-                                        <span>Welcome</span>
+                                        <span>Đăng kí</span>
                                     </div>
                                     <div class="input__control">
                                         <input type="text" name="username" require class="form-control form__controls"
@@ -86,10 +86,10 @@
                                     </div>
                                 </div>
                                 <!-- form registration -->
-                                <div id="tab-login" class="user-tab-body">
+                                <div id="tab-login" class="user-tab-body active">
                                     <div class="form__login__title">
-                                        <h4>Welcome back</h4>
-                                        <p>Please sign in to your account below</p>
+                                        <h4>Đăng nhập</h4>
+                                        <p class="mt-3">Vui lòng đăng nhập vào tài khoản hiện có</p>
                                     </div>
                                     <div class="input__control">
                                         <input type="text" name="username1" class="form-control form__controls"
@@ -112,8 +112,8 @@
                                 <div id="tab-forgot" class="user-tab-body recover__password">
                                     <div class="tab__password">
                                         <div class="tab__header">
-                                            <h3>Fogot your password</h3>
-                                            <p>Use the form below to recover it.</p>
+                                            <h3>Quên mật khẩu</h3>
+                                            <p>Sử dụng biểu mẫu để khôi phục nó</p>
                                         </div>
                                         <div class="tab__body ">
                                             <div class="tab__body--input">
@@ -133,8 +133,8 @@
                             <div class="modal__footer">
                                 <div class="form__account">
                                     <ul class="group__account">
-                                        <li class="user-switch-form box-register d-none" data-tab="tab-register">Đăng kí</li>
-                                        <li class="user-switch-form box-login" data-tab="tab-login">Đăng nhập</li>
+                                        <li class="user-switch-form box-register " data-tab="tab-register">Đăng kí</li>
+                                        <li class="user-switch-form box-login d-none" data-tab="tab-login">Đăng nhập</li>
                                         <li class="user-switch-form box-forgot" data-tab="tab-forgot">Quên mật khẩu</li>
                                     </ul>
                                 </div>

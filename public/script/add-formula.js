@@ -11,7 +11,7 @@ function validateTypeAndSize(loadFile) {
         var typeFile = $(loadFile).val().split('.').pop().toLowerCase();
         var arrTypeFile = ['jpeg', 'jpg', 'png'];
 
-        if ($.inArray(typeFile, arrTypeFile) == -1) {
+        if ($.inArray(typeFile, arrTypeFile) ==  -1) {
                 $("#image-error").text("Kiểu file bạn tải lên phải là: jpeg-jpg-png").show().css("color", "red");
         } else {
                 var size = parseFloat($("#filter-image")[0].files[0].size / 1024).toFixed(2);
@@ -29,7 +29,7 @@ $(document).ready(function () {
                 var tab = $(this).data("tab");
                 $("#" + tab).hide();
         });
-
+        
         // Add ingredient
         var index = $(".content_row").length;
         $("#btn-click").click(function () {
@@ -50,8 +50,10 @@ $(document).ready(function () {
 
         // validate form input
         $("#form-1").submit(function (event) {
-                $("#desc-error").remove();
                 var formData = $(this).serialize();
+                var getImage = $("#filter-image").val().split('\\').pop();
+                console.log(getImage);
+                console.log(formData);
                 $.ajax({
                         type: "POST",
                         url: BaseUrl + "/addFormula/updateFormula",
@@ -71,10 +73,10 @@ $(document).ready(function () {
                                         $("#name-error").text(data.message.dish_name).css("color", "red");
                                 }
 
-                                // if(data.message.fileToUpload) {
-                                //     $("#filter-image").addClass("is-invalid border-danger");
-                                //     $("#image-error").text(data.message.fileToUpload).css("color","red");
-                                // }
+                                if(data.message.image) {
+                                    $("#filter-image").addClass("is-invalid border-danger");
+                                    $("#image-error").text(data.message.image).css("color","red");
+                                }
 
                                 if (data.message.name) {
                                         $("#igr-name").addClass("is-invalid border-danger");
@@ -90,10 +92,6 @@ $(document).ready(function () {
                                         $("#igr-unit").addClass("is-invalid border-danger");
                                         $("#igr-unit-error").text(data.message.unit).css("color", "red");
                                 }
-
-                                // if(data.message.dish_description) {
-                                //         $("#desc-error").text(data.message.dish_description).css("color", "red");
-                                // }
                                 
                         } else {
                                 $("#has-content").html(data.message);

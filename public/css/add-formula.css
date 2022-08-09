@@ -132,8 +132,14 @@
         color: #002cee;
 }
 
-.input__group--dish {
-        width: 400px;
+.both__name{
+        display:flex;
+        justify-content: space-between;
+        width: 803px;
+}
+
+.dish-name {
+        width:300px;
 }
 
 .add__fields {

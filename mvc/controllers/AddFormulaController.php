@@ -7,18 +7,10 @@ class AddFormula extends controller {
         }
 
         function updateFormula() {
-                $getModel = $this->model("AddFormulaModel");
-                $dish_image = $_FILES['fileToUpload']['name'] ?? "";
-                $data = [
-                        "name" => $_POST['dish_name'],
-                        "image" => $dish_image,
-                        "intro" => $_POST['dish_intro'],
-                        "dish_desc" =>$_POST['dish_desc']
-                ];
-                $getModel->insert("tbl_dish", $data);
-                move_uploaded_file($_FILES['fileToUpload']['tmp_name']);
                 $message = [];
                 $data = [];
+                $dataIgr = $_POST['ingredient'];
+                $image = $_FILES['fileToUpload'];
                 if(empty($_POST['dish_intro'])) {
                         $message["dish_intro"] = "Bạn phải giới thiệu món ăn";
                 }
@@ -27,15 +19,9 @@ class AddFormula extends controller {
                         $message["dish_name"] = "Bạn phải nhập tên món ăn";
                 }
 
-                // if(empty($_POST['fileToUpload'])) {
-                //         $message["fileToUpload"] = "Bạn phải mô tả các bước thực hiện";
-                // }
-
-                // if(empty($_FILES['fileToUpload'])) {
-                //     $message["fileToUpload"] = "Bạn phải chọn ảnh";
-                // }
-
-                $dataIgr = $_POST['ingredient'];
+                if(empty($image["name"])) {
+                        $message["image"] = "Bạn phải chọn ảnh";
+                }
 
                 if(empty($dataIgr[0]["name"])) {
                         $message["name"] = "Bạn phải chọn nguyên liệu";
