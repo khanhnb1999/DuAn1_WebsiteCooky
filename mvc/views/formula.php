@@ -8,29 +8,29 @@
 <div class="main_content">
     <div class="content__detail">
         <div class="main__title">
-            <h4>Công thức</h4>
+                <h4>Công thức</h4>
         </div>
         <div class="filter-bar">
-            <div class="main__search">
-                <div class="dropdown__selected">
-                    <span id="cooky-cate" class="horizontal">Loại món
+        <div class="main__search">
+            <div class="dropdown__selected">
+                <span id="cooky-cate" class="horizontal">Loại món
                         <i class="far fa-angle-down"></i>
-                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="search__filter">
+            <?php foreach ($data["cate"] as $key => $value) : ?>
+            <div class="filter__item">
+                <div class="form-check">
+                    <label class="form-check-label" for="<?= $value["catalog_id"] ?>">
+                        <?= $value["catalog_name"] ?>
+                    </label>
+                    <input type="checkbox" class="form-check-input" id="<?= $value["catalog_id"] ?>"
+                    onclick="listCate(<?= $value['catalog_id'] ?>)">
                 </div>
             </div>
-            <div class="search__filter">
-                <?php foreach ($data["cate"] as $key => $value) : ?>
-                    <div class="filter__item">
-                        <div class="form-check">
-                            <label class="form-check-label" for="<?= $value["catalog_id"] ?>">
-                               <?= $value["catalog_name"] ?>
-                            </label>
-                            <input type="checkbox" class="form-check-input" id="<?= $value["catalog_id"] ?>"
-                            onclick="listCate(<?= $value['catalog_id'] ?>)">
-                        </div>
-                    </div>
-                <?php endforeach; ?>
-            </div>
+            <?php endforeach; ?>
+        </div>
         </div>
     </div>
 

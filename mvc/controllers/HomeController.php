@@ -9,10 +9,10 @@ class Home extends Controller {
         $getAllNew = $getModel->getAllLimit("news","new_id","DESC",0,3);
         $pr = $getModel->getAllLimit("dish","dish_id","DESC",0,8);
         $this->view("home",[
-            "home" => $cate,
-            "dish" => $pr,
-            "outstanding" => $getAllDish,
-            "news" => $getAllNew
+                "home" => $cate,
+                "dish" => $pr,
+                "outstanding" => $getAllDish,
+                "news" => $getAllNew
         ]);
     }
 
@@ -20,7 +20,7 @@ class Home extends Controller {
         $getModel = $this->model("HomeModel");
         $newDetail = $getModel->getOne("dish","dish_id=$id");
         $this->view("new_dish",[
-            "dish" => $newDetail
+                "dish" => $newDetail
         ]);
     }
 }

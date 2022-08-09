@@ -1,24 +1,92 @@
 <?php
 
 class AddFormula extends controller {
-    function index() {
-        $getModel = $this->model("AddFormulaModel");
-        $this->view("add-formula");
-    }
-
-    function add() {
-        // $arr = [];  
-        if($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $data = [
-                "dish_name" => $_POST["dish_name"],
-                "dish_image" => $_POST["fileToUpload"],
-                "dish_desc" => $_POST["dish_desc"],
-                "dish_intro" => $_POST["dish_intro"],
-                "dish_view" => 1,
-                "dish_like" => 1,
-            ];
+        function index() {
+                $getModel = $this->model("AddFormulaModel");
+                $this->view("add-formula");
         }
-    }
+
+        function updateFormula() {
+                $getModel = $this->model("AddFormulaModel");
+                $dish_image = $_FILES['fileToUpload']['name'] ?? "";
+                $data = [
+                        "name" => $_POST['dish_name'],
+                        "image" => $dish_image,
+                        "intro" => $_POST['dish_intro'],
+                        "dish_desc" =>$_POST['dish_desc']
+                ];
+                $getModel->insert("tbl_dish", $data);
+                move_uploaded_file($_FILES['fileToUpload']['tmp_name']);
+                $message = [];
+                $data = [];
+                if(empty($_POST['dish_intro'])) {
+                        $message["dish_intro"] = "Bạn phải giới thiệu món ăn";
+                }
+
+                if(empty($_POST['dish_name'])) {
+                        $message["dish_name"] = "Bạn phải nhập tên món ăn";
+                }
+
+                // if(empty($_POST['fileToUpload'])) {
+                //         $message["fileToUpload"] = "Bạn phải mô tả các bước thực hiện";
+                // }
+
+                // if(empty($_FILES['fileToUpload'])) {
+                //     $message["fileToUpload"] = "Bạn phải chọn ảnh";
+                // }
+
+                $dataIgr = $_POST['ingredient'];
+
+                if(empty($dataIgr[0]["name"])) {
+                        $message["name"] = "Bạn phải chọn nguyên liệu";
+                }
+
+                if(empty($dataIgr[0]["quantity"])) {
+                        $message["quantity"] = "Bạn phải chọn số lượng";
+                }
+
+                if(empty($dataIgr[0]["unit"])) {
+                        $message["unit"] = "Bạn phải chọn đơn vị";
+                }
+                
+                if(!empty($message)) {
+                        $data['success'] = false;
+                        $data['message'] = $message;
+                } else {
+                        $data['success'] = true;
+                        $data['message'] = '
+                        <div class="model__open" id="current-content">
+                                <div class="model__hidden">
+                                        <div class="has__content--show">
+                                        <div class="button__current">
+                                                <button onclick="currentBox()"><i class="far fa-times"></i></button>
+                                        </div>
+                                        <div class="box__head">
+                                                <p>Bạn đã thêm món ăn thành công</hp>
+                                        </div>
+                                        <div class="box__body">
+                                                <div class="box__body--small">
+                                                <div class="body-image">
+                                                        <img src="admin/mvc/views/products/image/ba chỉ luộc han quốc.jpg" alt="">
+                                                </div>
+                                                <div class="body-intro">
+                                                        <p>Kem đậu xanh</p>
+                                                        <span>Bộ sưu tập của bạn gồm 3 món ăn</span>
+                                                </div>
+                                                </div>
+                                        </div>
+                                        <div class="box__footer">
+                                                <div class="view-formula">
+                                                <a href="">Xem món ăn của bạn</a>
+                                                </div>
+                                        </div>
+                                        </div>
+                                </div>
+                        </div>
+                ';
+                }
+                echo json_encode($data);
+        }
 }
 
 ?>

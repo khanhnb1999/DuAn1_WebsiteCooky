@@ -1,63 +1,190 @@
 .grid__app {
-    margin: 40px 350px;
+        margin: 40px 350px;
+}
+
+/* Use Ajax display tab product */
+.model__open {
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: black;
+        background-color: rgba(0, 0, 0, 0.4);
+        padding-top: 230px;
+        /* display: none; */
+        /* transition: 0.3s; */
+}
+
+.model__hidden {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+
+.has__content--show {
+        display: flex;
+        flex-direction: column;
+        width: 450px;
+        height: auto;
+        background-color: white;
+        border-radius: 3px;
+        position: relative;
+        padding: 25px;
+}
+
+.button__current {
+        position: absolute;
+        right: 7px;
+        top: 5px;
+        z-index: 1;
+}
+
+.button__current button {
+        background-color: transparent !important;
+        border: none;
+        font-size: 20px;
+        font-weight: 600;
+        color: #c0aeae;
+}
+
+.box__head {
+        text-align: center;
+        font-size: 21px;
+        font-weight: 460px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #efefef;
+}
+
+.box__body {
+        margin: 20px 0;
+        border-bottom: 1px solid #efefef;
+        padding-bottom: 23px;
+}
+
+.box__body--small {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+}
+
+.body-intro {
+        flex-basis: 60%;
+}
+
+.body-intro p {
+        font-size: 19px;
+        font-weight: 600;
+}
+
+.body-image img {
+        border-radius: 5px;
+        border: 1px solid #dfd8d8;
+        padding: 5px;
+        width: 140px;
+}
+
+.box__footer {
+        margin-top: 12px;
+}
+
+.box__head p {
+        margin: 0;
+}
+
+.view-formula {
+        text-align: center;
+}
+
+.view-formula a {
+        text-decoration: none;
+        background-color: #566ce0;
+        color: white;
+        padding: 15px 80px;
+        transition: 0.3s;
+}
+
+.view-formula a:hover {
+        background-color: #ee993d;
+        color: white;
 }
 
 .add__formula {
-    background-color: white;
-    padding: 20px;
+        background-color: white;
+        padding: 20px;
 }
 
 .title__add-formula p {
-    font-size:40px;
-    margin: 0;
+        font-size: 40px;
+        margin: 0;
 }
 
 .step {
-    padding: 10px 0;
+        padding: 10px 0;
 }
 
 .introduction__step span {
-    font-size:23px;
-    font-weight: 650;
-    text-decoration: underline;
-    color: #002cee;
+        font-size: 23px;
+        font-weight: 650;
+        text-decoration: underline;
+        color: #002cee;
 }
 
 .input__group--dish {
-    width:400px;
+        width: 400px;
 }
 
-.add__fields  {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 1100px;
-    margin-bottom: 20px;
+.add__fields {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+}
+
+.info__ingredient {
+        width: 1286px;
+}
+
+.space-1 {
+        flex-basis: 32%;
+}
+
+.space-2 {
+        flex-basis: 21%;
+}
+
+.space-3 {
+        flex-basis: 21.3%;
+}
+
+.space-4 {
+        flex-basis: 21%;
 }
 
 .ingredient {
-    flex-basis: 47%;
+        flex-basis: 30%;
 }
 
 .quantity {
-    flex-basis: 10%;
+        flex-basis: 20%;
 }
 
 .unit {
-    flex-basis: 10%;
+        flex-basis: 20%;
 }
 
 .note {
-    flex-basis: 26%;
+        flex-basis: 20%;
 }
 
 .delete-input {
-    text-align: center;
-    flex-basis: 5%;
-    color:red;
-    font-size:30px;
+        text-align: center;
+        flex-basis: 5%;
+        color: red;
+        font-size: 30px;
 }
 
 .btn__dangers {
-    padding: 10px;
+        padding: 10px;
 }

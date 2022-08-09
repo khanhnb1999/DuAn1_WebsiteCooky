@@ -100,5 +100,4 @@ class BaseModel extends ConnectDb {
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-    // public function get2Table($table1, $table2,)
 }

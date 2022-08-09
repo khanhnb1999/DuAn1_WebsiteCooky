@@ -504,9 +504,9 @@
     justify-content: space-between;
   }
 
-  .input__message {
-    flex-basis: 80%;
-  }
+.input__message {
+        flex-basis: 80%;
+}
 
   .space__input {
     padding: 8px;

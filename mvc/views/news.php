@@ -97,12 +97,6 @@
                                     <?= $value["new_title"] ?>
                                 </a>
                             </h4>
-                            <p>Có thể mẹ chưa biết, yến mạch là loại thực phẩm chứa hàm lượng dinh dưỡng cũng
-                                    như các
-                                    khoáng chất thiết yếu cao. Bên cạnh đó, đây còn là loại thực phẩm khá lành tính và
-                                    ít gây dị ứng
-                                    nên mẹ hoàn toàn có thể nấu cháo yến mạch cho bé khi bước vào giai đoạn ăn dặm.
-                            </p>
                             <strong>
                                 <i class="fal fa-user-edit"></i> Khanhnb
                             </strong>

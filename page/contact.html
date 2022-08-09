@@ -1,11 +1,6 @@
-<?php
-    if(isset($_POST['update']) && ($_POST['update'] == 'update')){
-        $_SESSION['table'] = $_POST['table'] ?? '';
-    } 
-    
-?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,20 +9,11 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <link rel="stylesheet" href="../../public/css/header.css">
-    <link rel="stylesheet" href="../../public/css/home.css">
-    <link rel="stylesheet" href="../../public/css/formula.css">
-    <link rel="stylesheet" href="../../public/css/news.css">
-    <link rel="stylesheet" href="../../public/css/new_detail.css">
-    <link rel="stylesheet" href="../../public/css/tray.css">
-    <link rel="stylesheet" href="../../public/css/table-tray.css">
-    <link rel="stylesheet" href="../../public/css/footer.css">
-    <link rel="icon" href="../../public/image/60.ico">
-    <title>Home</title>
-    <script type="text/javascript">
-        var BaseUrl = '<?php echo SITE_URL; ?>';
-    </script>
+    <link rel="stylesheet" href="./contact.css">
+    <link rel="icon" href="/img/60.ico">
+    <title>Dish</title>
 </head>
+
 <body>
     <header class="header">
         <div class="header__top">
@@ -56,27 +42,27 @@
                                         <span>Welcome</span>
                                     </div>
                                     <div class="input__control">
-                                        <input type="text" name="username" require class="form-control form__controls"
+                                        <input type="text" name="username" require class="form-control form__control"
                                             placeholder="Username">
                                     </div>
                                     <div class="input__control">
-                                        <input type="email" name="email" require class="form-control form__controls"
+                                        <input type="email" name="email" require class="form-control form__control"
                                             placeholder="Username@gmail.com">
                                     </div>
                                     <div class="input__control">
                                         <input type="password" name="password" require
-                                            class="form-control form__controls" placeholder="Password">
+                                            class="form-control form__control" placeholder="Password">
                                     </div>
                                     <div class="input__control">
-                                        <input type="password" class="form-control form__controls"
+                                        <input type="password" class="form-control form__control"
                                             placeholder="Re-password">
                                     </div>
                                     <div class="input__control">
-                                        <input type="address" name="address" class="form-control form__controls"
+                                        <input type="address" name="address" class="form-control form__control"
                                             placeholder="Address">
                                     </div>
                                     <div class="input__control">
-                                        <input type="phone" name="phone" class="form-control form__controls"
+                                        <input type="phone" name="phone" class="form-control form__control"
                                             placeholder="Phone">
                                     </div>
                                     <div class="form__check">
@@ -94,11 +80,11 @@
                                         <p>Please sign in to your account below</p>
                                     </div>
                                     <div class="input__control">
-                                        <input type="text" name="username1" class="form-control form__controls"
+                                        <input type="text" name="username1" class="form-control form__control"
                                             placeholder="Username">
                                     </div>
                                     <div class="input__control">
-                                        <input type="password" name="password1" class="form-control form__controls"
+                                        <input type="password" name="password1" class="form-control form__control"
                                             placeholder="Enter password">
                                     </div>
                                     <div class="keep__me">
@@ -119,7 +105,7 @@
                                         </div>
                                         <div class="tab__body ">
                                             <div class="tab__body--input">
-                                                <input type="email" class="form-control form__controls" name="email2"
+                                                <input type="email" class="form-control form__control" name="email2"
                                                     placeholder="Username@gmail.com">
                                             </div>
                                         </div>
@@ -147,30 +133,42 @@
                     </form>
                 </div>
             </div>
+
             <!-- end form register -->
         </div>
         <!-- Introduction and call contact about store -->
         <div class="grid-header">
             <div class="header__navigation">
+
                 <div class="menu__left">
                     <ul class="nav__bar">
                         <li class="nav__item ">
-                            <span class="logo"><a href="home">Tasty</a></span>
+                            <span class="logo"><a href="">Cooky</a></span>
                         </li>
                         <li class="nav__item">
-                            <a href="<?php echo SITE_URL; ?>/home" class="nav__link">Home</a>
+                            <a href="./index.html" class="nav__link">Home</a>
                         </li>
                         <li class="nav__item">
-                            <a href="<?php echo SITE_URL; ?>/formula" class="nav__link">Công Thức</a>
+                            <a href="" class="nav__link">Công Thức</a>
                         </li>
                         <li class="nav__item">
-                            <a href="<?php echo SITE_URL; ?>/news" class="nav__link">Bài Viết</a>
+                            <a href="./blog.html" class="nav__link">Bài Viết</a>
                         </li>
                         <li class="nav__item">
-                            <a href="./blog.html" class="nav__link">Thêm công thức</a>
+                            <a href="./blog.html" class="nav__link">Tạo món</a>
                         </li>
                         <li class="nav__item dropdown__menu">
-                            <a href="<?php echo SITE_URL; ?>/tray" class="nav__link">Bàn ăn</a>
+                            <a href="javascript:void(0)" class="nav__link">Mâm Cơm
+                                <i class="far fa-angle-down"></i>
+                            </a>
+                            <div class="price__trays" id="active_tray">
+                                <ul>
+                                    <li class="list__item"><a href="">Mâm cơm: 1 người</a></li>
+                                    <li class="list__item"><a href="">Mâm cơm: 2 người</a></li>
+                                    <li class="list__item"><a href="">Mâm cơm: 3 người</a></li>
+                                    <li class="list__item"><a href="">Mâm cơm: 4 người</a></li>
+                                </ul>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -189,124 +187,62 @@
             </div>
         </div>
         <!-- end navigation -->
+    </header>
+    <!-- ------------end header--------------------------- -->
 
-        <div class="banner__carousel">
-            <div id="demo" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-                    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-                    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-                </div>
-                <div class="carousel-inner carousel__images">
-                    <div class="carousel-item active">
-                        <img src="./public/image/banner.jpg" alt="Los Angeles" class="d-block w-100">
+    <div class="main__contact">
+        <div class="contact-content">
+            <div class="contact-content--top">
+                <h5>
+                    Liên Hệ
+                </h5>
+                <p class="contact_text ">
+                    Với mong muốn có thể giúp những người nội trợ bình thường nhất cũng có thể nấu được món ăn ngon
+                    nhất. Hy vọng Cooky.vn
+                    là một website cung cấp cho người dùng những công thức, cũng như là nơi để mọi người có thể tìm
+                    kiếm, hoặc chia sẻ các
+                    công thức nấu ăn, công thức chế biến ẩm thực.
+
+                </p>
+                <p class="contact_adress"><strong>CÔNG TY CỔ PHẦN COOKY</strong><br>
+                    132,Cầu Diễn,Nam Từ Liêm,Hà Nội <br>
+                    Điện thoại: 1900 1877</p>
+            </div>
+            <div class="contact-content--form">
+                <form action="" method="post" enctype="multipart/form-data">
+                    <div class="input__news">
+                        <div class="form__row ">
+                            <input type="text" class="form-control input__control" placeholder="Họ tên">
+                            <div class="form-right">
+                                Họ tên
+                            </div>
+                        </div>
+                        <div class="form__row">
+                            <input type="text" class="form-control input__control" placeholder="Email liên hệ">
+                            <div class="form-right">
+                                Email
+                            </div>
+                        </div>
+                        <div class="form__row">
+                            <input type="text" class="form-control input__control" placeholder="Địa chỉ liên hệ">
+                            <div class="form-right">
+                                Địa chỉ
+                            </div>
+                        </div>
+
                     </div>
-                    <div class="carousel-item">
-                        <img src="./public/image/banner2.jpg" alt="Chicago" class="d-block w-100">
+                    <div class="form__row my-3">
+                        <textarea type="text" class="form-control" name="product_content" rows="10"
+                            placeholder="Nội dung liên hệ" id="editor1"></textarea>
                     </div>
-                    <div class="carousel-item">
-                        <img src="./public/image/banner.jpg" alt="New York" class="d-block w-100">
+                    <div class="form__row">
+                        <button type="submit" class="btn">Gửi</button>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
-    </header>
-    <style>
-        .banner__carousel {
-            display: none;
-        }
-    </style>
-    <session class="session">
-        <form action="<?php echo SITE_URL; ?>/tableTray/add" method="post">
-            <div class="app__table">
-                <div class="introduction-tray">
-                    <div class="aside__left">
-                        <div class="title__table">
-                            <h6><i class="fas fa-utensils-alt"></i> BÀN ĂN</h6>
-                        </div>
-                        <form action="" method="post" enctype="multipart/form-data">
-                            <div class="formula__items">
-                                <?php $totalMoney = 0 ?>
-                                <?php foreach ($data["dish"] as $value) : ?>
-                                    <div class="formula__intro" id="current_<?= $value['dish_id'] ?>">
-                                        <img src="../../admin/mvc/views/products/image/<?= $value['dish_image'] ?>" alt="">
-                                        <div class="icon__current">
-                                            <a href="javascript:void()" class="btn__show" onclick=viewDish(<?= $value["dish_id"] ?>)>
-                                                <i class="fas fa-eye"></i>
-                                            </a>
-                                            <a href="javascript:void()" onclick="removeDish(<?= $value['dish_id'] ?>)"
-                                             class="btn__show">
-                                                <i class="far fa-trash"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <?php
-                                        $sumMoney = $value["dish_price"];
-                                        $totalMoney += $sumMoney;
-                                    ?>
-                                <?php endforeach; ?>
-                            </div>
-                        </form>
-                        <div class="box__container">
-                            <div class="price__table">
-                                <span>Giá: <?= number_format($totalMoney) ?><sup>đ</sup></span>
-                            </div>
-                            <div class="update__trays">
-                                <a href="" class="btn__update">Cập nhật</a>
-                            </div>
-                            <div class="add__dish">
-                                <a href="<?php echo SITE_URL; ?>/formula">Thêm món ăn</a>
-                            </div>
-                        </div>
-                        <div class="introduction__customer">
-                            <div class="introduction__store">
-                                <div class="logo__stores">
-                                    <a href="<?php echo SITE_URL; ?>/home">Cooky</a>
-                                </div>
-                                <div class="name__store">
-                                    <h6>Cooky</h6>
-                                    <span><?= $data['totalRecord'] ?> Công thức</span>
-                                </div>
-                            </div>
-                            <h5>Hôm nay bạn ăn gì!</h5>
-                            <p>Để mâm cơm của gia đình bạn luôn đầy đủ chất dinh dưỡng,
-                                đảm bảo sức khỏe cho mọi người bằng cách bạn hãy chọn món 
-                                ăn, giá cả phù hợp cho gia đình bạn...
-                            </p>
-                        </div>
-                    </div> 
-                    <div class="aside__right">
-                        <div class="group__button">
-                            <h6>Thành phần và các bước thực hiện</h6>
-                        </div>
-                        <div class="show__content--details" id="show-dish">
-                            <div class="formula__details" >
-                                <div class="ingredient__title">
-                                    <h4>Thành phần</h4>
-                                </div>
-                                <div class="intro__ingredient">
-                                    <?php foreach ($data['ingredient'] as $value) : ?>
-                                        <div class="ingredient__name">
-                                            <span>
-                                                <?= $value['name']?> <?=$value['quantity'] ?> <?=  $value['unit']?>
-                                            </span>
-                                        </div>
-                                    <?php endforeach; ?>    
-                                </div>
-                                <div class="ingredients__title">
-                                    <h4>Các bước thực hiện</h4>
-                                </div>
-                                <div class="title__head--dish">
-                                    <span>MÓN ĂN : <?= $data['intro']['dish_name'] ?></span>
-                                </div>
-                                <?= $data['intro']['dish_intro'] ?>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </form>    
-    </session>
+    </div>
+
 
     <div class="footer">
         <div class="main__footer">
@@ -320,10 +256,9 @@
                 <h6>Danh mục</h6>
                 <div class="list__menu">
                     <a href="#">Home</a>
-                    <a href="#">Công thức</a>
-                    <a href="#">Blog</a>
-                    <a href="#">Tạo món</a>
-                    <a href="#">Mâm cơm</a>
+                    <a href="#">Sản phẩm</a>
+                    <a href="#">Tin tức</a>
+                    <a href="#">Liên hệ</a>
                 </div>
             </div>
             <div class="item contact">
@@ -342,7 +277,7 @@
             <div class="item about__as">
                 <div class="logo__store">
                     <h6>Về chúng tôi</h6>
-                    <!-- <a href=""><img src="./admin/settings/image/" alt=""></a> -->
+                    <a href=""><img src="./admin/settings/image/" alt=""></a>
                     <span>
                         CÔNG TY CỔ PHẦN COOKY
                         Giấy đăng ký kinh doanh số 0314498604 do Sở Kế hoạch Đầu tư TP Hồ Chí Minh cấp lần đầu ngày
@@ -372,9 +307,7 @@
     </footer>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript" src="../../public/script/main.js"></script>
-    <script type="text/javascript" src="../../public/script/formula.js"></script>
-    <script type="text/javascript" src="../../public/script/table-tray.js"></script>
+    <script type="text/javascript" src="./main.js"></script>
 </body>
 
 </html>

@@ -10,17 +10,17 @@ class TableTray extends controller {
         $ingredient = $getModel->getIngredient($ingredientId);
         $get_number = 1;
         if($id) {
-            if(!isset($_SESSION['table'][$id])) {
-                $_SESSION['table'][$id] = 0;
-            }
-            $_SESSION['table'][$id] += $get_number;
+                if(!isset($_SESSION['table'][$id])) {
+                        $_SESSION['table'][$id] = 0;
+                }
+                $_SESSION['table'][$id] += $get_number;
         }
         $trays = $_SESSION['table'] ?? [];
         foreach ($trays as $key => $value) {
-            if($key == "public") {
-                unset($trays[$key]);
-                unset($trays["TableTray"]);
-            }
+                if($key == "public") {
+                        unset($trays[$key]);
+                        unset($trays["TableTray"]);
+                }
         }
         // print_r($trays);
         $dishId = "";
@@ -29,10 +29,10 @@ class TableTray extends controller {
         $dishTray = implode(",", $dishId) ;
         $result = $getModel->getAllDish($dishTray);
         $this->view("table-tray",[
-            "dish" => $result,
-            "intro" => $getOne,
-            "ingredient" => $ingredient,
-            "totalRecord" => $totalRecord
+                "dish" => $result,
+                "intro" => $getOne,
+                "ingredient" => $ingredient,
+                "totalRecord" => $totalRecord
         ]);
     }
 
@@ -44,18 +44,18 @@ class TableTray extends controller {
         $ingredient = $getModel->getIngredient($ingredientId);
         $this->view("filter-table",
         [
-            "intro" => $result,
-            "ingredient" => $ingredient
+                "intro" => $result,
+                "ingredient" => $ingredient
         ]);
     }
 
-    function remove($id) {
-        if(!empty($id)){
-            unset($_SESSION['table'][$id]);
-            die(json_encode(['status' => 1, 'messg' => 'Xóa thành công.']));
+        function remove($id) {
+                if(!empty($id)){
+                        unset($_SESSION['table'][$id]);
+                        die(json_encode(['status' => 1, 'messg' => 'Xóa thành công.']));
+                }
+                die(['status' => 0, 'messg' => 'Xóa thất bại']);
         }
-        die(['status' => 0, 'messg' => 'Xóa thất bại']);
-    }
 }
 
 ?>
