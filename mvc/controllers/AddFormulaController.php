@@ -6,7 +6,7 @@ class AddFormula extends controller {
                 $this->view("formula/add-formula");
         }
 
-        function updateFormula() {
+        function add() {
                 $message = [];
                 $data = [];
                 $dataIngredient = $_POST['ingredient'];
@@ -70,6 +70,13 @@ class AddFormula extends controller {
                         
                 }
                 echo json_encode($data);
+        }
+
+        function update($id) {
+                $getModel = $this->model("AddFormulaModel");
+                $pr = $getModel->getOne("dish","dish_id=$id");
+                $ingredient = $getModel->getMany("ingredients","dish_id=$id");
+                $this->view("formula/update-formula");
         }
 }
 

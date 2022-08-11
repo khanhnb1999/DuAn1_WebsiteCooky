@@ -56,7 +56,7 @@ $(document).ready(function () {
                 // formData.append("fileToUpload", file);
                 $.ajax({
                         type: "POST",
-                        url: BaseUrl + "/addFormula/updateFormula",
+                        url: BaseUrl + "/addFormula/add",
                         data: formData,
                         dataType: "json",
                         encode: true,

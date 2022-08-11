@@ -10,6 +10,16 @@
                                 <div class="pr__item">
                                         <img src="./mvc/views/formula/image/<?= $value['image'] ?> " alt="">
                                         <p><?= $value['name'] ?></p>
+                                        <div class="scroll__dish--block">
+                                                <div class="icon__current--dish">
+                                                        <div class="icon__views--details">
+                                                                <a href="javascript:void()"><i class="fas fa-eye"></i></a>
+                                                        </div>
+                                                        <div class="icon__update--details">
+                                                               <a href="<?= SITE_URL ?>/AddFormula/update/<?= $value["id"] ?>"> <i class="fas fa-edit"></i></a>
+                                                        </div>
+                                                </div>
+                                        </div>
                                 </div>
                          <?php endforeach; ?>       
                 </div>
