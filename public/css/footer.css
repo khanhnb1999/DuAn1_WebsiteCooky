@@ -36,12 +36,12 @@
         text-decoration: underline;
 }
 
-.footer .form__group {
+.footer .forms__group {
         display: flex;
         background-color: var(--color-white);
 }
 
-.footer .side__input {
+.footer .sides__input {
         flex-basis: 80%;
         border: none;
         outline: none;
@@ -53,7 +53,7 @@
 
 .footer .side__send button {
         outline: none;
-        padding: 0.3rem;
+        padding: 0.4rem;
         border: none;
 }
 

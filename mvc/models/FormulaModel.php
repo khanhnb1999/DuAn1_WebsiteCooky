@@ -22,7 +22,13 @@ class FormulaModel extends BaseModel {
                 $stmt->execute();
                 return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
-    
+
+        function getUser($username) {
+                $sql = "SELECT * FROM users WHERE user_name='$username'";
+                $stmt = ($this->conn)->prepare($sql);
+                $stmt->execute();
+                return $stmt->fetch(PDO::FETCH_ASSOC);
+        }
 }
 
 ?>

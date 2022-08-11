@@ -1,0 +1,40 @@
+.formula__your {
+        margin: 40px 350px;
+}
+
+.formula__your {
+        background-color: white;
+        border-radius: 5px;
+        padding: 50px ;
+}
+
+.title__views {
+        margin-bottom:15px;
+}
+
+.products__item {
+        display:flex;
+        justify-content:space-between;
+        flex-wrap: wrap;
+}
+
+.pr__item {
+        text-align: center;
+        border: 1px solid #e6dbdb;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom:30px;
+}
+
+
+.pr__item img {
+        border-radius: 5px;
+        width:280px;
+        height:280px;
+}
+
+.pr__item p{
+        margin: 15px 0 0 0;
+        font-size:21px;
+        font-weight: 500;
+}

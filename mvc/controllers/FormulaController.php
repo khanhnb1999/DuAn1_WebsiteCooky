@@ -71,13 +71,13 @@ class Formula extends controller {
                                 "content" => $_POST['comment'],
                                 "date" => $date,
                                 "status" => 0,
-                                "user_id" => 1,
+                                "user_id" => $_SESSION['userId'],
                                 "dish_id" => $_POST["dish_id"]
                         ];
                         $getModel->insert("comments", $data);
                         $message['status'] = true;
+                        $message['content'] = "Bình luận của bạn đang chờ người quản trị phê duyệt!!!";
                 } else {
-                        $message['content'] = "display:block";
                         $message['status'] = false;
                 }
                 echo json_encode($message);

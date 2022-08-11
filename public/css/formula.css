@@ -13,7 +13,7 @@
 .filter-bar {
         background-color: var(--color-white);
         border-radius: 10px;
-        border: 1px solid #c0bdbd;
+        border: 1px solid #eee5e5;
 }
 
 .main__search {
@@ -21,7 +21,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        border-bottom: 1px solid #c0bdbd;
+        border-bottom: 1px solid #eee5e5;
 }
 
 .search__filter {

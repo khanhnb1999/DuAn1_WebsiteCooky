@@ -10,13 +10,12 @@ function getInput(value) {
 function validateTypeAndSize(loadFile) {
         var typeFile = $(loadFile).val().split('.').pop().toLowerCase();
         var arrTypeFile = ['jpeg', 'jpg', 'png'];
-
         if ($.inArray(typeFile, arrTypeFile) ==  -1) {
                 $("#image-error").text("Kiểu file bạn tải lên phải là: jpeg-jpg-png").show().css("color", "red");
         } else {
                 var size = parseFloat($("#filter-image")[0].files[0].size / 1024).toFixed(2);
-                if (size > 40) {
-                        $("#image-error").text("Kích thước file tối đa là 40kb").show().css("color", "red");
+                if (size > 100) {
+                        $("#image-error").text("Kích thước file tối đa là 100kb").show().css("color", "red");
                 }
         }
 }
@@ -50,16 +49,19 @@ $(document).ready(function () {
 
         // validate form input
         $("#form-1").submit(function (event) {
-                var formData = $(this).serialize();
-                var getImage = $("#filter-image").val().split('\\').pop();
-                console.log(getImage);
-                console.log(formData);
+                event.preventDefault();
+                var formData = new FormData(this);
+                // console.log(formData);
+                // var file =  $("#filter-image").files[0];
+                // formData.append("fileToUpload", file);
                 $.ajax({
                         type: "POST",
                         url: BaseUrl + "/addFormula/updateFormula",
                         data: formData,
                         dataType: "json",
                         encode: true,
+                        processData: false,
+                        contentType: false
                 }).done(function (data) {
                         console.log(data);
                         if (!data.success) {
@@ -67,9 +69,9 @@ $(document).ready(function () {
                                         $("#filter-intro").addClass("is-invalid border-danger");
                                         $("#intro-error").text(data.message.dish_intro).css("color", "red");
                                 }
-
+                                       
                                 if (data.message.dish_name) {
-                                        $("#filter-name").addClass("is-invalid border-danger");
+                                        $("#filter-names").addClass("is-invalid border-danger");
                                         $("#name-error").text(data.message.dish_name).css("color", "red");
                                 }
 
@@ -94,13 +96,14 @@ $(document).ready(function () {
                                 }
                                 
                         } else {
-                                $("#has-content").html(data.message);
+                                var dishName = data.product;
+                                $("#name_dish").html(dishName);
+                                $(".model__open").css("display","block");
                         }
                 });
                 event.preventDefault();
         })
 });
-
 
 
 function currentDish(val) {

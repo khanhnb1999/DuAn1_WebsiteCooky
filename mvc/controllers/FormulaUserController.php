@@ -1,9 +1,14 @@
 <?php
 
 class FormulaUser extends controller {
-    function index() {
-        $this->view("formula-user");
-    }
+        function index() {
+                $getModel = $this->model("FormulaUserModel");
+                $userId = $_SESSION['userId'];
+                $result = $getModel->getFormulaUser($userId);
+                $this->view("formula-user",[
+                        "formulaUser" => $result
+                ]);
+        }
 }
 
 ?>

@@ -83,6 +83,10 @@
         flex-basis: 39.3%;
 }
 
+.alert__message {
+        font-size:22px;
+}
+
 .info__comment {
         display: flex;
         justify-content: flex-start;

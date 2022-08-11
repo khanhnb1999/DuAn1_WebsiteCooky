@@ -14,8 +14,7 @@
         background-color: black;
         background-color: rgba(0, 0, 0, 0.4);
         padding-top: 230px;
-        /* display: none; */
-        /* transition: 0.3s; */
+        display: none;
 }
 
 .model__hidden {
@@ -58,6 +57,11 @@
         border-bottom: 1px solid #efefef;
 }
 
+.box__head p i {
+        color: #23ad00;
+        font-size: 29px;
+}
+
 .box__body {
         margin: 20px 0;
         border-bottom: 1px solid #efefef;
@@ -65,9 +69,15 @@
 }
 
 .box__body--small {
-        display: flex;
+        text-align: center;
+        /* display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: center; */
+}
+
+.box__body--small span {
+        font-weight: 600;
+        font-size: 25px;
 }
 
 .body-intro {

@@ -44,135 +44,141 @@
                 <i class="fas fa-user"></i> <span>Đăng nhập</span>
             </div>
             <div class="box__overlay" id="myForm">
-                <div class="form__registration">
-                    <form action="./check_user.php" id="user-account" method="post">
-                        <div class="modal__content">
-                            <button type="button" class="btn__close">
-                                <i class="fas fa-times"></i>
-                            </button>
-                            <div class="modal__body">
-                                <div id="tab-register" class="user-tab-body active">
-                                    <div class="title">
-                                        <span>Welcome</span>
-                                    </div>
-                                    <div class="input__control">
-                                        <input type="text" name="username" require class="form-control form__controls"
-                                            placeholder="Username">
-                                    </div>
-                                    <div class="input__control">
-                                        <input type="email" name="email" require class="form-control form__controls"
-                                            placeholder="Username@gmail.com">
-                                    </div>
-                                    <div class="input__control">
-                                        <input type="password" name="password" require
-                                            class="form-control form__controls" placeholder="Password">
-                                    </div>
-                                    <div class="input__control">
-                                        <input type="password" class="form-control form__controls"
-                                            placeholder="Re-password">
-                                    </div>
-                                    <div class="input__control">
-                                        <input type="address" name="address" class="form-control form__controls"
-                                            placeholder="Address">
-                                    </div>
-                                    <div class="input__control">
-                                        <input type="phone" name="phone" class="form-control form__controls"
-                                            placeholder="Phone">
-                                    </div>
-                                    <div class="form__check">
-                                        <input class="form-check-input" type="checkbox">
-                                        <label class="form-check-label"> Remember</label>
-                                    </div>
-                                    <div class="modal__footer">
-                                        <button type="submit" name="register-user">Create account</button>
-                                    </div>
-                                </div>
-                                <!-- form registration -->
-                                <div id="tab-login" class="user-tab-body">
-                                    <div class="form__login__title">
-                                        <h4>Welcome back</h4>
-                                        <p>Please sign in to your account below</p>
-                                    </div>
-                                    <div class="input__control">
-                                        <input type="text" name="username1" class="form-control form__controls"
-                                            placeholder="Username">
-                                    </div>
-                                    <div class="input__control">
-                                        <input type="password" name="password1" class="form-control form__controls"
-                                            placeholder="Enter password">
-                                    </div>
-                                    <div class="keep__me">
-                                        <input class="form-check-input" type="checkbox" name="remember" value="1">
-                                        <label class="form-check-label">Keep me logged in</label>
-                                    </div>
-                                    <div class="dashboard">
-                                        <button class="btn btn__info" type="submit" name="login-user">Login
-                                            in</button>
-                                    </div>
-                                </div>
-                                <!-- form login -->
-                                <div id="tab-forgot" class="user-tab-body recover__password">
-                                    <div class="tab__password">
-                                        <div class="tab__header">
-                                            <h3>Fogot your password</h3>
-                                            <p>Use the form below to recover it.</p>
+                        <div class="form__registration">
+                                <div class="modal__content">
+                                        <button type="button" class="btn__close">
+                                                <i class="fas fa-times"></i>
+                                        </button>
+                                        <div class="modal__body">
+                                                <form action="" id="logout" method="post">
+                                                        <div id="tab-register" class="user-tab-body ">
+                                                                <div class="title">
+                                                                        <span>Đăng kí</span>
+                                                                </div>
+                                                                <div class="input__control">
+                                                                        <input type="text"  name="username" class="form-control form__controls border" id="filter-name"
+                                                                        data-tab = "error-name" placeholder="Username">
+                                                                        <span id="error-name"></span>
+                                                                </div>
+                                                                <div class="input__control">
+                                                                        <input type="email" name="email"  class="form-control form__controls border"  id="filter-email"
+                                                                        data-tab="error-email"  placeholder="Username@gmail.com">
+                                                                        <span id="error-email"></span>
+                                                                </div>
+                                                                <div class="input__control">
+                                                                        <input type="password" name="password"  class="form-control form__controls border" id="filter-pass"
+                                                                         data-tab="error-password"  placeholder="Password">
+                                                                        <span id="error-password"></span>
+                                                                </div>
+                                                                <div class="input__control">
+                                                                        <input type="password" name="re-password" class="form-control form__controls border" id="filter-repass"
+                                                                         data-tab="error-repass" placeholder="Re-password">
+                                                                        <span id="error-repass"></span>
+                                                                </div>
+                                                                <div class="input__control">
+                                                                        <input type="address" name="address" class="form-control form__controls border"  id="filter-address"
+                                                                        data-tab="error-address"  placeholder="Address">
+                                                                        <span id="error-address"></span>
+                                                                </div>
+                                                                <div class="input__control">
+                                                                        <input type="phone" name="phone" class="form-control form__controls border" id="filter-phone"
+                                                                         data-tab="error-phone" placeholder="Phone">
+                                                                        <span id="error-phone"></span>
+                                                                </div>
+                                                                <div class="form__check">
+                                                                        <input class="form-check-input" type="checkbox">
+                                                                        <label class="form-check-label"> Remember</label>
+                                                                </div>
+                                                                <div class="modal__footer">
+                                                                        <button type="submit"  id="btn-logout">Create account</button>
+                                                                </div>
+                                                        </div>
+                                                </form>
+                                                <!-- form registration -->
+                                                <form action="" id="login" method="post">
+                                                        <div id="tab-login" class="user-tab-body active">
+                                                                <div class="form__login__title">
+                                                                        <h4>Đăng nhập</h4>
+                                                                        <p class="mt-3">Vui lòng đăng nhập vào tài khoản hiện có</p>
+                                                                </div>
+                                                                <div class="input__control">
+                                                                        <input type="text" name="username1" id="username1" class="form-control form__controls border"
+                                                                        placeholder="Username">
+                                                                </div>
+                                                                <div class="input__control">
+                                                                        <input type="password" name="password1" id="password1" class="form-control form__controls border"
+                                                                        placeholder="Enter password">
+                                                                        <span id="error-login"></span>
+                                                                </div>
+                                                                <div class="keep__me">
+                                                                        <input class="form-check-input" type="checkbox" name="remember" value="1">
+                                                                        <label class="form-check-label">Keep me logged in</label>
+                                                                </div>
+                                                                <div class="dashboard">
+                                                                        <button class="btn btn__info" type="submit"  id="btn-login">Login  in</button>
+                                                                </div>
+                                                        </div>
+                                                </form>
+                                                <!-- form login -->
+                                                <form action="" id="forgot-password" method="post">
+                                                        <div id="tab-forgot" class="user-tab-body recover__password">
+                                                                <div class="tab__password">
+                                                                        <div class="tab__header">
+                                                                                <h3>Quên mật khẩu</h3>
+                                                                                <p>Sử dụng biểu mẫu để khôi phục nó</p>
+                                                                        </div>
+                                                                        <div class="tab__body ">
+                                                                                <div class="tab__body--input">
+                                                                                        <input type="email" class="form-control form__controls" name="email2"placeholder="Username@gmail.com">
+                                                                                </div>
+                                                                        </div>
+                                                                        <div class="tab__footer">
+                                                                                <button class="btn btn__danger" type="submit"  id="login-forgot">Recover password</button>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                </form>       
                                         </div>
-                                        <div class="tab__body ">
-                                            <div class="tab__body--input">
-                                                <input type="email" class="form-control form__controls" name="email2"
-                                                    placeholder="Username@gmail.com">
-                                            </div>
+                                        <!-- form forgot password -->
+                                        <div class="modal__footer">
+                                                <div class="form__account">
+                                                        <ul class="group__account">
+                                                                <li class="user-switch-form box-register " data-tab="tab-register">Đăng kí</li>
+                                                                <li class="user-switch-form box-login d-none" data-tab="tab-login">Đăng nhập</li>
+                                                                <li class="user-switch-form box-forgot" data-tab="tab-forgot">Quên mật khẩu</li>
+                                                        </ul>
+                                                </div>
                                         </div>
-                                        <div class="tab__footer">
-                                            <button class="btn btn__danger" type="submit" name="recover-user">Recover
-                                                password</button>
-                                        </div>
-                                    </div>
                                 </div>
-                            </div>
-
-                            <!-- form forgot password -->
-                            <div class="modal__footer">
-                                <div class="form__account">
-                                    <ul class="group__account">
-                                        <li class="user-switch-form box-register d-none" data-tab="tab-register">
-                                            Sign up</li>
-                                        <li class="user-switch-form box-login" data-tab="tab-login">Login</li>
-                                        <li class="user-switch-form box-forgot" data-tab="tab-forgot">Forgot
-                                            password</li>
-                                    </ul>
-                                </div>
-                            </div>
                         </div>
-                    </form>
                 </div>
-            </div>
             <!-- end form register -->
         </div>
         <!-- Introduction and call contact about store -->
         <div class="grid-header">
             <div class="header__navigation">
                 <div class="menu__left">
-                    <ul class="nav__bar">
+                <ul class="nav__bar">
                         <li class="nav__item ">
-                            <span class="logo"><a href="<?php echo SITE_URL; ?>/home">Tasty</a></span>
+                                <span class="logo"><a href="<?= SITE_URL ?>/home">Tasty</a></span>
                         </li>
                         <li class="nav__item">
-                            <a href="<?php echo SITE_URL; ?>/home" class="nav__link">Home</a>
+                                <a href="<?= SITE_URL ?>/home" class="nav__link">Home</a>
                         </li>
                         <li class="nav__item">
-                            <a href="<?php echo SITE_URL; ?>/formula" class="nav__link">Công Thức</a>
+                                <a href="<?= SITE_URL ?>/news" class="nav__link">Bài Viết</a>
                         </li>
                         <li class="nav__item">
-                            <a href="<?php echo SITE_URL; ?>/news" class="nav__link">Bài Viết</a>
+                                <div class="dropdown__menu--formula">
+                                        <span class="nav__link" id="has-link">Công Thức <i class="far fa-angle-down"></i></span>
+                                        <div class="side__down">
+                                                <a href="<?= SITE_URL ?>/formula">Tất cả công thức</a>
+                                                <a href="<?= SITE_URL ?>/addFormula" id="add-formula">Thêm công thức</a>
+                                                <a href="<?= SITE_URL ?>/formulaUser">Xem công thức của bạn</a>
+                                        </div>
+                                </div>
                         </li>
-                        <li class="nav__item">
-                            <a href="<?php echo SITE_URL; ?>/addFormula" class="nav__link">Thêm công thức</a>
-                        </li>
-                        <li class="nav__item dropdown__menu">
-                            <a href="<?php echo SITE_URL; ?>/tray" class="nav__link">Bàn ăn</a>
-                        </li>
-                    </ul>
+                </ul>
                 </div>
                 <div class="search__rights">
                     <form action="" class="search__cookings">
@@ -330,8 +336,8 @@
                 <h6>Liên hệ</h6>
                 <span>
                 </span>
-                <div class="form__group">
-                    <div class="side__input">
+                <div class="form__groups" style="display:flex">
+                    <div class="sides__input">
                         <input type="text" class="send__email" placeholder="Email">
                     </div>
                     <div class="side__send">
@@ -375,6 +381,7 @@
     <script type="text/javascript" src="../../public/script/main.js"></script>
     <script type="text/javascript" src="../../public/script/formula.js"></script>
     <script type="text/javascript" src="../../public/script/table-tray.js"></script>
+    <script type="text/javascript" src="../../public/script/home.js"></script>
 </body>
 
 </html>

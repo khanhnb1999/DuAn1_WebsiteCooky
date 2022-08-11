@@ -113,6 +113,37 @@ h6 {
         text-decoration: underline;
 }
 
+.dropdown__menu--formula {
+        position: relative;
+}
+
+.dropdown__menu--formula span {
+        cursor: pointer;
+}
+
+.side__down {
+        position: absolute;
+        width: 215px;
+        left: 54px;
+        z-index: 1;
+        background-color: #fff8f8;
+        height: 110px;
+        top: 34px;
+        padding: 9px 8px;
+        display:none;
+}
+
+.side__down a {
+        display:block;
+        text-decoration: none;
+        padding: 3px;
+        font-weight: 440;
+}
+
+.side__down a:hover {
+        background-color:#d8d9e6;
+}
+
 /* end menu left */
 
 .search__rights {

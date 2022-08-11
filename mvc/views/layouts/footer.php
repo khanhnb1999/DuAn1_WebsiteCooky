@@ -20,8 +20,8 @@
                 <h6>Liên hệ</h6>
                 <span>
                 </span>
-                <div class="form__group">
-                    <div class="side__input">
+                <div class="form__groups">
+                    <div class="sides__input">
                         <input type="text" class="send__email" placeholder="Email">
                     </div>
                     <div class="side__send">

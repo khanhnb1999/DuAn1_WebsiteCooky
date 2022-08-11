@@ -24,6 +24,10 @@ $(document).ready(function() {
                         console.log(data);
                         if(!data.status) {
                                 $("#myForm").css("display", "block");
+                        } else {
+                                if(data.content) {
+                                        $("#alert-message").html(data.content);
+                                }
                         }
                 });
         });
