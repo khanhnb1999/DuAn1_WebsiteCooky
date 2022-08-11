@@ -1,6 +1,7 @@
 $(document).ready(function () {
     $("#btn__open").click(function () {
         $("#myForm").slideToggle();
+        $(".tab__current--login").hide();
     });
 
     $(".btn__close").click(function () {

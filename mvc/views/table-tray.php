@@ -40,9 +40,24 @@
                     <i class="fas fa-address-book"></i> <span>Địa chỉ: 132, Cầu Diễn, Nam Từ Liêm</span>
                 </div>
             </div>
-            <div class="register" id="btn__open">
-                <i class="fas fa-user"></i> <span>Đăng nhập</span>
-            </div>
+            <div class="tab__registration">
+                        <div class="register">
+                               <span class="has__current-login"><i class="fal fa-user-circle"></i> 
+                                        <?php 
+                                                if(isset($_SESSION['username'])) {
+                                                        echo "Tài khoản: ".$_SESSION['username'];
+                                                } else {
+                                                        echo "Đăng kí";
+                                                }
+                                        ?>
+                                </span>
+                        </div>
+                        <div class="tab__current--login">
+                                <div class="line__spaces"></div>
+                                <p id="btn__open">Đăng nhập</p>
+                                <p><a href="<?= SITE_URL ?>/user/logout"><i class="fad fa-sign-out"></i> Đăng xuất</a></p>
+                        </div>
+                </div>        
             <div class="box__overlay" id="myForm">
                         <div class="form__registration">
                                 <div class="modal__content">

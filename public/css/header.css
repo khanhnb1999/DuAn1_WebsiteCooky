@@ -64,8 +64,60 @@ h6 {
 }
 
 .register {
+        position: relative;
+        font-weight: 600;
+}
+
+
+.line__spaces {
+        top: 49px;
+        z-index: 1;
+        left: 4px;
+        position: absolute;
+        width: 176px;
+        height: 1px;
+        background-color: #eae1e1;
+}
+
+.tab__current--login {
+        position: absolute;
+        background-color: white;
+        width: 181px;
+        height: 98px;
+        left: 1584px;
+        top: 58px;
+        padding: 19px 20px;
+        border-radius: 3px;
+        display:none;
+        text-align: center;
+}
+
+.tab__current--login a {
+        text-decoration: none;
+        color:black;
+        font-weight: 500;
+}
+
+.tab__current--login p {
+        font-weight: 500;
+        padding-left: 13px;
+}
+
+.tab__current--login p:hover {
+        color: #0d6efd;
+        cursor: pointer;
+
+}
+
+.tab__current--login a:hover {
+        color: #0d6efd;
+}
+
+.register {
         cursor: pointer;
 }
+
+
 
 /* end header top  */
 .grid-header {

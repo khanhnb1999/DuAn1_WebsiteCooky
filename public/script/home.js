@@ -1,7 +1,11 @@
 $(document).ready(function () {
         $("#has-link").click(function() {
                 $(".side__down").slideToggle(300);
-        });        
+        });
+        
+        $(".register").click(function () {
+                $(".tab__current--login").slideToggle(300);
+        });
 });
 function showDish(id) {
         $.ajax({
@@ -71,7 +75,7 @@ $(document).ready(function() {
         });
 
         $("#login").submit(function(event) {
-                event.preventDefault();
+                // event.preventDefault();
                 var dataLogin = $(this).serialize();
                 console.log(dataLogin);
                 $.ajax({

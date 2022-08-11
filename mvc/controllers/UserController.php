@@ -84,6 +84,12 @@ class User extends Controller {
                 }
                 echo json_encode($message);
         }
+
+        function logout() {
+                session_start();
+                session_destroy();
+               header("Location:" .$_SERVER['PHP_SELF']);
+        }
 }
 
 
