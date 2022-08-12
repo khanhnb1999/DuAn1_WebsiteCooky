@@ -34,10 +34,10 @@
                         </button>
                         <ul class="dropdown__nav">
                             <li class="dropdown__item">
-                                <a href="<?php echo SITE_URL; ?>/product/index/1" class="dropdown__item--link">List product</a>
+                                <a href="<?php echo SITE_URL; ?>/product/index/1" class="dropdown__item--link">Product-Admin</a>
                             </li>
                             <li class="dropdown__item">
-                                <a href="<?php echo SITE_URL; ?>/unit/index/1" class="dropdown__item--link">Units</a>
+                                <a href="<?php echo SITE_URL; ?>/userFormula/index/1" class="dropdown__item--link">Product-User</a>
                             </li>
                         </ul>
                     </li>
@@ -149,8 +149,8 @@
                 <li class="item user__account">
                     <span id="user">
                         <?php
-                            if(isset($_SESSION['username'])) {
-                                echo $_SESSION['username'] ?? 0;
+                            if(isset($_SESSION['admin'])) {
+                                echo $_SESSION['admin'] ?? 0;
                             }
                         ?>
                         <i class="fal fa-angle-down icon__dropdown"></i>

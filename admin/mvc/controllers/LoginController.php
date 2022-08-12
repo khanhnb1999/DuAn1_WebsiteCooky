@@ -12,7 +12,7 @@ class Login extends controller {
             $user = $getModel->getTwoCondition("users",$where1,$where2);
             if($user) {
                 // $_SESSION['btn-submit'] = $user;
-                $_SESSION['username'] = $user['user_name'];
+                $_SESSION['admin'] = $user['user_name'];
                 $_SESSION['password'] = $user['user_password'];
                 $_SESSION['userId'] = $user['user_id'];
                 header("Location: ".SITE_URL."/product/index/1");

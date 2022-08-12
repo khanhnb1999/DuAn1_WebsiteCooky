@@ -17,7 +17,7 @@
                                                         </div>
                                                         <div class="blog1_text">
                                                                 <h5>
-                                                                        <a href=""><?= $value['new_title'] ?></a>
+                                                                        <a href="news/newDetail/<?= $value['new_id'] ?>"><?= $value['new_title'] ?></a>
                                                                 </h5>
                                                         </div>
                                                  <?php endforeach; ?>       
@@ -29,7 +29,7 @@
                                                                         <img src="./admin/mvc/views/news/image/<?= $value['image_new'] ?>" alt="">
                                                                 </div>
                                                                 <div class="items--text">
-                                                                        <h6 ><a href=""><?= $value["new_title"] ?></a></h6>
+                                                                        <h6 ><a href="news/newDetail/<?= $value['new_id'] ?>"><?= $value["new_title"] ?></a></h6>
                                                                 </div>
                                                         </div>
                                                 <?php endforeach; ?>       

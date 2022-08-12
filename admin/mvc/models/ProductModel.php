@@ -18,12 +18,28 @@ class ProductModel extends BaseModel {
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function totalPrice($id) {
-        $sql = "SELECT tray_prices.price FROM tray_prices WHERE tray_id = $id";
-        $stmt = ($this->conn)->prepare($sql);
-        $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
+        public function totalPrice($id) {
+                $sql = "SELECT tray_prices.price FROM tray_prices WHERE tray_id = $id";
+                $stmt = ($this->conn)->prepare($sql);
+                $stmt->execute();
+                return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+
+        public function getFormulaUser($pages_one,$page) {
+                $start_from = ($page - 1) * $pages_one;
+                $sql = "SELECT * FROM dish INNER JOIN users ON dish.user_id=users.user_id WHERE users.user_type='Customer' ORDER BY dish_id ASC LIMIT $start_from,$pages_one";
+                $stmt= ($this->conn)->prepare($sql);
+                $stmt->execute();
+                return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+
+        public function totalRecordUserFormula() {
+                $sql = "SELECT * FROM dish INNER JOIN users ON dish.user_id=users.user_id WHERE users.user_type='Customer'";
+                $stmt = ($this->conn)->prepare($sql);
+                $stmt->execute();
+                return $stmt->rowCount();
+            }
+
 }
 
 ?>

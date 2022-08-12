@@ -60,65 +60,22 @@
                 </div>
                 <div class="item__iner">
                         <div class="item__title">
-                                <h4>Mẹo vặt vào bếp</h4>
+                                <h4>Tin tức mới nhất</h4>
                         </div>
                         <div class="item__dish--blog">
                                 <div class="blog__dish">
-                                        <div class="featured-item">
-                                                <div class="featured__image">
-                                                        <img src="./page/img/meo1.jpg" alt="">
-                                                </div>
-                                                <div class="featured__text">
-                                                        <h5><a href="">Mẹo chế biến món nấm thơm ngon tự nhiên cho gia đình</a></h5>
-                                                        <p>Dựa theo mùi thơm và màu sắc của nấm. Nấm tươi thì màu sáng, mùi thơm rơm,
-                                                                không có vết nhăn trên chop hay vết thâm trên
-                                                                thân. Cắt thử nấm không bị chảy ra chất màu trắng sữa
-                                                        </p>
-                                                </div>
-                                        </div>
-                                        <div class="featured-item">
-                                                <div class="featured__image">
-                                                        <img src="./page/img/meo2.jpg" alt="">
-                                                </div>
-                                                <div class="featured__text">
-                                                        <h5><a href="">Mẹo chế biến món nấm thơm ngon tự nhiên cho gia đình</a></h5>
-                                                        <p>Dựa theo mùi thơm và màu sắc của nấm. Nấm tươi thì màu sáng,
-                                                                mùi
-                                                                thơm rơm,
-                                                                không có vết nhăn trên chop hay vết thâm trên
-                                                                thân. Cắt thử nấm không bị chảy ra chất màu trắng sữa
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                        <div class="blog__dish">
-                                <div class="featured-item">
-                                        <div class="featured__image">
-                                                <img src="./page/img/meo3.jpg" alt="">
-                                                </div>
-                                                        <div class="featured__text">
-                                                                <h5><a href="">Mẹo chế biến món nấm thơm ngon tự nhiên cho gia đình</a></h5>
-                                                                <p>Dựa theo mùi thơm và màu sắc của nấm. Nấm tươi thì màu sáng, mùi thơm rơm,
-                                                                        không có vết nhăn trên chop hay vết thâm trên
-                                                                        thân. Cắt thử nấm không bị chảy ra chất màu trắng sữa
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                                <div class="featured-item ">
+                                        <?php foreach ($data["new"] as $value) : ?>
+                                                <div class="featured-item">
                                                         <div class="featured__image">
-                                                                <img src="./page/img/meo4.jpg" alt="">
+                                                                <img src="./admin/mvc/views/news/image/<?= $value['image_new'] ?>" alt="">
                                                         </div>
-                                                <div class="featured__text">
-                                                        <h5><a href="">Mẹo chế biến món nấm thơm ngon tự nhiên cho gia đình</a></h5>
-                                                        <p>Dựa theo mùi thơm và màu sắc của nấm. Nấm tươi thì màu sáng, mùi
-                                                                thơm rơm,
-                                                                không có vết nhăn trên chop hay vết thâm trên
-                                                                thân. Cắt thử nấm không bị chảy ra chất màu trắng sữa
-                                                        </p>
+                                                        <div class="featured__text">
+                                                                <a href="news/newDetail/<?= $value['new_id'] ?>"><?= $value['new_title'] ?></a>
+                                                        </div>
                                                 </div>
-                                        </div>
+                                        <?php endforeach; ?>       
                                 </div>
-                        </div>
+                        </div>        
                 </div>
         </div>
 </session>

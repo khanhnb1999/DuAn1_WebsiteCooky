@@ -6,10 +6,12 @@ class Formula extends controller {
                 $result = $getModel->getAll("catalogs");
                 $cateId = 1;
                 $getOneDish = $getModel->getDish($cateId);
+                $news = $getModel->getNewTop6();
                 $this->view("formula",
                 [
                         "cate" => $result,
-                        "getOneDish" => $getOneDish
+                        "getOneDish" => $getOneDish,
+                        "new" => $news,
                 ]);
         }
 

@@ -63,7 +63,7 @@ class User extends Controller {
                         $dataUser = $getModel->getUser($username, $password);
                         if($dataUser) {
                                 $_SESSION['username'] = $username;
-                                $_SESSION['userId'] = $dataUser['user_id'];
+                                $_SESSION['user-id'] = $dataUser['user_id'];
                                 $message['status'] = true;
                         } else {
                                 $message['status'] = false;

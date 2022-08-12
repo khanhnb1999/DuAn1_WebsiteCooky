@@ -292,7 +292,7 @@
                                         <div class="both__name">
                                                 <div class="dish-name mb-3">
                                                         <strong>2.1 - Tên món ăn</strong>
-                                                        <input type="text" id="filter-names" name="dish_name" data-tab="name-error"
+                                                        <input type="text" id="filter-names" name="dish_name" data-tab="name-error" value="<?= $data['dish']['name'] ?>"
                                                         class="form-control border p-3 mb-1" placeholder="Tên món ăn...">
                                                         <span class="my-1" id="name-error"></span>
                                                 </div>

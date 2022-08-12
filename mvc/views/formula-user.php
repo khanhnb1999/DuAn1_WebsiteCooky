@@ -8,7 +8,7 @@
                 <div class="products__item">
                         <?php foreach ($data["formulaUser"] as $value) : ?>
                                 <div class="pr__item">
-                                        <img src="./mvc/views/formula/image/<?= $value['image'] ?> " alt="">
+                                        <img src="admin/mvc/views/products/image/<?= $value['dish_image'] ?>" alt="">
                                         <p><?= $value['name'] ?></p>
                                         <div class="scroll__dish--block">
                                                 <div class="icon__current--dish">

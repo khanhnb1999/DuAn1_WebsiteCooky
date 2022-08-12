@@ -60,7 +60,7 @@ class BaseModel extends ConnectDb {
     }
     // Lấy 1 dòng dữ liệu với 2 điều kiện
     public function getTwoCondition($table,$where1,$where2) {
-        $sql = "SELECT * FROM $table WHERE $where1 AND $where2";
+        $sql = "SELECT * FROM $table WHERE $where1 AND $where2 AND user_type='Admin'";
         $stmt = ($this->conn)->prepare($sql);
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);

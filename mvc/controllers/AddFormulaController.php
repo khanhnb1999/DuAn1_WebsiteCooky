@@ -40,17 +40,19 @@ class AddFormula extends controller {
                 } else {
                         $getModel = $this->model("AddFormulaModel");
                         $getNewDish = $getModel->getNewFormula();
-                        // insert table tbl_dish
                         $dish_image = $_FILES['fileToUpload']['name'];
                         $getData = [
-                                "name" => $_POST['dish_name'],
-                                "image" => $dish_image,
-                                "intro" => $_POST['dish_intro'],
-                                "dish_desc" => $_POST['dish_desc'],
-                                "user_id" => $_SESSION["userId"]
+                                'dish_name' => $_POST['dish_name'],
+                                'dish_image' => $dish_image,
+                                'dish_desc' => $_POST['dish_desc'],
+                                'dish_intro' => $_POST['dish_intro'],
+                                'dish_price' => 0,
+                                'catalog_id' => 0,
+                                'user_id' => $_SESSION['user-id'],
+                                "status" => 0
                         ];
-                        $getModel->insert("tbl_dish", $getData);
-                        move_uploaded_file($_FILES['fileToUpload']['tmp_name'], './mvc/views/formula/image/' .$dish_image);
+                        $getModel->insert("dish", $getData);
+                        move_uploaded_file($_FILES['fileToUpload']['tmp_name'], 'admin/mvc/views/products/image/' .$dish_image);
                         // insert table tbl_ingredients
                         foreach ($dataIngredient as $value) {
                                 $dataIgr = [
@@ -59,7 +61,7 @@ class AddFormula extends controller {
                                         "unit" => $value['unit'],
                                         "node" => $value['note'],
                                         "tbl_dish_id" => 1,
-                                        "user_id" =>  $_SESSION["userId"]
+                                        "user_id" =>  $_SESSION["user-id"]
                                 ];
                                 $getModel->insert("tbl_ingredients", $dataIgr);
                         }
@@ -74,9 +76,11 @@ class AddFormula extends controller {
 
         function update($id) {
                 $getModel = $this->model("AddFormulaModel");
-                $pr = $getModel->getOne("dish","dish_id=$id");
+                $pr = $getModel->getOne("tbl_dish","id=$id");
                 $ingredient = $getModel->getMany("ingredients","dish_id=$id");
-                $this->view("formula/update-formula");
+                $this->view("formula/update-formula",[
+                        "dish" => $pr
+                ]);
         }
 }
 
