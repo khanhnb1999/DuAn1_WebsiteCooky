@@ -1,4 +1,4 @@
-.formula__your {
+.views__formula {
         margin: 40px 350px;
 }
 
@@ -20,7 +20,6 @@
 
 .pr__item {
         position: relative;
-        text-align: center;
         border: 1px solid #e6dbdb;
         border-radius: 5px;
         padding: 10px;
@@ -75,4 +74,56 @@
 
 .pr__item:hover .scroll__dish--block {
         display:block;
+}
+
+.delete__dish {
+        display:none;
+        position: absolute;
+        top: 1px;
+        right: 1px;
+        background-color: #D94241;
+}
+
+.delete__dish a {
+        text-decoration: none;
+        padding: 2px 7px;
+        color: white;
+}
+
+.pr__item:hover .delete__dish {
+        display:block;
+}
+
+.view__dish--your {
+        display:flex;
+        justify-content:space-between;
+        margin: 40px 350px;
+        background-color: white;
+        padding: 20px 25px;
+        border-radius: 5px;
+}
+
+.introduction__dish--image {
+        flex-basis: 23%;
+}
+
+.introduction__dish--image img {
+        width:380px;
+        border-radius: 5px;
+}
+
+.group__info--dish {
+        background-color: #fcfcfc;
+        padding: 7px 18px;
+        border-radius: 5px;
+        flex-basis: 70%;
+}
+
+.group__info--dish {
+        flex-basis: 70%;
+}
+
+.ingredient__dish--detail img {
+        width: 112px;
+        height: 98px;
 }

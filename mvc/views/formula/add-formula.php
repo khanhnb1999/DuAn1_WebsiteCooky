@@ -117,7 +117,7 @@
                                         </div>
                                         <div class="input__step--dish">
                                                 <span id="description-error"></span>
-                                                <textarea type="text" name="dish_desc" id="editor2"  class="form-control  filter-desc border "
+                                                <textarea type="text" name="dish_desc" id="editor1"  class="form-control  border "
                                                  rows="10"  data-tab="description-error"></textarea>
                                         </div>
                                 </div>

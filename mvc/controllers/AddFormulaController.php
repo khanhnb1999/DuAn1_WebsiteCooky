@@ -40,6 +40,7 @@ class AddFormula extends controller {
                 } else {
                         $getModel = $this->model("AddFormulaModel");
                         $getNewDish = $getModel->getNewFormula();
+                        $getDishFinalId = $getModel->getDishIdFinal();
                         $dish_image = $_FILES['fileToUpload']['name'];
                         $getData = [
                                 'dish_name' => $_POST['dish_name'],
@@ -59,27 +60,73 @@ class AddFormula extends controller {
                                         "name" => $value['name'],
                                         "quantity" => $value["quantity"],
                                         "unit" => $value['unit'],
-                                        "node" => $value['note'],
-                                        "tbl_dish_id" => 1,
-                                        "user_id" =>  $_SESSION["user-id"]
+                                        "note" => $value['note'],
+                                        "dish_id" => $getDishFinalId[0]['dish_id'] + 1,
                                 ];
-                                $getModel->insert("tbl_ingredients", $dataIgr);
+                                $getModel->insert("ingredients", $dataIgr);
                         }
                         $data['success'] = true;
                         $data['message'] = 'Tạo món ăn thành công';
                         $data['product'] = $_POST['dish_name'];
-                         
-                        
                 }
                 echo json_encode($data);
         }
 
         function update($id) {
-                $getModel = $this->model("AddFormulaModel");
-                $pr = $getModel->getOne("tbl_dish","id=$id");
+                $getModel = $this->model("addFormulaModel");
+                $pr = $getModel->getOne("dish","dish_id=$id");
                 $ingredient = $getModel->getMany("ingredients","dish_id=$id");
-                $this->view("formula/update-formula",[
-                        "dish" => $pr
+                if($_SERVER['REQUEST_METHOD'] == 'POST') {
+                        $dataIngredient = $_POST['ingredient'];
+                        foreach($dataIngredient as $value) {
+                                $data = [
+                                        "name" => $value['name'],
+                                        "quantity" => $value['quantity'],
+                                        "unit" => $value["unit"],
+                                        "note" => $value['note'],
+                                        "dish_id" => $id,
+                                ];
+                                if(isset($value['id']) && !empty($value['id'])) {
+                                        $getModel->update("ingredients",$data, "id=".$value['id']);
+                                } else {
+                                        $getModel->insert("ingredients",$data);
+                                }
+                }
+                $image = $_FILES['fileToUpload'];
+                if(!empty($image['name'])) {
+                        $data = [
+                                'dish_id' => $_POST['dish_id'],
+                                'dish_name' => $_POST['dish_name'],
+                                'dish_image' => $image['name'] ?? 'no-image.png',
+                                'dish_desc' => $_POST['dish_desc'],
+                                'dish_intro' => $_POST['dish_intro'],
+                                'dish_price' => 0,
+                                'catalog_id' => 0,
+                                'user_id' => $_SESSION['user-id'],
+                                "status" => 0,
+                        ];
+                } else {
+                        $data = [
+                                'dish_id' => $_POST['dish_id'],
+                                'dish_name' => $_POST['dish_name'],
+                                'dish_desc' => $_POST['dish_desc'],
+                                'dish_intro' => $_POST['dish_intro'],
+                                'dish_price' => 0,
+                                'catalog_id' => 0,
+                                'user_id' => $_SESSION['user-id'],
+                                "status" => 0,
+                        ];
+                }
+                $dish_image = $image['name'];
+                $where = "dish_id = $id";
+                $getModel->update("dish",$data,$where);
+                move_uploaded_file($image['tmp_name'], 'admin/mvc/views/products/image/' .$dish_image);
+                header("Location: ".SITE_URL."/formulaUser");
+                }
+                $this->view("formula/update-formula",
+                [
+                        "product" => $pr,
+                        "ingredient" => $ingredient
                 ]);
         }
 }

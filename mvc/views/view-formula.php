@@ -267,107 +267,33 @@
 </div>
 
 <session class="session">
-<?php $value = $data['product'] ?>
-        <form action="<?= SITE_URL ?>/addFormula/update/<?= $value['dish_id'] ?>" method="POST" enctype="multipart/form-data" >
-                <div class="grid__app">
-                        <input type="hidden" name="dish_id" value="<?= $value['dish_id'] ?>">
-                        <div class="add__formula">
-                                <div class="title__add-formula">
-                                        <p>Tạo công thức mới</p>
-                                </div>
-                                <div class="step">
-                                        <div class="introduction__step">
-                                                <p> <span>Bước 1: </span> Hãy mô tả "<strong>Tên món ăn</strong>" của bạn nhé! </p>
-                                        </div>
-                                        <div class="input__step--dish">
-                                                <textarea type="text" name="dish_intro" style="width:800px" id="filter-intro" data-tab="intro-error"
-                                                class="form-control border mb-1" rows="5" placeholder="Mô tả tên món ăn..." ><?= $value['dish_intro'] ?></textarea>
-                                                <span class="my-1" id="intro-error"></span>
-                                        </div>
-                                </div>
-                                <div class="step">
-                                        <div class="introduction__step">
-                                                <p>
-                                                <span>Bước 2:</span>&nbsp;Hãy nhập "<strong>Tên món ăn</strong>" và nhớ chọn "<strong>Ảnh đại diện</strong>" là một hình thành phẩm thật hấp dẫn nhé!
-                                                </p>
-                                        </div>
-                                        <div class="both__name" style="width:1158px">
-                                                <div class="dish-name mb-3">
-                                                        <strong>2.1 - Tên món ăn</strong>
-                                                        <input type="text" id="filter-names" name="dish_name" data-tab="name-error" value="<?= $value['dish_name'] ?>"
-                                                        class="form-control border p-3 mb-1" placeholder="Tên món ăn..." >
-                                                        <span class="my-1" id="name-error"></span>
-                                                </div>
-                                                <div class="dish-images">
-                                                        <strong>2.2 - Chọn ảnh mới</strong>
-                                                        <input type="hidden" name="fileToUpload" value="<?=$value['dish_image']?>">
-                                                        <input type="file" id="filter-image" name="fileToUpload" onchange="validateTypeAndSize(this)"
-                                                        data-tab="image-error" class="form-control p-3 mb-1 border">
-                                                        <span id="image-error"></span>
-                                                </div>
-                                                <div class="update__image--user border border-3 border-success" style="position:relative; left:-164px;top:-26px; " >
-                                                        <img src="../../admin/mvc/views/products/image/<?= $value['dish_image'] ?>" style="width:113px" alt="">
-                                                </div>
-                                        </div>
-                                </div>
-                                <div class="step">
-                                        <div class="introduction__step">
-                                                <p> <span>Bước 3 :</span>&nbsp;Nhập thông tin nguyên vật liệu cần chuẩn bị cho món ăn của bạn.</p>
-                                        </div>
-                                        <div class="add__contents">
-                                                <?php foreach ($data['ingredient'] as $key => $value){
-                                                        ?>
-                                                        <div class="add__fields content_row" id="current_<?php echo $key; ?>">
-                                                                <div class="ingredient"> 
-                                                                        <input type="text" name="ingredient[<?php echo $key; ?>][name]" value="<?= $value['name'] ?? "" ?>" class="form-control p-3" placeholder="Tên nguyên liệu...">
-                                                                        <input type="hidden" id="ingredient_<?php echo $key; ?>" name="ingredient[<?php echo $key; ?>][id]" value="<?= $value['id'] ?? "" ?>">
-                                                                </div>
-                                                                <div class="quantity">
-                                                                        <input type="text" name="ingredient[<?php echo $key; ?>][quantity]" value="<?= $value['quantity'] ?? "" ?>" class="form-control p-3"  placeholder="Số lượng...">
-                                                                </div>
-                                                                <div class="unit">
-                                                                        <input type="text" name="ingredient[<?php echo $key; ?>][unit]" value="<?= $value['unit'] ?? "" ?>" class="form-control p-3" placeholder="Đơn vị...">
-                                                                </div>
-                                                                <div class="note">
-                                                                        <input type="text" name="ingredient[<?php echo $key; ?>][note]"value="<?= $value['note'] ?? "" ?>" class="form-control p-3" placeholder="Ghi chú...">
-                                                                </div>
-                                                                <div class="delete-input">
-                                                                        <button type="button" class="btn btn-danger" onclick="currentDish('<?php echo $key; ?>')">
-                                                                        <i class="fas fa-trash-alt"></i>
-                                                                        </button>
-                                                                </div>
-                                                        </div>
-                                                        <?php
-                                                        }
-                                                ?>        
-                                        </div>
-                                        <div class="product-add">
-                                                <button type="button" id="btn-click" class="btn btn-success mb-3">
-                                                        <i class="fas fa-plus"></i>
-                                                </button>
-                                        </div>
-                                </div>
-
-                                <div class="step">
-                                        <div class="introduction__step">
-                                                <p>
-                                                        <span>Bước 4 :</span>&nbsp;Nhập các bước thực hiện món ăn.Nhớ kèm theo hình ảnh minh họa nhé!
-                                                </p>
-                                        </div>
-                                        <div class="input__step--dish">
-                                                <span id="description-error"></span>
-                                                <textarea type="text" name="dish_desc" id="editor2"  class="form-control  filter-desc border "
-                                                 rows="10"  data-tab="description-error"><?= $value['dish_desc'] ?></textarea>
-                                        </div>
-                                </div>
-
-                                <div class="post__dish">
-                                        <strong>Bây giờ, bạn hãy chia sẻ công thức của bạn ngay nhé!</strong><br>
-                                        <button type="submit" id="add-ingredient" class="btn btn-success my-3">Cập nhật công thức của bạn</button>
-                                </div>
+        <?php $val = $data['dish'] ?>
+        <div class="view__dish--your">
+                <div class="introduction__dish--image">
+                        <img src="../../admin/mvc/views/products/image/<?= $val['dish_image'] ?>" alt="">
+                        <div class="group__btn mt-3">
+                                <a href="<?= SITE_URL ?>/addFormula" class="btn btn-success">Thêm công thức</a>
+                                <a href="<?= SITE_URL ?>/addFormula/update/<?= $val["dish_id"] ?>" class="btn btn-info mx-3">Sửa công thức</a>
                         </div>
                 </div>
-        </form>    
+                <div class="group__info--dish">
+                        <div class="ingredient__dish--detail">
+                                <h4><strong>Tên công thức: </strong><?= $val['dish_name'] ?></h4>
+                               <div class="item__small--detail">
+                                        <h4 class="mt-3">Thành phần</h4>
+                                        <?php foreach ($data["ingredient"] as $value) : ?>
+                                                <div class="ingredient__items">
+                                                        <?= $value["name"] ?> <?= $value["quantity"] ?> <?= $value["unit"] ?>
+                                                </div>
+                                        <?php endforeach; ?>
+                                        <h4 class="my-3">Các bước thực hiện</h4>
+                                        <?= $val['dish_desc'] ?>
+                               </div>
+                        </div>
+                        <div class="steps__dish">
+                        </div>
+                </div>
+        </div>
 </session>
 
 <div class="footer">

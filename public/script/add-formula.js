@@ -102,12 +102,39 @@ $(document).ready(function () {
                         }
                 });
                 event.preventDefault();
-        })
+        });
 });
 
 
 function currentDish(val) {
+        var $nlId = $("#ingredient_" + val).val();
+        if ($nlId !== '') {
+                $.ajax({
+                        type: "POST",
+                        url: BaseUrl + "/formulaUser/removeNl/" + $nlId,
+                        data: {},
+                        success: function (data) {
+                                console.log(data);
+                        },
+                        dataType: "application/json"
+                });
+        }
         $("#current_" + val).remove();
+}
+
+function deleteDish(id) {
+        if (id !== '') {
+                $.ajax({
+                        type: "POST",
+                        url: BaseUrl + "/formulaUser/deleteDishUser/" + id,
+                        data: {},
+                        success: function (data) {
+                                console.log(data);
+                        },
+                        dataType: "application/json"
+                });
+        }
+        $("#hide_" + id).remove();
 }
 
 function currentBox() {

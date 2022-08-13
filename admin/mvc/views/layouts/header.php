@@ -90,28 +90,19 @@
                         </ul>
                     </li>
                     <li class="sidebar__nav--group">
-                        <button class="dropdown__btn">
-                            <i class="fas fa-user-cog icon__left"></i>
-                            <span>Roles</span>
-                            <i class="fal fa-angle-down icon__right"></i>
-                        </button>
-                        <ul class="dropdown__nav">
-                            <li class="dropdown__item">
-                                <a href="<?php echo SITE_URL; ?>/role/index/1" class="dropdown__item--link">Role</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="sidebar__nav--group">
-                        <button class="dropdown__btn">
-                            <i class="fas fa-utensils icon__left"></i>
-                            <span>Dinner Table</span>
-                            <i class="fal fa-angle-down icon__right"></i>
-                        </button>
-                        <ul class="dropdown__nav">
-                            <li class="dropdown__item">
-                                <a href="<?php echo SITE_URL; ?>/tray/index/1" class="dropdown__item--link">Tray table</a>
-                            </li>
-                        </ul>
+                                <button class="dropdown__btn">
+                                <i class="far fa-chart-line icon__left"></i>
+                                        <span>Statistical</span>
+                                <i class="fal fa-angle-down icon__right"></i>
+                                </button>
+                                <ul class="dropdown__nav">
+                                <li class="dropdown__item">
+                                        <a href="<?php echo SITE_URL; ?>/tray/index/1" class="dropdown__item--link">Views</a>
+                                </li>
+                                <li class="dropdown__item">
+                                        <a href="<?php echo SITE_URL; ?>/tray/index/1" class="dropdown__item--link">Product-User</a>
+                                </li>
+                         </ul>
                     </li>
                 </ul>
             </div>
