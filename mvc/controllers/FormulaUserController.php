@@ -15,11 +15,17 @@ class FormulaUser extends controller {
                 $getModel = $this->model("FormulaUserModel");
                 $dishDetail = $getModel->getOne("dish","dish_id=$id");
                 $ingredient = $getModel->getIngredient($ingredientId);
+                $getId = $_SESSION['user-id'];
+                $getInfoUser = $getModel->getUserName($getId);
+                $countFormula = $getModel-> countFormula($getId);
                 $this->view('view-formula',[
                         "dish" => $dishDetail,
-                        "ingredient" => $ingredient
+                        "ingredient" => $ingredient,
+                        "user" => $getInfoUser,
+                        "count" =>  $countFormula
                 ]);
         }
+
 
         function removeNl($id) {
                 if(!empty($id)){

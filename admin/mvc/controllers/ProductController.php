@@ -34,7 +34,8 @@ class Product extends Controller {
                                         'dish_price' => $_POST['dish_price'],
                                         'catalog_id' => $_POST['cate_id'],
                                         'user_id' => $userId,
-                                        "status" => 1
+                                        "status" => 1,
+                                        "views" => 0
                                 ];
                                 $dataTray = [
                                         "tray_id" => $_POST['tray_id'],
@@ -55,7 +56,8 @@ class Product extends Controller {
                                         'dish_price' => $_POST['dish_price'],
                                         'catalog_id' => $_POST['cate_id'],
                                         'user_id' => $userId,
-                                        "status" => 1
+                                        "status" => 1,
+                                        "views" => 0
                                 ];
                                 $getModel = $this->model("ProductModel");
                                 $getModel->insert("dish",$data);
@@ -115,6 +117,7 @@ class Product extends Controller {
                                 'catalog_id' => $_POST['cate_id'],
                                 'user_id' => $_SESSION['userId'],
                                 "status" => $_POST['status'],
+                                "views" => $_POST['views'],
                         ];
                 } else {
                         $data = [
@@ -126,6 +129,7 @@ class Product extends Controller {
                                 'catalog_id' => $_POST['cate_id'],
                                 'user_id' => $_SESSION['userId'],
                                 "status" => $_POST['status'],
+                                "views" => $_POST['views'],
                         ];
                 }
                 $dish_image = $image['name'];
@@ -148,21 +152,21 @@ class Product extends Controller {
                 $ingredient = $getModel->getMany("ingredients","dish_id=$id");
                 $result = $getModel->getAll("catalogs");
                 if($_SERVER['REQUEST_METHOD'] == 'POST') {
-                        // $dataIngredient = $_POST['ingredient'];
-                        // foreach($dataIngredient as $value) {
-                        //         $data = [
-                        //                 "name" => $value['name'],
-                        //                 "quantity" => $value['quantity'],
-                        //                 "unit" => $value["unit"],
-                        //                 "note" => $value['note'],
-                        //                 "dish_id" => $id,
-                        //         ];
-                        //         if(isset($value['id']) && !empty($value['id'])) {
-                        //                 $getModel->update("ingredients",$data, "id=".$value['id']);
-                        //         } else {
-                        //                 $getModel->insert("ingredients",$data);
-                        //         }
-                        // }
+                        $dataIngredient = $_POST['ingredient'];
+                        foreach($dataIngredient as $value) {
+                                $data = [
+                                        "name" => $value['name'],
+                                        "quantity" => $value['quantity'],
+                                        "unit" => $value["unit"],
+                                        "note" => $value['note'],
+                                        "dish_id" => $id,
+                                ];
+                                if(isset($value['id']) && !empty($value['id'])) {
+                                        $getModel->update("ingredients",$data, "id=".$value['id']);
+                                } else {
+                                        $getModel->insert("ingredients",$data);
+                                }
+                        }
                         $image = $_FILES['fileToUpload'];
                         if(!empty($image['name'])) {
                                 $data = [
@@ -175,6 +179,7 @@ class Product extends Controller {
                                         'catalog_id' => $_POST['cate_id'] ,
                                         'user_id' => $_SESSION['userId'],
                                         "status" => $_POST['status'] ,
+                                        "views" => $_POST['views'],
                                 ];
                         } else {
                                 $data = [
@@ -186,6 +191,7 @@ class Product extends Controller {
                                         'catalog_id' => $_POST['cate_id']  ,
                                         'user_id' => $_SESSION['userId'],
                                         "status" => $_POST['status'],
+                                        "views" => $_POST['views'],
                                 ];
                         }
                         $dish_image = $image['name'];

@@ -52,10 +52,26 @@ class Formula extends controller {
                 $getModel = $this->model("FormulaModel");
                 $cateId = $id;
                 $ingredientId = $id;
+                $where = "dish_id = $id";
                 $result = $getModel->getOne("dish", "dish_id=$cateId");
+                $getViews = $result['views'];
+                $updateViews = $result['views'] + 1;
+                $dataView = [
+                        "dish_id" => $result['dish_id'],
+                        "dish_name" => $result['dish_name'],
+                        "dish_image" => $result['dish_image'],
+                        "dish_desc" => $result['dish_desc'],
+                        "dish_intro" => $result['dish_intro'],
+                        "dish_price" => $result['dish_price'],
+                        "catalog_id" => $result['catalog_id'],
+                        "user_id" => $result['user_id'],
+                        "status" => $result['status'],
+                        "views" => $updateViews
+                ];
                 $ingredient = $getModel->getIngredient($ingredientId);
                 $dishId = $result['catalog_id'];
                 $dishTop = $getModel->getDishTop($dishId);
+                $getModel->update("dish", $dataView, $where);
                 $this->view("dish_detail",[
                         "dishDetail" => $result,
                         "ingredient" => $ingredient,

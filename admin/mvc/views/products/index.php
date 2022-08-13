@@ -43,18 +43,17 @@
                     </tbody>
                 </table>
             </div>
-            <div class="choice__dish" style="width: 200px">
+            <!-- <div class="choice__dish" style="width: 200px">
                 <select name="tray_id" class="form-control input__control text-center p-3 border border-success border-3">
                     <option>Chọn Loại Mâm Cơm</option>
                     <?php foreach($data['tray'] as $cat): ?>
                         <option value="<?= $cat['tray_id'] ?>"><?= $cat['tray_name'] ?></option>
                     <?php endforeach; ?>
                 </select>
-            </div>
+            </div> -->
             <div class="checkbox mt-5">
                 <a href="#" class="btn btn-success" id="btn1">Check all</a>
                 <a href="#" class="btn btn-warning text-white mx-3" id="btn2">Uncheck all</a>
-                <button type="submit"  class="btn btn-success mx-3">Thêm Món Ăn Vào Mâm Cơm</button>
             </div>
         </form>
         <div class="pagination d-flex justify-content-center mt-5">

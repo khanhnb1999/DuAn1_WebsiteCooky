@@ -97,10 +97,10 @@
                                 </button>
                                 <ul class="dropdown__nav">
                                 <li class="dropdown__item">
-                                        <a href="<?php echo SITE_URL; ?>/tray/index/1" class="dropdown__item--link">Views</a>
+                                        <a href="<?php echo SITE_URL; ?>/views" class="dropdown__item--link">Views</a>
                                 </li>
                                 <li class="dropdown__item">
-                                        <a href="<?php echo SITE_URL; ?>/tray/index/1" class="dropdown__item--link">Product-User</a>
+                                        <a href="<?php echo SITE_URL; ?>/formula" class="dropdown__item--link">Product-User</a>
                                 </li>
                          </ul>
                     </li>

@@ -50,7 +50,8 @@ class AddFormula extends controller {
                                 'dish_price' => 0,
                                 'catalog_id' => 0,
                                 'user_id' => $_SESSION['user-id'],
-                                "status" => 0
+                                "status" => 0,
+                                "views" => 0
                         ];
                         $getModel->insert("dish", $getData);
                         move_uploaded_file($_FILES['fileToUpload']['tmp_name'], 'admin/mvc/views/products/image/' .$dish_image);
@@ -104,6 +105,7 @@ class AddFormula extends controller {
                                 'catalog_id' => 0,
                                 'user_id' => $_SESSION['user-id'],
                                 "status" => 0,
+                                "views" => $_POST['views']
                         ];
                 } else {
                         $data = [
@@ -115,6 +117,7 @@ class AddFormula extends controller {
                                 'catalog_id' => 0,
                                 'user_id' => $_SESSION['user-id'],
                                 "status" => 0,
+                                "views" => $_POST['views']
                         ];
                 }
                 $dish_image = $image['name'];

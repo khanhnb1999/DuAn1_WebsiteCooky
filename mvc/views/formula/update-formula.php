@@ -359,6 +359,7 @@
                                                 <textarea type="text" name="dish_desc" id="editor2"  class="form-control  filter-desc border "
                                                  rows="10"  data-tab="description-error"><?= $value['dish_desc'] ?></textarea>
                                         </div>
+                                        <input type="hidden" name="views" value="<?= $value['views'] ?>">
                                 </div>
 
                                 <div class="post__dish">

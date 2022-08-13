@@ -267,10 +267,21 @@
 </div>
 
 <session class="session">
-        <?php $val = $data['dish'] ?>
+        <?php $val = $data['dish'];
+                $user = $data['user'];
+         ?>
         <div class="view__dish--your">
                 <div class="introduction__dish--image">
                         <img src="../../admin/mvc/views/products/image/<?= $val['dish_image'] ?>" alt="">
+                        <div class="user__post--formula mt-3">
+                                <div class="icon__avatar">
+                                        <i class="far fa-user"></i>
+                                </div>
+                                <div class="information__users">
+                                        <span><?= $user['user_name'] ?></span>
+                                        <p><?= $data['count'] ?>công thức</p>
+                                </div>
+                        </div>
                         <div class="group__btn mt-3">
                                 <a href="<?= SITE_URL ?>/addFormula" class="btn btn-success">Thêm công thức</a>
                                 <a href="<?= SITE_URL ?>/addFormula/update/<?= $val["dish_id"] ?>" class="btn btn-info mx-3">Sửa công thức</a>
@@ -279,6 +290,7 @@
                 <div class="group__info--dish">
                         <div class="ingredient__dish--detail">
                                 <h4><strong>Tên công thức: </strong><?= $val['dish_name'] ?></h4>
+                                <p class="mt-3"><?=  $val['dish_intro'] ?></p>
                                <div class="item__small--detail">
                                         <h4 class="mt-3">Thành phần</h4>
                                         <?php foreach ($data["ingredient"] as $value) : ?>
