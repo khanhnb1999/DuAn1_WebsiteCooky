@@ -16,7 +16,7 @@ class AddFormula extends controller {
                         "dish_desc" =>$_POST['dish_desc']
                 ];
                 $getModel->insert("tbl_dish", $data);
-                move_uploaded_file($_FILES['fileToUpload']['tmp_name']);
+                // move_uploaded_file($_FILES['fileToUpload']['tmp_name']);
                 $message = [];
                 $data = [];
                 if(empty($_POST['dish_intro'])) {
