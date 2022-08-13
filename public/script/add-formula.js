@@ -10,13 +10,12 @@ function getInput(value) {
 function validateTypeAndSize(loadFile) {
         var typeFile = $(loadFile).val().split('.').pop().toLowerCase();
         var arrTypeFile = ['jpeg', 'jpg', 'png'];
-
-        if ($.inArray(typeFile, arrTypeFile) == -1) {
+        if ($.inArray(typeFile, arrTypeFile) ==  -1) {
                 $("#image-error").text("Kiểu file bạn tải lên phải là: jpeg-jpg-png").show().css("color", "red");
         } else {
                 var size = parseFloat($("#filter-image")[0].files[0].size / 1024).toFixed(2);
-                if (size > 40) {
-                        $("#image-error").text("Kích thước file tối đa là 40kb").show().css("color", "red");
+                if (size > 100) {
+                        $("#image-error").text("Kích thước file tối đa là 100kb").show().css("color", "red");
                 }
         }
 }
@@ -29,7 +28,7 @@ $(document).ready(function () {
                 var tab = $(this).data("tab");
                 $("#" + tab).hide();
         });
-
+        
         // Add ingredient
         var index = $(".content_row").length;
         $("#btn-click").click(function () {
@@ -50,14 +49,19 @@ $(document).ready(function () {
 
         // validate form input
         $("#form-1").submit(function (event) {
-                $("#desc-error").remove();
-                var formData = $(this).serialize();
+                event.preventDefault();
+                var formData = new FormData(this);
+                // console.log(formData);
+                // var file =  $("#filter-image").files[0];
+                // formData.append("fileToUpload", file);
                 $.ajax({
                         type: "POST",
-                        url: BaseUrl + "/addFormula/updateFormula",
+                        url: BaseUrl + "/addFormula/add",
                         data: formData,
                         dataType: "json",
                         encode: true,
+                        processData: false,
+                        contentType: false
                 }).done(function (data) {
                         console.log(data);
                         if (!data.success) {
@@ -65,16 +69,16 @@ $(document).ready(function () {
                                         $("#filter-intro").addClass("is-invalid border-danger");
                                         $("#intro-error").text(data.message.dish_intro).css("color", "red");
                                 }
-
+                                       
                                 if (data.message.dish_name) {
-                                        $("#filter-name").addClass("is-invalid border-danger");
+                                        $("#filter-names").addClass("is-invalid border-danger");
                                         $("#name-error").text(data.message.dish_name).css("color", "red");
                                 }
 
-                                // if(data.message.fileToUpload) {
-                                //     $("#filter-image").addClass("is-invalid border-danger");
-                                //     $("#image-error").text(data.message.fileToUpload).css("color","red");
-                                // }
+                                if(data.message.image) {
+                                    $("#filter-image").addClass("is-invalid border-danger");
+                                    $("#image-error").text(data.message.image).css("color","red");
+                                }
 
                                 if (data.message.name) {
                                         $("#igr-name").addClass("is-invalid border-danger");
@@ -90,23 +94,47 @@ $(document).ready(function () {
                                         $("#igr-unit").addClass("is-invalid border-danger");
                                         $("#igr-unit-error").text(data.message.unit).css("color", "red");
                                 }
-
-                                // if(data.message.dish_description) {
-                                //         $("#desc-error").text(data.message.dish_description).css("color", "red");
-                                // }
                                 
                         } else {
-                                $("#has-content").html(data.message);
+                                var dishName = data.product;
+                                $("#name_dish").html(dishName);
+                                $(".model__open").css("display","block");
                         }
                 });
                 event.preventDefault();
-        })
+        });
 });
 
 
-
 function currentDish(val) {
+        var $nlId = $("#ingredient_" + val).val();
+        if ($nlId !== '') {
+                $.ajax({
+                        type: "POST",
+                        url: BaseUrl + "/formulaUser/removeNl/" + $nlId,
+                        data: {},
+                        success: function (data) {
+                                console.log(data);
+                        },
+                        dataType: "application/json"
+                });
+        }
         $("#current_" + val).remove();
+}
+
+function deleteDish(id) {
+        if (id !== '') {
+                $.ajax({
+                        type: "POST",
+                        url: BaseUrl + "/formulaUser/deleteDishUser/" + id,
+                        data: {},
+                        success: function (data) {
+                                console.log(data);
+                        },
+                        dataType: "application/json"
+                });
+        }
+        $("#hide_" + id).remove();
 }
 
 function currentBox() {

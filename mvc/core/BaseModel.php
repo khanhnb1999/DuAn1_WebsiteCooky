@@ -100,4 +100,10 @@ class BaseModel extends ConnectDb {
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    public function getMany($table, $where){
+        $sql = "SELECT * FROM $table where $where";
+        $stmt = ($this->conn)->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }

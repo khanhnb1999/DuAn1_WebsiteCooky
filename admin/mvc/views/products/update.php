@@ -32,7 +32,12 @@
                     <input type="file" class="form-control input__control" name="fileToUpload">
                 </div>
             </div>
-            <div class="avatar d-flex justify-content-end">
+            <div class="avatar d-flex justify-content-between">
+                <span class="status__dish">
+                        <strong>Status: (1-Hiện thị/ 2-Ẩn)</strong>
+                        <input type="text" class="form-control p-3" name="status" value="<?= $value["status"] ?>">
+                        <input type="hidden" name="views" value="<?= $value['views'] ?>">
+                </span>
                 <span class="border border-5">
                     <img src="<?php echo SITE_URL; ?>/mvc/views/products/image/<?=$value['dish_image'] ?>" width="100px; height: 100px" alt="">
                 </span>

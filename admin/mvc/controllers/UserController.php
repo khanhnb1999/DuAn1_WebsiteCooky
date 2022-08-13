@@ -12,7 +12,7 @@ class User extends Controller {
             "user" => $result,
             "totalRecord" => $totalRecord,
             "page" => $id,
-            "page_one" => 3
+            "page_one" => 8
         ]);
     }
 

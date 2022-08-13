@@ -2,7 +2,7 @@
         margin: 40px 350px;
 }
 
-.detail__hot-title h3 {
+.detail__hot-title h4 {
         text-align: center;
         color: var(--color-violet);
         padding-bottom: 10px;
