@@ -6,7 +6,21 @@ class AddFormula extends controller {
                 $this->view("formula/add-formula");
         }
 
+
+        function updateFormula() {
+                $getModel = $this->model("AddFormulaModel");
+                $dish_image = $_FILES['fileToUpload']['name'] ?? "";
+                $data = [
+                        "name" => $_POST['dish_name'],
+                        "image" => $dish_image,
+                        "intro" => $_POST['dish_intro'],
+                        "dish_desc" =>$_POST['dish_desc']
+                ];
+                $getModel->insert("tbl_dish", $data);
+                // move_uploaded_file($_FILES['fileToUpload']['tmp_name']);
+        }
         function add() {
+
                 $message = [];
                 $data = [];
                 $dataIngredient = $_POST['ingredient'];
@@ -157,5 +171,6 @@ class AddFormula extends controller {
                 ]);
         }
 }
+
 
 ?>
