@@ -38,7 +38,15 @@ class ProductModel extends BaseModel {
                 $stmt = ($this->conn)->prepare($sql);
                 $stmt->execute();
                 return $stmt->rowCount();
-            }
+        }
+
+         public function totalFormula($val) {
+                $sql = "SELECT * FROM dish INNER JOIN users ON dish.user_id = users.user_id INNER JOIN total_formulas
+                ON users.user_id = total_formulas.user_id WHERE dish.dish_id = $val";
+                $stmt = ($this->conn)->prepare($sql);
+                $stmt->execute();
+                return $stmt->fetch(PDO::FETCH_ASSOC);
+        }
 
 }
 

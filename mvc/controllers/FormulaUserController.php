@@ -17,12 +17,11 @@ class FormulaUser extends controller {
                 $ingredient = $getModel->getIngredient($ingredientId);
                 $getId = $_SESSION['user-id'];
                 $getInfoUser = $getModel->getUserName($getId);
-                $countFormula = $getModel-> countFormula($getId);
+                $getName = $getModel->getManyFormula($getId);
                 $this->view('view-formula',[
                         "dish" => $dishDetail,
                         "ingredient" => $ingredient,
-                        "user" => $getInfoUser,
-                        "count" =>  $countFormula
+                        "count" =>  $getName
                 ]);
         }
 
@@ -39,7 +38,15 @@ class FormulaUser extends controller {
         function deleteDishUser($id) {
                 if(!empty($id)){
                         $getModel = $this->model("FormulaUserModel");
-                        $getModel->delete("dish", "dish_id=$id"); 
+                        $val = $_SESSION['user-id'];
+                        $getVal = $getModel->totalFormula($val);
+                        $data = [
+                                'id' => $getVal['id'],
+                                "user_id" => $getVal['user_id'],
+                                "total" => $getVal['total'] - 1
+                        ];
+                        $getModel->delete("dish", "dish_id=$id");
+                        $getModel->update("total_formulas",$data,"id=".$getVal['id']);
                         die(json_encode(['status' => 1, 'messg' => 'Xóa thành công.']));
                 }
                 die(['status' => 0, 'messg' => 'Xóa thất bại']);

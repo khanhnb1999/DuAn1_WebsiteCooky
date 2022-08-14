@@ -41,6 +41,8 @@ class AddFormula extends controller {
                         $getModel = $this->model("AddFormulaModel");
                         $getNewDish = $getModel->getNewFormula();
                         $getDishFinalId = $getModel->getDishIdFinal();
+                        $val = $_SESSION['user-id'];
+                        $getVal = $getModel->totalFormula($val);
                         $dish_image = $_FILES['fileToUpload']['name'];
                         $getData = [
                                 'dish_name' => $_POST['dish_name'],
@@ -53,6 +55,28 @@ class AddFormula extends controller {
                                 "status" => 0,
                                 "views" => 0
                         ];
+                        $values1 = [
+                                "id" => $getVal['id'],
+                                "user_id" => $_SESSION['user-id'],
+                                "total" => $getVal['total'] + 1
+                        ];
+
+                        $values2 = [
+                                "user_id" => $_SESSION['user-id'],
+                                "total" => 1
+                        ];
+
+                        // if(isset($getVal['id']) == 0) {
+                        //         $getModel-insert("total_formulas",$values2);
+                        // } else {
+                        //         $getModel->update("total_formulas",$values1,"id=".$getVal['id']);
+                        // }
+
+                        if(isset($_SESSION['user-id']) && $getVal['id'] > 0) {
+                                $getModel->update("total_formulas",$values1,"id=".$getVal['id']);
+                        } else {
+                                $getModel->insert("total_formulas",$values2);
+                        }
                         $getModel->insert("dish", $getData);
                         move_uploaded_file($_FILES['fileToUpload']['tmp_name'], 'admin/mvc/views/products/image/' .$dish_image);
                         // insert table tbl_ingredients

@@ -268,7 +268,7 @@
 
 <session class="session">
         <?php $val = $data['dish'];
-                $user = $data['user'];
+                $user = $data['count'];
          ?>
         <div class="view__dish--your">
                 <div class="introduction__dish--image">
@@ -279,7 +279,7 @@
                                 </div>
                                 <div class="information__users">
                                         <span><?= $user['user_name'] ?></span>
-                                        <p><?= $data['count'] ?>công thức</p>
+                                        <p class="mb-0"><?= $user['total'] ?> công thức</p>
                                 </div>
                         </div>
                         <div class="group__btn mt-3">

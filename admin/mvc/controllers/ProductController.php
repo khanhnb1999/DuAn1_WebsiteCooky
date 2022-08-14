@@ -220,6 +220,13 @@ class Product extends Controller {
         function deleteFormula($id) {
                 $getModel = $this->model("ProductModel");
                 if(isset($id)) {
+                        $getVal = $getModel->totalFormula($id);
+                        $values1 = [
+                                "id" => $getVal['id'],
+                                "user_id" => $getVal['user_id'],
+                                "total" => $getVal['total'] - 1
+                        ];
+                        $getModel->update("total_formulas",$values1,"id=".$getVal['id']);
                         $where = "dish_id = $id";
                         $getModel->delete('dish',$where);
                         header("Location: ".SITE_URL."/userFormula/index/1");

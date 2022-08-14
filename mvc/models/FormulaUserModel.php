@@ -27,6 +27,21 @@ class FormulaUserModel extends BaseModel {
                 $stmt = ($this->conn)->prepare($sql);
                 return $stmt->execute();
         }
+
+        public function totalFormula($val) {
+                $sql = "SELECT * FROM total_formulas WHERE user_id='$val'";
+                $stmt = ($this->conn)->prepare($sql);
+                $stmt->execute();
+                return $stmt->fetch(PDO::FETCH_ASSOC);
+        }
+
+        public function getManyFormula($userId) {
+                $sql = "SELECT * FROM total_formulas INNER JOIN users ON total_formulas.user_id = users.user_id WHERE total_formulas.user_id = $userId";
+                $stmt = ($this->conn)->prepare($sql);
+                $stmt->execute();
+                return $stmt->fetch(PDO::FETCH_ASSOC);
+        }
+
 }
 
 ?>

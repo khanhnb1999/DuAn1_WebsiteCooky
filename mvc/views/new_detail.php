@@ -278,8 +278,6 @@
                     <a href="#">Home</a>
                     <a href="#">Công thức</a>
                     <a href="#">Blog</a>
-                    <a href="#">Tạo món</a>
-                    <a href="#">Mâm cơm</a>
                 </div>
             </div>
             <div class="item contact">
