@@ -34,6 +34,14 @@ class FormulaModel extends BaseModel {
                 $stmt->execute();
                 return $stmt->fetch(PDO::FETCH_ASSOC);
         }
+
+        function showComment($id) {
+                $sql = "SELECT * FROM comments INNER JOIN users ON comments.user_id=users.user_id
+                 WHERE dish_id='$id' AND status=1";
+                $stmt = ($this->conn)->prepare($sql);
+                $stmt->execute();
+                return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
 }
 
 ?>

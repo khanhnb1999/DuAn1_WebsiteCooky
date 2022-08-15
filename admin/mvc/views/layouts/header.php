@@ -114,7 +114,7 @@
             <ul class="nav__left">
                 <li class="header__brand">
                     <div class="brand">
-                        <img src="./public/image/cooky.png" alt="">
+                        <img src="../../public/image/cooky.png" alt="">
                     </div>
                     <span class="icon__bars"><i class="fal fa-bars"></i></span>
                 </li>
@@ -135,7 +135,7 @@
             </ul>
             <ul class="nav__right">
                 <li class="item user__avatar">
-                    <img src="./public/image/avatar.jpg" alt="">
+                    <img src="../../public/image/avatar.jpg" alt="">
                 </li>
                 <li class="item user__account">
                     <span id="user">

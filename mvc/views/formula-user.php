@@ -34,3 +34,23 @@
 </div>
 
 <?php require_once "./mvc/views/layouts/footer.php";?>
+<script type="text/javascript">
+        $( window ).load(function() {
+        $.ajax({
+                type: "GET",
+                url: BaseUrl + "/user/checkUserAddFormula",
+                data: {},
+                dataType: "json",
+                encode: true,
+                }).done(function(data) {
+                if(data.status) {
+                        $(".box__overlay").css("display", "none");
+                } else {
+                        setTimeout(function() {
+                                $(".box__overlay").css("display", "block");
+                                // $(".btn__close").css("display", "none");
+                        },1000);
+                }
+        });
+});
+</script>

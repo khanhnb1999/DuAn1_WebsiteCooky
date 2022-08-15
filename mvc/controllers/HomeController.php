@@ -6,13 +6,15 @@ class Home extends Controller {
         $getModel = $this->model("HomeModel");
         $cate = $getModel->getAll("catalogs");
         $getAllDish = $getModel->getAllTop50();
+        $setting = $getModel->setting();
         $getAllNew = $getModel->getAllLimit("news","new_id","DESC",0,4);
         $pr = $getModel->getAllStatus();
         $this->view("home",[
                 "home" => $cate,
                 "dish" => $pr,
                 "outstanding" => $getAllDish,
-                "news" => $getAllNew
+                "news" => $getAllNew,
+                "setting" => $setting
         ]);
     }
 

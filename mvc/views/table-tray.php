@@ -252,10 +252,10 @@
                                     <div class="formula__intro" id="current_<?= $value['dish_id'] ?>">
                                         <img src="../../admin/mvc/views/products/image/<?= $value['dish_image'] ?>" alt="">
                                         <div class="icon__current">
-                                            <a href="javascript:void()" class="btn__show" onclick=viewDish(<?= $value["dish_id"] ?>)>
+                                            <a href="javascript:void()" class="btn__show" title="xem" onclick=viewDish(<?= $value["dish_id"] ?>)>
                                                 <i class="fas fa-eye"></i>
                                             </a>
-                                            <a href="javascript:void()" onclick="removeDish(<?= $value['dish_id'] ?>)"
+                                            <a href="javascript:void()" title="xóa" onclick="removeDish(<?= $value['dish_id'] ?>)"
                                              class="btn__show">
                                                 <i class="far fa-trash"></i>
                                             </a>

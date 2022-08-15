@@ -254,6 +254,7 @@
                         </div>
                         <div class="dish__detail__right">
                                 <div class="list__dish--cate">
+                                        <h4 class="mb-3">CÔNG THỨC LIÊN QUAN</h4>
                                         <div class="dish__item--small">
                                                 <?php foreach ($data['dishTop'] as $value) : ?>
                                                         <div class="item__image--big">
@@ -279,6 +280,7 @@
                                                         <?php $getDishId  = $data['getId'];?>
                                                         <input type="hidden" name="dish_id" value="<?= $getDishId; ?>" id="dish-id">
                                                         <input type="text" name="comment" id="comment" class="form-control p-3" placeholder="Nhập bình luận...">
+                                                        <span id="error-message"></span>
                                                 </div>
                                                 <div class="send__comment">
                                                         <button type="submit" class="btn btn-success p-3" >Gửi bình luận</button>
@@ -290,19 +292,21 @@
                                 </div>
                         </form>
                         <div class="user__information">
-                                <div class="info__comment">
-                                        <div class="user__avatar">
-                                                <span><i class="far fa-user-edit"></i></span>
-                                        </div>
-                                        <div class="side__user">
-                                                <div class="user__name--comment">
-                                                        <span>Khanh nb</span>
+                                <?php foreach ($data['comment'] as $value): ?>     
+                                        <div class="info__comment">
+                                                <div class="user__avatar">
+                                                        <span><i class="far fa-user-edit"></i></span>
                                                 </div>
-                                                <div class="show__comment">
-                                                        <em>Mon an lanh manh cho suc khoe</em>
+                                                <div class="side__user">
+                                                        <div class="user__name--comment">
+                                                                <span><?= $value['user_name'] ?></span>
+                                                        </div>
+                                                        <div class="show__comment">
+                                                                <em><?= $value['content'] ?></em>
+                                                        </div>
                                                 </div>
                                         </div>
-                                </div>
+                                <?php endforeach; ?>          
                         </div>
                 </div>
         </div>

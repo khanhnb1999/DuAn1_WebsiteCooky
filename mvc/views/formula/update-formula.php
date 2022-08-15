@@ -356,10 +356,8 @@
                                         </div>
                                         <div class="input__step--dish">
                                                 <span id="description-error"></span>
-                                                <textarea type="text" name="dish_desc" id="editor2"  class="form-control  filter-desc border "
-                                                 rows="10"  data-tab="description-error"><?= $value['dish_desc'] ?></textarea>
+                                                <textarea type="text" name="desc" id="editor1" rows="10" ><?= $value['dish_desc'] ?></textarea>
                                         </div>
-                                        <input type="hidden" name="views" value="<?= $value['views'] ?>">
                                 </div>
 
                                 <div class="post__dish">
@@ -368,7 +366,7 @@
                                 </div>
                         </div>
                 </div>
-        </form>    
+        </form>     
 </session>
 
 <div class="footer">
@@ -440,15 +438,11 @@
     <script type="text/javascript" src="../../public/script/home.js"></script>
     <script type="text/javascript" src="../../public/script/add-formula.js"></script>
     <script>
-    $(document).ready(function(){
-        if($("#editor1").length){
-            CKEDITOR.replace('editor1');
-        }
-        if($("#editor2").length){
-            CKEDITOR.replace('editor2');
-        }
-    });
-     
+        $(document).ready(function(){
+                if($("#editor1").length){
+                CKEDITOR.replace('editor1');
+                }
+        });
 </script>
 </body>
 

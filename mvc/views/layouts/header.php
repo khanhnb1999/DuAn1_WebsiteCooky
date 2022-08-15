@@ -187,7 +187,7 @@
                                                 <span class="nav__link" id="has-link">Công Thức <i class="far fa-angle-down"></i></span>
                                                 <div class="side__down">
                                                         <a href="formula" >Tất cả công thức</a>
-                                                        <a href="addFormula" id="add-formula">Thêm công thức</a>
+                                                        <a href="addFormula" id="add-formula" data-tab="add-formula">Thêm công thức</a>
                                                         <a href="formulaUser">Xem công thức của bạn</a>
                                                 </div>
                                         </div>
@@ -210,25 +210,9 @@
         </div>
         <!-- end navigation -->
 
-        <div class="banner__carousel">
-            <div id="demo" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-                    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-                    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-                </div>
-                <div class="carousel-inner carousel__images">
-                    <div class="carousel-item active">
-                        <img src="./public/image/banner.jpg" alt="Los Angeles" class="d-block w-100">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./public/image/banner2.jpg" alt="Chicago" class="d-block w-100">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./public/image/banner.jpg" alt="New York" class="d-block w-100">
-                    </div>
-                </div>
-            </div>
+        <div class="banner__carousel" >
+                <?php $val = $data['setting'] ?>
+                <img src="admin/mvc/views/settings/image/<?= $val['banner'] ?>" alt="" style="width: 100%; border-radius: 5px;height: 510px;">
         </div>
 
     </header>

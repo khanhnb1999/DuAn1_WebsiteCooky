@@ -45,7 +45,7 @@
                                                         <a href="<?= SITE_URL ?>/formula/detailDish/<?= $value["dish_id"] ?>">
                                                                 <img src="./admin/mvc/views/products/image/<?= $value['dish_image'] ?>" alt="">
                                                         </a>
-                                                        <a href="DetailDish/dishDetail/<?= $value['dish_id'] ?>" class="cook__name">
+                                                        <a href="<?= SITE_URL ?>/formula/detailDish/<?= $value["dish_id"] ?>" class="cook__name">
                                                                 <?= $value['dish_name'] ?>
                                                         </a>
                                                         <div class="add__dish--table">

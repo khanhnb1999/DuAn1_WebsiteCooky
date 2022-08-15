@@ -97,23 +97,5 @@ $(document).ready(function() {
                         }
                 });
         });
-
-        $("#add-formula").click(function (event) {
-                // event.preventDefault();
-                $.ajax({
-                        type: "GET",
-                        url: BaseUrl + "/user/checkUserAddFormula",
-                        data: {},
-                        dataType: "json",
-                        encode: true,
-                }).done(function(data) {
-                        if(data.status) {
-                                console.log(data.status);
-                                $(".box__overlay").css("display", "none");
-                        } else {
-                                $(".box__overlay").css("display", "block");
-                                $(".side__down").css("display", "none");
-                        }
-                });
-        })
 });
+

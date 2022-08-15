@@ -72,10 +72,7 @@
                                                                 <?= $value["new_title"] ?>
                                                                 </a>
                                                         </h4>
-                                                        <strong>
-                                                                <i class="fal fa-user-edit"></i> Khanhnb
-                                                        </strong>
-                                                        <span><?= $value["new_date"] ?></span>
+                                                        <em><?= $value["new_date"] ?></em>
                                                 </div>
                                         <?php endforeach; ?>
                                 </div>

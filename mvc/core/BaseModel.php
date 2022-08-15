@@ -106,4 +106,10 @@ class BaseModel extends ConnectDb {
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+        public function setting(){
+                $sql = "SELECT * FROM settings WHERE setting_id=1";
+                $stmt = ($this->conn)->prepare($sql);
+                $stmt->execute();
+                return $stmt->fetch(PDO::FETCH_ASSOC);
+        }
 }

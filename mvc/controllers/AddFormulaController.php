@@ -61,7 +61,7 @@ class AddFormula extends controller {
                         $getData = [
                                 'dish_name' => $_POST['dish_name'],
                                 'dish_image' => $dish_image,
-                                'dish_desc' => $_POST['dish_desc'],
+                                'dish_desc' => $_POST['desc'],
                                 'dish_intro' => $_POST['dish_intro'],
                                 'dish_price' => 0,
                                 'catalog_id' => 0,
@@ -79,13 +79,6 @@ class AddFormula extends controller {
                                 "user_id" => $_SESSION['user-id'],
                                 "total" => 1
                         ];
-
-                        // if(isset($getVal['id']) == 0) {
-                        //         $getModel-insert("total_formulas",$values2);
-                        // } else {
-                        //         $getModel->update("total_formulas",$values1,"id=".$getVal['id']);
-                        // }
-
                         if(isset($_SESSION['user-id']) && $getVal['id'] > 0) {
                                 $getModel->update("total_formulas",$values1,"id=".$getVal['id']);
                         } else {
@@ -137,25 +130,25 @@ class AddFormula extends controller {
                                 'dish_id' => $_POST['dish_id'],
                                 'dish_name' => $_POST['dish_name'],
                                 'dish_image' => $image['name'] ?? 'no-image.png',
-                                'dish_desc' => $_POST['dish_desc'],
+                                'dish_desc' => $_POST['desc'],
                                 'dish_intro' => $_POST['dish_intro'],
                                 'dish_price' => 0,
                                 'catalog_id' => 0,
                                 'user_id' => $_SESSION['user-id'],
                                 "status" => 0,
-                                "views" => $_POST['views']
+                                "views" => 0
                         ];
                 } else {
                         $data = [
                                 'dish_id' => $_POST['dish_id'],
                                 'dish_name' => $_POST['dish_name'],
-                                'dish_desc' => $_POST['dish_desc'],
+                                'dish_desc' => $_POST['desc'],
                                 'dish_intro' => $_POST['dish_intro'],
                                 'dish_price' => 0,
                                 'catalog_id' => 0,
                                 'user_id' => $_SESSION['user-id'],
                                 "status" => 0,
-                                "views" => $_POST['views']
+                                "views" => 0
                         ];
                 }
                 $dish_image = $image['name'];

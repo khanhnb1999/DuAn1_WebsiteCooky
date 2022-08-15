@@ -116,9 +116,7 @@
                                                 </p>
                                         </div>
                                         <div class="input__step--dish">
-                                                <span id="description-error"></span>
-                                                <textarea type="text" name="dish_desc" id="editor1"  class="form-control  border "
-                                                 rows="10"  data-tab="description-error"></textarea>
+                                                <textarea type="text" name="desc" id="editor1" rows="10"  ></textarea>
                                         </div>
                                 </div>
 
@@ -132,3 +130,25 @@
 </session>
 
 <?php require_once "./mvc/views/layouts/footer.php";?>
+
+<script type="text/javascript">
+        $( window ).load(function() {
+        $.ajax({
+                type: "GET",
+                url: BaseUrl + "/user/checkUserAddFormula",
+                data: {},
+                dataType: "json",
+                encode: true,
+                }).done(function(data) {
+                if(data.status) {
+                        $(".box__overlay").css("display", "none");
+                } else {
+                        setTimeout(function() {
+                                $(".box__overlay").css("display", "block");
+                                // $(".btn__close").css("display", "none");
+                        },1000);
+                }
+        });
+});
+</script>
+

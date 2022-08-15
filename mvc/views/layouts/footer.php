@@ -10,8 +10,8 @@
                 <h6>Danh mục</h6>
                 <div class="list__menu">
                     <a href="#">Home</a>
+                    <a href="#">Bài viết</a>
                     <a href="#">Công thức</a>
-                    <a href="#">Blog</a>
                 </div>
             </div>
             <div class="item contact">
@@ -32,12 +32,8 @@
                     <h6>Về chúng tôi</h6>
                     <a href=""><img src="./admin/settings/image/" alt=""></a>
                     <span>
-                        CÔNG TY CỔ PHẦN COOKY
-                        Giấy đăng ký kinh doanh số 0314498604 do Sở Kế hoạch Đầu tư TP Hồ Chí Minh cấp lần đầu ngày
-                        06/07/2017
-                        Địa chỉ: C10 Điện Biên Phủ, Phường 25, Quận Bình Thạnh, TPHCM
-                        Số điện thoại: 02862861131
-                        Email: info@cooky.vn
+                       <?= $val['address'] ?>
+                       <?= $val['description'] ?>
                     </span>
                 </div>
             </div>
@@ -64,17 +60,7 @@
     <script type="text/javascript" src="./public/script/formula.js"></script>
     <script type="text/javascript" src="./public/script/home.js"></script>
     <script type="text/javascript" src="./public/script/add-formula.js"></script>
-    <script>
-    $(document).ready(function(){
-        if($("#editor1").length){
-            CKEDITOR.replace('editor1');
-        }
-        if($("#editor2").length){
-            CKEDITOR.replace('editor2');
-        }
-    });
-     
-</script>
+
 </body>
 
 </html>

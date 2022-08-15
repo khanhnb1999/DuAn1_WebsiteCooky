@@ -54,6 +54,7 @@ class Formula extends controller {
                 $ingredientId = $id;
                 $where = "dish_id = $id";
                 $result = $getModel->getOne("dish", "dish_id=$cateId");
+                $comment = $getModel->showComment($id);
                 $getViews = $result['views'];
                 $updateViews = $result['views'] + 1;
                 $dataView = [
@@ -76,7 +77,8 @@ class Formula extends controller {
                         "dishDetail" => $result,
                         "ingredient" => $ingredient,
                         "dishTop" => $dishTop,
-                        "getId" => $id 
+                        "getId" => $id,
+                        "comment" => $comment
                 ]);
         }
 
