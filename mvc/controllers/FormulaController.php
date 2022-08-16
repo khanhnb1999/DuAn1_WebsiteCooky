@@ -38,6 +38,22 @@ class Formula extends controller {
                 die();
         }
 
+        function filterNewDish() {
+                $getModel = $this->model("FormulaModel");
+                $result = $getModel->getDishNew();
+                $this->view('filter-new',[
+                        "result" => $result
+                ]);
+        }
+
+        function filterViewDish() {
+                $getModel = $this->model("FormulaModel");
+                $result = $getModel->getDishView();
+                $this->view('filter-view',[
+                        "result" => $result
+                ]);
+        }
+
         function getCate($id) {
                 $getModel = $this->model("FormulaModel");
                 $cateId = $id;

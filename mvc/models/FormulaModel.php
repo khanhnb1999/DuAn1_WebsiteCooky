@@ -42,6 +42,20 @@ class FormulaModel extends BaseModel {
                 $stmt->execute();
                 return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
+
+        function getDishNew() {
+                $sql = "SELECT * FROM dish WHERE status=1 ORDER BY dish_id DESC LIMIT 0,12 ";
+                $stmt = ($this->conn)->prepare($sql);
+                $stmt->execute();
+                return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+
+        function getDishView() {
+                $sql = "SELECT * FROM dish WHERE status=1 ORDER BY views DESC LIMIT 0,12 ";
+                $stmt = ($this->conn)->prepare($sql);
+                $stmt->execute();
+                return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
 }
 
 ?>

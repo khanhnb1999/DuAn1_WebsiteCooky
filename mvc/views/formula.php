@@ -17,6 +17,13 @@
                                                         <i class="far fa-angle-down"></i>
                                                 </span>
                                         </div>
+                                        <div class="list__view--formula">
+                                                <span id="select-down"> Mới nhất <i class="far fa-angle-down"></i> </span>
+                                                <div class="dropdown__dish">
+                                                        <a href="javascript:void()" id="dish-new">Mới nhất</a>
+                                                        <a href="javascript:void()" id="dish-view">Lượt xem</a>
+                                                </div>
+                                        </div>
                                 </div>
                                 <div class="search__filter">
                                         <?php foreach ($data["cate"] as $key => $value) : ?>
