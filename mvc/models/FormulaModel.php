@@ -37,7 +37,7 @@ class FormulaModel extends BaseModel {
 
         function showComment($id) {
                 $sql = "SELECT * FROM comments INNER JOIN users ON comments.user_id=users.user_id
-                 WHERE dish_id='$id' AND status=1";
+                 WHERE dish_id=$id AND status=1";
                 $stmt = ($this->conn)->prepare($sql);
                 $stmt->execute();
                 return $stmt->fetchAll(PDO::FETCH_ASSOC);

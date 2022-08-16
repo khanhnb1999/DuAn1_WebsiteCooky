@@ -291,23 +291,23 @@
                                         </div>
                                 </div>
                         </form>
-                        <div class="user__information">
-                                <?php foreach ($data['comment'] as $value): ?>     
-                                        <div class="info__comment">
-                                                <div class="user__avatar">
-                                                        <span><i class="far fa-user-edit"></i></span>
-                                                </div>
-                                                <div class="side__user">
-                                                        <div class="user__name--comment">
-                                                                <span><?= $value['user_name'] ?></span>
+                                <div class="user__information">
+                                        <?php foreach ($data['comment'] as $value): ?>     
+                                                <div class="info__comment">
+                                                        <div class="user__avatar">
+                                                                <span><i class="far fa-user-edit"></i></span>
                                                         </div>
-                                                        <div class="show__comment">
-                                                                <em><?= $value['content'] ?></em>
+                                                        <div class="side__user">
+                                                                <div class="user__name--comment">
+                                                                        <span><?= $value['user_name'] ?></span>
+                                                                </div>
+                                                                <div class="show__comment">
+                                                                        <em><?= $value['content'] ?></em>
+                                                                </div>
                                                         </div>
                                                 </div>
-                                        </div>
-                                <?php endforeach; ?>          
-                        </div>
+                                        <?php endforeach; ?>          
+                                </div>
                 </div>
         </div>
         <div class="footer">
