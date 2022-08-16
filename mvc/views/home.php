@@ -11,7 +11,7 @@
                                         <?php foreach ($data['home'] as $value) :?>
                                                 <div class="items">
                                                         <div class="avatar__cate">
-                                                                <a href="javascript:void()" onclick="showDish(<?= $value['catalog_id'] ?>)">
+                                                                <a href="<?= SITE_URL ?>/formula" onclick="showDish(<?= $value['catalog_id'] ?>)">
                                                                         <img src="./admin/mvc/views/catalogs/image/<?= $value['catalog_image'] ?>" alt="">
                                                                 </a>
                                                         </div>

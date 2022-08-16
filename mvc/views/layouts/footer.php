@@ -32,8 +32,12 @@
                     <h6>Về chúng tôi</h6>
                     <a href=""><img src="./admin/settings/image/" alt=""></a>
                     <span>
-                       <?= $val['address'] ?>
-                       <?= $val['description'] ?>
+                        CÔNG TY CỔ PHẦN COOKY
+                        Giấy đăng ký kinh doanh số 0314498604 do Sở Kế hoạch Đầu tư TP Hồ Chí Minh cấp lần đầu ngày
+                        06/07/2017
+                        Địa chỉ: C10 Điện Biên Phủ, Phường 25, Quận Bình Thạnh, TPHCM
+                        Số điện thoại: 02862861131
+                        Email: info@cooky.vn
                     </span>
                 </div>
             </div>

@@ -9,7 +9,39 @@ function listCate(cate_id) {
         }
 }
 
+
+
 $(document).ready(function() {
+        $("#select-down").click(function(){
+                $(".dropdown__dish").slideToggle(300);
+        });
+
+        $("#dish-new").click(function(){
+                $.ajax({
+                        type: "GET",
+                        url: BaseUrl + "/formula/filterNewDish",
+                        data: {},
+                        success: function(result) {
+                                $("#list-cate").html(result);
+                        }
+                });
+                $(".dropdown__dish").hide();
+                $(".foods__title").hide();
+        });
+
+        $("#dish-view").click(function(){
+                $.ajax({
+                        type: "GET",
+                        url: BaseUrl + "/formula/filterViewDish",
+                        data: {},
+                        success: function(result) {
+                                $("#list-cate").html(result);
+                        }
+                });
+                $(".dropdown__dish").hide();
+                $(".foods__title").hide();
+        });
+
         $("#form-comment").submit(function(event) {
                 event.preventDefault();
                 var formData = $(this).serialize();

@@ -38,8 +38,43 @@
 
 .dropdown__selected {
         border: 1px solid #c0bdbd;
-        border-radius: 10px;
-        background-color: #e0dada;
+        border-radius: 5px;
+        background-color: #ffffff;
+        padding: 7px 25px;
+        margin-left: 10px;
+}
+
+.list__view--formula {
+        position: relative;
+}
+
+.dropdown__dish {
+        position: absolute;
+        left: 11px;
+        top: 36px;
+        width: 134px;
+        height: 60px;
+        background-color: #f2f2f1;
+        border: 1px solid #c0bdbd;
+        display:none;
+}
+
+.dropdown__dish a {
+        display:block;
+        text-decoration: none;
+        text-align: center;
+}
+
+.dropdown__dish a:hover {
+        background-color:#3453af;
+        color:white;
+}
+
+.list__view--formula  span{
+        cursor: pointer;
+        border: 1px solid #c0bdbd;
+        border-radius: 5px;
+        background-color: #ffffff;
         padding: 9px 25px;
         margin-left: 10px;
 }

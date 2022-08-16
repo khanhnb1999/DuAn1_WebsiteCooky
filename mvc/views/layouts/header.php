@@ -209,10 +209,8 @@
             </div>
         </div>
         <!-- end navigation -->
-
         <div class="banner__carousel" >
                 <?php $val = $data['setting'] ?>
                 <img src="admin/mvc/views/settings/image/<?= $val['banner'] ?>" alt="" style="width: 100%; border-radius: 5px;height: 510px;">
         </div>
-
     </header>
